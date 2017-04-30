@@ -1,0 +1,68 @@
+## Automation
+
+  - alias: Check network on start
+    trigger:
+      platform: homeassistant
+      event: start
+    action:
+      - service: sensor.update_fastdotcom
+      - delay: '00:01:00'
+      - service: sensor.update_speedtest
+
+  - alias: Natural wake up light 6:30
+    hide_entity: true
+    trigger:
+      platform: time
+      after: "06:15:00"
+    condition:
+      - condition: state
+        entity_id: input_boolean.alarmone
+        state: 'on'
+    action:
+    - service: light.turn_on
+      entity_id: group.bedroom_lamps
+      data:
+        brightness: 1
+    - service: light.turn_on
+      entity_id: group.bedroom_lamps
+      data:
+        transition: 900
+        brightness: 255
+
+  - alias: Natural wake up light 7:30
+    hide_entity: true
+    trigger:
+      platform: time
+      after: "07:15:00"
+    condition:
+      - condition: state
+        entity_id: input_boolean.alarmtwo
+        state: 'on'
+    action:
+    - service: light.turn_on
+      entity_id: group.bedroom_lamps
+      data:
+        brightness: 1
+    - service: light.turn_on
+      entity_id: group.bedroom_lamps
+      data:
+        transition: 900
+        brightness: 255
+
+  - alias: Turn On Lights Arrive Home
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id: device_tracker.rich_iphone
+      from: 'not_home'
+      to: 'home'
+      state: 'home'
+    condition:
+      - condition: sun
+        after: sunset
+        after_offset: "-00:15:00"
+    action:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Living Room"
+        scene_name: "Dimmed"

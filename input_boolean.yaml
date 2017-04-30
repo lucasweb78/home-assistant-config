@@ -1,0 +1,11 @@
+## Input Boolean
+
+  alarmone:
+    name: Alarm 1
+    initial: off
+    icon: mdi:alarm
+
+  alarmtwo:
+    name: Alarm 2
+    initial: off
+    icon: mdi:alarm

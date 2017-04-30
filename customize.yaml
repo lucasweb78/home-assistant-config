@@ -1,0 +1,25 @@
+## Customizations
+
+  switch.bedroom_fan_switch_2_0:
+    friendly_name: Bedroom Fan
+
+  switch.living_room_fan:
+    # Alexa integrated directly with TP-Link Switch
+    emulated_hue: false
+
+  media_player.living_room:
+    friendly_name: Living Room Apple TV
+
+  media_player.roku_yu00na893334:
+    friendly_name: Living Room Roku
+
+  media_player.plex_web_safari:
+    hidden: true
+
+  device_tracker.rich_iphone:
+    friendly_name: Rich
+
+  scene.going_to_bed:
+    emulated_hue: true
+    emulated_hue_name: "Going to Bed"
+    homebridge_hidden: true

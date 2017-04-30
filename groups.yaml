@@ -1,0 +1,125 @@
+# Groups
+
+  default_view:
+    view: yes
+    entities:
+      - sun.sun
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
+      - climate.downstairs_nest
+      - group.locations
+      - group.lights
+      - group.alarms
+
+  climate_view:
+    view: yes
+    name: "Climate Control"
+    entities:
+      - sun.sun
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
+      - climate.downstairs_nest
+      - group.thermostat
+      - group.weather
+
+  living_room_view:
+    view: yes
+    name: "Living Room"
+    entities:
+      - switch.living_room_fan
+      - light.living_room_lamp
+      - media_player.apple_tv
+      - media_player.living_room_airtunes_speaker
+      - media_player.roku_yu00na893334
+
+  bedroom_room_view:
+    view: yes
+    name: "Bedroom"
+    entities:
+      - switch.bedroom_fan_switch_2_0
+      - group.bedroom_lamps
+      - media_player.bedroom_apple_tv
+      - media_player.bedroom_apple_tv_airtunes_speaker
+
+  entertainment_view:
+    view: yes
+    name: "Entertainment"
+    entities:
+      - group.entertainment
+
+  network_view:
+    view: yes
+    name: "Network"
+    entities:
+      - group.network
+
+  lights:
+    name: Lights
+    entities:
+      - light.living_room_lamp
+      - light.bedroom_lamp_1
+      - light.bedroom_lamp_2
+
+  bedroom_lamps:
+    name: Bedroom Lamps
+    entities:
+      - light.bedroom_lamp_1
+      - light.bedroom_lamp_2
+
+  weather:
+    name: Weather
+    view: no
+    entities:
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_daily_low_temperature
+      - sensor.dark_sky_humidity
+      - sensor.dark_sky_precip_probability
+      - sensor.dark_sky_wind_speed
+
+  thermostat:
+    name: Thermostat
+    view: no
+    entities:
+    - sensor.downstairs_thermostat_nest_temperature
+    - sensor.downstairs_thermostat_nest_target
+    - sensor.downstairs_thermostat_nest_humidity
+    - sensor.downstairs_thermostat_nest_operation_mode
+    - sensor.downstairs_thermostat_nest_hvac_state
+    - binary_sensor.downstairs_thermostat_nest_online
+    - binary_sensor.downstairs_thermostat_nest_fan
+    - binary_sensor.downstairs_thermostat_nest_has_leaf
+    - binary_sensor.downstairs_thermostat_nest_is_locked
+    - binary_sensor.downstairs_thermostat_nest_is_using_emergency_heat
+
+  entertainment:
+    name: Entertainment
+    view: no
+    entities:
+      - media_player.apple_tv
+      - media_player.living_room_airtunes_speaker
+      - media_player.roku_yu00na893334
+      - media_player.bedroom_apple_tv
+      - media_player.bedroom_apple_tv_airtunes_speaker
+      - media_player.itunes
+      - media_player.plex_web_safari
+
+  locations:
+    name: "Locations"
+    entities:
+      - device_tracker.rich_iphone
+
+  network:
+    name: "Network"
+    entities:
+      - sensor.lucaswebduckdnsorg
+      - sensor.ipv4_address_en1
+      - sensor.fastcom_download
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.speedtest_ping
+
+  alarms:
+    name: "Alarms"
+    entities:
+     - input_boolean.alarmone
+     - input_boolean.alarmtwo

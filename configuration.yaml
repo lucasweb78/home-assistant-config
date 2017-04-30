@@ -1,0 +1,55 @@
+homeassistant:
+  name: Home
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: 562
+  unit_system: imperial
+  time_zone: America/Los_Angeles
+  customize: !include customize.yaml
+
+frontend:
+config:
+updater:
+discovery:
+  ignore:
+    - apple_tv
+history:
+logbook:
+sun:
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: /etc/letsencrypt/live/lucasweb.duckdns.org/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/lucasweb.duckdns.org/privkey.pem
+  base_url: !secret http_base_url
+
+ios:
+
+zwave:
+  usb_path: /dev/cu.usbmodem1411
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+emulated_hue:
+  off_maps_to_on_domains:
+    - script
+    - scene
+  exposed_domains:
+    - scene
+    - input_boolean
+    - switch
+
+ifttt:
+  key: !secret ifttt_key
+
+input_boolean: !include input_boolean.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+media_player: !include media_players.yaml
+automation: !include automation.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+group: !include groups.yaml
+zone: !include zones.yaml

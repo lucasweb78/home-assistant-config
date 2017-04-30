@@ -1,0 +1,28 @@
+## Sensors
+
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - summary
+      - temperature
+      - temperature_max
+      - temperature_min
+      - humidity
+      - precip_probability
+      - wind_speed
+
+  - platform: speedtest
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
+  - platform: fastdotcom
+
+  - platform: systemmonitor
+    resources:
+      - type: ipv4_address
+        arg: en1
+
+  - platform: dnsip
+    hostname: lucasweb.duckdns.org
