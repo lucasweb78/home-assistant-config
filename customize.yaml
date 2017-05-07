@@ -7,14 +7,36 @@
     # Alexa integrated directly with TP-Link Switch
     emulated_hue: false
 
-  media_player.living_room:
-    friendly_name: Living Room Apple TV
+  media_player.apple_tv:
+    friendly_name: Apple TV
+    emulated_hue: true
+    emulated_hue_name: "Apple TV"
 
+  media_player.living_room_airtunes_speaker:
+    emulated_hue: false
+    homebridge_hidden: true
+    
   media_player.roku_yu00na893334:
     friendly_name: Living Room Roku
+    emulated_hue: false
+    homebridge_hidden: true
 
+  media_player.bedroom_apple_tv:
+    emulated_hue: false
+    homebridge_hidden: true
+
+  media_player.bedroom_apple_tv_airtunes_speaker:
+    emulated_hue: false
+    homebridge_hidden: true
+    
   media_player.plex_web_safari:
+    emulated_hue: false
     hidden: true
+    homebridge_hidden: true
+
+  media_player.itunes:
+    emulated_hue: false
+    homebridge_hidden: true
 
   device_tracker.rich_iphone:
     friendly_name: Rich

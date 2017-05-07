@@ -40,6 +40,7 @@ emulated_hue:
     - scene
     - input_boolean
     - switch
+    - media_player
 
 ifttt:
   key: !secret ifttt_key

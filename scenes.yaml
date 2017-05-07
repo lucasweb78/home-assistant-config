@@ -5,3 +5,4 @@
       light.living_room_lamp: off
       script.nightlight_in_bedroom: on
       switch.living_room_fan: off
+      media_player.apple_tv: off
