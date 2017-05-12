@@ -2,7 +2,8 @@
 
   - name: Going to Bed
     entities:
-      light.living_room_lamp: off
       script.nightlight_in_bedroom: on
+      switch.bedroom_fan_switch_2_0: on
+      light.living_room_lamp: off
       switch.living_room_fan: off
       media_player.apple_tv: off
