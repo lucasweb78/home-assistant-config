@@ -1,6 +1,7 @@
 ## Automation
 
-  - alias: Check network on start
+  - id: network_start
+    alias: Check network on start
     trigger:
       platform: homeassistant
       event: start
@@ -9,7 +10,8 @@
       - delay: '00:01:00'
       - service: sensor.update_speedtest
 
-  - alias: Natural wake up light 6:30
+  - id: wakeup_630
+    alias: Natural wake up light 6:30
     hide_entity: true
     trigger:
       platform: time
@@ -29,7 +31,8 @@
         transition: 900
         brightness: 255
 
-  - alias: Natural wake up light 7:30
+  - id: wakeup_730
+    alias: Natural wake up light 7:30
     hide_entity: true
     trigger:
       platform: time
@@ -49,7 +52,8 @@
         transition: 900
         brightness: 255
 
-  - alias: Turn On Lights Arrive Home
+  - id: arrive_home
+    alias: Turn On Lights Arrive Home
     hide_entity: true
     trigger:
       platform: state

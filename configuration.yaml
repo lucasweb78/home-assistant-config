@@ -49,7 +49,7 @@ input_boolean: !include input_boolean.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 media_player: !include media_players.yaml
-automation: !include automation.yaml
+automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml
