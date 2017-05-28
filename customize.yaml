@@ -45,3 +45,8 @@
     emulated_hue: true
     emulated_hue_name: "Going to Bed"
     homebridge_hidden: true
+
+  scene.goodnight:
+    emulated_hue: true
+    emulated_hue_name: "Goodnight"
+    homebridge_hidden: true

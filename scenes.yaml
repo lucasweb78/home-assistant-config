@@ -7,3 +7,9 @@
       light.living_room_lamp: off
       switch.living_room_fan: off
       media_player.apple_tv: off
+
+  - name: Goodnight
+    entities:
+      group.lights: off
+      switch.living_room_fan: off
+      media_player.apple_tv: off
