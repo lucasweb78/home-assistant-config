@@ -1,9 +1,9 @@
 ## Customizations
 
-  switch.bedroom_fan_switch_2_0:
+  switch.bedroom_fan_switch:
     friendly_name: Bedroom Fan
 
-  switch.living_room_fan_switch_3_0:
+  switch.living_room_fan_switch:
     friendly_name: Living Room Fan
 
   switch.garage_light:

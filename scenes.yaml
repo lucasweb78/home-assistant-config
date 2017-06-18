@@ -3,15 +3,15 @@
   - name: Going to Bed
     entities:
       script.nightlight_in_bedroom: on
-      switch.bedroom_fan_switch_2_0: on
+      switch.bedroom_fan_switch: on
       light.living_room_lamp: off
-      switch.living_room_fan_switch_3_0: off
+      switch.living_room_fan_switch: off
       media_player.apple_tv: off
       switch.garage_light: off
 
   - name: Goodnight
     entities:
       group.lights: off
-      switch.living_room_fan_switch_3_0: off
+      switch.living_room_fan_switch: off
       media_player.apple_tv: off
       switch.garage_light: off

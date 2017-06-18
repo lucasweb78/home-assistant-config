@@ -27,6 +27,7 @@ ios:
 
 zwave:
   usb_path: /dev/cu.usbmodem1411
+  new_entity_ids: true
 
 nest:
   client_id: !secret nest_client_id
