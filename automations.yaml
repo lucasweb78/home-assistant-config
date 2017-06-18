@@ -15,11 +15,11 @@
     hide_entity: true
     trigger:
       platform: time
-      after: "06:15:00"
+      at: "06:15:00"
     condition:
       - condition: state
         entity_id: input_boolean.alarmone
-        state: 'on'
+        to: 'on'
     action:
     - service: light.turn_on
       entity_id: group.bedroom_lamps
@@ -36,11 +36,11 @@
     hide_entity: true
     trigger:
       platform: time
-      after: "07:15:00"
+      at: "07:15:00"
     condition:
       - condition: state
         entity_id: input_boolean.alarmtwo
-        state: 'on'
+        to: 'on'
     action:
     - service: light.turn_on
       entity_id: group.bedroom_lamps
@@ -60,10 +60,9 @@
       entity_id: device_tracker.rich_iphone
       from: 'not_home'
       to: 'home'
-      state: 'home'
     condition:
       - condition: sun
-        after: sunset
+        at: sunset
         after_offset: "-00:15:00"
     action:
     - service: light.hue_activate_scene
@@ -79,7 +78,6 @@
       entity_id: device_tracker.rich_iphone
       from: 'not_home'
       to: 'home'
-      state: 'home'
     action:
     - service: switch.turn_on
       entity_id: switch.garage_light
