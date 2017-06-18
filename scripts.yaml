@@ -8,3 +8,10 @@
         data:
           group_name: "Bedroom"
           scene_name: "Nightlight"
+
+  timer_off_garage_light_timer:
+    sequence:
+      - delay:
+          minutes: 10
+      - service: switch.turn_off
+        entity_id: switch.garage_light

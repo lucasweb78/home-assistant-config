@@ -52,8 +52,8 @@
         transition: 900
         brightness: 255
 
-  - id: arrive_home
-    alias: Turn On Lights Arrive Home
+  - id: arrive_home_evening
+    alias: Arrive Home Evening
     hide_entity: true
     trigger:
       platform: state
@@ -70,3 +70,17 @@
       data:
         group_name: "Living Room"
         scene_name: "Dimmed"
+
+  - id: arrive_home
+    alias: Arrive Home
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id: device_tracker.rich_iphone
+      from: 'not_home'
+      to: 'home'
+      state: 'home'
+    action:
+    - service: switch.turn_on
+      entity_id: switch.garage_light
+    - service: script.timer_off_garage_light_timer

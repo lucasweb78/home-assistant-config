@@ -2,4 +2,4 @@
 
   - platform: tplink
     host: !secret tp_link_switch_1_ip
-    name: Living Room Fan
+    name: Garage Light

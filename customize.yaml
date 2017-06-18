@@ -3,7 +3,10 @@
   switch.bedroom_fan_switch_2_0:
     friendly_name: Bedroom Fan
 
-  switch.living_room_fan:
+  switch.living_room_fan_switch_3_0:
+    friendly_name: Living Room Fan
+
+  switch.garage_light:
     # Alexa integrated directly with TP-Link Switch
     emulated_hue: false
 

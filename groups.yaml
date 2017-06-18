@@ -26,7 +26,7 @@
     view: yes
     name: "Living Room"
     entities:
-      - switch.living_room_fan
+      - switch.living_room_fan_switch_3_0
       - light.living_room_lamp
       - media_player.apple_tv
       - media_player.living_room_airtunes_speaker
@@ -40,6 +40,12 @@
       - group.bedroom_lamps
       - media_player.bedroom_apple_tv
       - media_player.bedroom_apple_tv_airtunes_speaker
+
+  garage_view:
+    view: yes
+    name: "Garage"
+    entities:
+      - switch.garage_light
 
   entertainment_view:
     view: yes
