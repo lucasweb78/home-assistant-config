@@ -65,6 +65,7 @@
       - light.living_room_lamp
       - light.bedroom_lamp_1
       - light.bedroom_lamp_2
+      - switch.garage_light
 
   bedroom_lamps:
     name: Bedroom Lamps
