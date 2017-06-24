@@ -118,6 +118,7 @@
     name: "Network"
     entities:
       - sensor.lucaswebduckdnsorg
+      - sensor.ssl_cert_expiry
       - sensor.ipv4_address_en1
       - sensor.fastcom_download
       - sensor.speedtest_download
