@@ -10,6 +10,7 @@
       - group.locations
       - group.lights
       - group.alarms
+      - lock.front_door_lock_locked
 
   climate_view:
     view: yes

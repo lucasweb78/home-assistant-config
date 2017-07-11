@@ -10,6 +10,9 @@
     # Alexa integrated directly with TP-Link Switch
     emulated_hue: false
 
+  lock.front_door_lock_locked:
+    friendly_name: Front Door Lock
+
   media_player.apple_tv:
     friendly_name: Apple TV
     emulated_hue: true

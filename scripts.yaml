@@ -1,7 +1,5 @@
 ## Scripts
 
-  #Hue Scenes exposed as home assistant scripts:
-
   nightlight_in_bedroom:
     sequence:
       - service: light.hue_activate_scene
