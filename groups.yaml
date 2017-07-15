@@ -30,7 +30,6 @@
       - switch.living_room_fan_switch
       - light.living_room_lamp
       - media_player.apple_tv
-      - media_player.living_room_airtunes_speaker
       - media_player.roku_yu00na893334
 
   bedroom_room_view:
@@ -40,7 +39,6 @@
       - switch.bedroom_fan_switch
       - group.bedroom_lamps
       - media_player.bedroom_apple_tv
-      - media_player.bedroom_apple_tv_airtunes_speaker
 
   garage_view:
     view: yes
@@ -104,12 +102,8 @@
     view: no
     entities:
       - media_player.apple_tv
-      - media_player.living_room_airtunes_speaker
       - media_player.roku_yu00na893334
       - media_player.bedroom_apple_tv
-      - media_player.bedroom_apple_tv_airtunes_speaker
-      - media_player.itunes
-      - media_player.plex_web_safari
 
   locations:
     name: "Locations"

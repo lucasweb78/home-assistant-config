@@ -52,7 +52,24 @@
         transition: 900
         brightness: 255
 
-  - id: arrive_home_evening
+  - id: arrive_home
+    alias: Arrive Home
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id: device_tracker.rich_iphone
+      from: 'not_home'
+      to: 'home'
+    condition:
+      - condition: state
+        entity_id: light.garage_light
+        state: 'off'
+    action:
+    - service: switch.turn_on
+      entity_id: switch.garage_light
+    - service: script.timer_off_garage_light_timer
+
+  - id: arrive_home_dark
     alias: Arrive Home Evening
     hide_entity: true
     trigger:
@@ -64,21 +81,36 @@
       - condition: sun
         after: sunset
         after_offset: "-00:15:00"
+      - condition: state
+        entity_id: light.living_room_lamp
+        state: 'off'
     action:
     - service: light.hue_activate_scene
       data:
         group_name: "Living Room"
         scene_name: "Dimmed"
 
-  - id: arrive_home
-    alias: Arrive Home
-    hide_entity: true
+  - id: sync_unlock
+    alias: Sync Unlock State
     trigger:
       platform: state
-      entity_id: device_tracker.rich_iphone
-      from: 'not_home'
-      to: 'home'
+      entity_id: sensor.front_door_lock_alarm_type
+    condition:
+      - condition: template
+        value_template: '{{ is_state("sensor.front_door_lock_alarm_type", "19") or is_state("sensor.front_door_lock_alarm_type", "22")  }}'
     action:
-    - service: switch.turn_on
-      entity_id: switch.garage_light
-    - service: script.timer_off_garage_light_timer
+      - service: lock.unlock
+        entity_id: lock.front_door_lock_locked
+
+  - id: sync_lock
+    alias: Sync Lock State
+    trigger:
+      platform: state
+      entity_id: sensor.front_door_lock_alarm_type
+    condition:
+        - condition: state
+          entity_id: 'sensor.front_door_lock_alarm_type'
+          state: '21'
+    action:
+      - service: lock.lock
+        entity_id: lock.front_door_lock_locked

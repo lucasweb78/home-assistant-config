@@ -13,7 +13,8 @@ Devices:
 <li>GE 12722 Switches</li>
 <li>TP-Link HS200 Smart Wi-Fi Light Switches</li>
 <li>Phillips Hue Hub and Bulbs</li>
-<li>Nest Thermostat</li>    
+<li>Nest Thermostat</li>   
+<li><Yale Real Living Lock/li> 
 </ul>
 
 Voice Control:
