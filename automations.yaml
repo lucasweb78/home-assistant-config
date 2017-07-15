@@ -73,10 +73,14 @@
     alias: Arrive Home After Sunset
     hide_entity: true
     trigger:
-      platform: state
-      entity_id: device_tracker.rich_iphone
-      from: 'not_home'
-      to: 'home'
+      - platform: state
+        entity_id: device_tracker.rich_iphone
+        from: 'not_home'
+        to: 'home'
+      - platform: state
+        entity_id: lock.front_door_lock_locked
+        from: 'locked'
+        to: 'unlocked'
     condition:
       condition: and
       conditions:
