@@ -62,15 +62,15 @@
       to: 'home'
     condition:
       - condition: state
-        entity_id: light.garage_light
+        entity_id: switch.garage_light
         state: 'off'
     action:
     - service: switch.turn_on
       entity_id: switch.garage_light
     - service: script.timer_off_garage_light_timer
 
-  - id: arrive_home_dark
-    alias: Arrive Home Evening
+  - id: arrive_home_after_sunset
+    alias: Arrive Home After Sunset
     hide_entity: true
     trigger:
       platform: state
@@ -78,12 +78,14 @@
       from: 'not_home'
       to: 'home'
     condition:
-      - condition: sun
-        after: sunset
-        after_offset: "-00:15:00"
-      - condition: state
-        entity_id: light.living_room_lamp
-        state: 'off'
+      condition: and
+      conditions:
+        - condition: sun
+          after: sunset
+          after_offset: "-00:15:00"
+        - condition: state
+          entity_id: light.living_room_lamp
+          state: 'off'
     action:
     - service: light.hue_activate_scene
       data:
