@@ -42,7 +42,6 @@ emulated_hue:
     - scene
     - input_boolean
     - switch
-    - media_player
 
 ifttt:
   key: !secret ifttt_key
@@ -50,7 +49,6 @@ ifttt:
 input_boolean: !include input_boolean.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
-media_player: !include media_players.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml

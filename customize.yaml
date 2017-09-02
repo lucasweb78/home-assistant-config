@@ -13,20 +13,6 @@
   lock.front_door_lock_locked:
     friendly_name: Front Door Lock
 
-  media_player.apple_tv:
-    friendly_name: Apple TV
-    emulated_hue: true
-    emulated_hue_name: "Apple TV"
-
-  media_player.roku_yu00na893334:
-    friendly_name: Living Room Roku
-    emulated_hue: false
-    homebridge_hidden: true
-
-  media_player.bedroom_apple_tv:
-    emulated_hue: false
-    homebridge_hidden: true
-
   device_tracker.rich_iphone:
     friendly_name: Rich
 

@@ -29,8 +29,6 @@
     entities:
       - switch.living_room_fan_switch
       - light.living_room_lamp
-      - media_player.apple_tv
-      - media_player.roku_yu00na893334
 
   bedroom_room_view:
     view: yes
@@ -38,19 +36,12 @@
     entities:
       - switch.bedroom_fan_switch
       - group.bedroom_lamps
-      - media_player.bedroom_apple_tv
 
   garage_view:
     view: yes
     name: "Garage"
     entities:
       - switch.garage_light
-
-  entertainment_view:
-    view: yes
-    name: "Entertainment"
-    entities:
-      - group.entertainment
 
   network_view:
     view: yes
@@ -96,14 +87,6 @@
     - binary_sensor.downstairs_thermostat_nest_has_leaf
     - binary_sensor.downstairs_thermostat_nest_is_locked
     - binary_sensor.downstairs_thermostat_nest_is_using_emergency_heat
-
-  entertainment:
-    name: Entertainment
-    view: no
-    entities:
-      - media_player.apple_tv
-      - media_player.roku_yu00na893334
-      - media_player.bedroom_apple_tv
 
   locations:
     name: "Locations"

@@ -120,3 +120,24 @@
     action:
       - service: lock.lock
         entity_id: lock.front_door_lock_locked
+
+  - id: lock_door_using_scene
+    alias: Lock Front Door Using Scene
+    trigger:
+      - platform: event
+        event_type: call_service
+        event_data:
+          service_data:
+            entity_id: scene.going_to_bed
+          domain: scene
+          service: turn_on
+      - platform: event
+        event_type: call_service
+        event_data:
+          service_data:
+            entity_id: scene.goodnight
+          domain: scene
+          service: turn_on
+    action:
+      - service: lock.lock
+        entity_id: lock.front_door_lock_locked
