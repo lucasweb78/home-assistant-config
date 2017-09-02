@@ -1,11 +1,6 @@
 ## Input Boolean
 
-  alarmone:
-    name: Alarm 1
-    initial: off
-    icon: mdi:alarm
-
-  alarmtwo:
-    name: Alarm 2
+  morning_alarm:
+    name: Morning Alarm
     initial: off
     icon: mdi:alarm

@@ -10,15 +10,15 @@
       - delay: '00:01:00'
       - service: sensor.update_speedtest
 
-  - id: wakeup_630
-    alias: Natural wake up light 6:30
+  - id: wakeup
+    alias: Wakeup
     hide_entity: true
     trigger:
       platform: time
       at: "06:15:00"
     condition:
       - condition: state
-        entity_id: input_boolean.alarmone
+        entity_id: input_boolean.morning_alarm
         state: 'on'
     action:
     - service: light.turn_on
@@ -31,26 +31,23 @@
         transition: 900
         brightness: 255
 
-  - id: wakeup_730
-    alias: Natural wake up light 7:30
+  - id: turn_off_upstairs_morning_weekdays
+    alias: Turn Off Upstairs Morning Weekdays
     hide_entity: true
     trigger:
       platform: time
-      at: "07:15:00"
+      at: "07:55:00"
     condition:
-      - condition: state
-        entity_id: input_boolean.alarmtwo
-        state: 'on'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
     action:
-    - service: light.turn_on
+    - service: light.turn_off
       entity_id: group.bedroom_lamps
-      data:
-        brightness: 1
-    - service: light.turn_on
-      entity_id: group.bedroom_lamps
-      data:
-        transition: 900
-        brightness: 255
 
   - id: arrive_home
     alias: Arrive Home
@@ -69,8 +66,8 @@
       entity_id: switch.garage_light
     - service: script.timer_off_garage_light_timer
 
-  - id: arrive_home_after_sunset
-    alias: Arrive Home After Sunset
+  - id: arrive_home_night
+    alias: Arrive Home Night
     hide_entity: true
     trigger:
       - platform: state

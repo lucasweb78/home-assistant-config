@@ -107,5 +107,4 @@
   alarms:
     name: "Alarms"
     entities:
-     - input_boolean.alarmone
-     - input_boolean.alarmtwo
+     - input_boolean.morning_alarm
