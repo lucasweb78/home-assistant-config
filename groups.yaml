@@ -11,6 +11,8 @@
       - group.lights
       - group.alarms
       - lock.front_door_lock_locked
+      - group.scenes
+      - configurator.philips_hue
 
   climate_view:
     view: yes
@@ -108,3 +110,9 @@
     name: "Alarms"
     entities:
      - input_boolean.morning_alarm
+
+  scenes:
+    name: "Scenes"
+    entities:
+      - scene.going_to_bed
+      - scene.goodnight

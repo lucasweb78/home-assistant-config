@@ -23,6 +23,9 @@ http:
   ssl_key: /etc/letsencrypt/live/lucasweb.duckdns.org/privkey.pem
   base_url: !secret http_base_url
 
+logger:
+  default: warn
+
 ios:
 
 zwave:
@@ -33,6 +36,11 @@ zwave:
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
+
+light:
+  platform: hue
+  host: !secret hue_ip
+  allow_hue_groups: true
 
 emulated_hue:
   off_maps_to_on_domains:
