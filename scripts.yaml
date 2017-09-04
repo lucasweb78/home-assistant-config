@@ -7,6 +7,13 @@
           group_name: "Bedroom"
           scene_name: "Nightlight"
 
+  dimmed_in_livingroom:
+    sequence:
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Living Room"
+          scene_name: "Dimmed"
+
   timer_off_garage_light_timer:
     sequence:
       - delay:

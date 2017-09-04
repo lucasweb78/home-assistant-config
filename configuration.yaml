@@ -50,6 +50,7 @@ emulated_hue:
     - scene
     - input_boolean
     - switch
+    - fan
 
 ifttt:
   key: !secret ifttt_key

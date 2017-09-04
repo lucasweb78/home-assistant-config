@@ -9,6 +9,7 @@
       - climate.downstairs_nest
       - group.locations
       - group.lights
+      - group.fans
       - group.alarms
       - lock.front_door_lock_locked
       - group.scenes
@@ -29,8 +30,9 @@
     view: yes
     name: "Living Room"
     entities:
-      - switch.living_room_fan_switch
+      - fan.living_room_fan_level
       - light.living_room_lamp
+      - switch.living_room_light_switch
 
   bedroom_room_view:
     view: yes
@@ -55,9 +57,16 @@
     name: Lights
     entities:
       - light.living_room_lamp
+      - switch.living_room_light_switch
       - light.bedroom_lamp_1
       - light.bedroom_lamp_2
       - switch.garage_light
+
+  fans:
+    name: Fans
+    entities:
+      - fan.living_room_fan_level
+      - switch.bedroom_fan_switch
 
   bedroom_lamps:
     name: Bedroom Lamps
@@ -116,3 +125,4 @@
     entities:
       - scene.going_to_bed
       - scene.goodnight
+      - scene.dim_the_lights

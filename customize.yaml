@@ -3,8 +3,11 @@
   switch.bedroom_fan_switch:
     friendly_name: Bedroom Fan
 
-  switch.living_room_fan_switch:
+  fan.living_room_fan_level:
     friendly_name: Living Room Fan
+
+  switch.living_room_light_switch:
+    friendly_name: Living Room Light
 
   switch.garage_light:
     # Alexa integrated directly with TP-Link Switch
@@ -24,4 +27,9 @@
   scene.goodnight:
     emulated_hue: true
     emulated_hue_name: "Goodnight"
+    homebridge_hidden: true
+
+  scene.dim_the_lights:
+    emulated_hue: true
+    emulated_hue_name: "Dim the Lights"
     homebridge_hidden: true

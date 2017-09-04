@@ -5,11 +5,18 @@
       script.nightlight_in_bedroom: on
       switch.bedroom_fan_switch: on
       light.living_room_lamp: off
-      switch.living_room_fan_switch: off
+      fan.living_room_fan_level: off
+      switch.living_room_light_switch: off
       switch.garage_light: off
 
   - name: Goodnight
     entities:
       group.lights: off
-      switch.living_room_fan_switch: off
+      fan.living_room_fan_level: off
+      switch.living_room_light_switch: off
       switch.garage_light: off
+
+  - name: Dim the Lights
+    entities:
+      switch.living_room_light_switch: off
+      script.dimmed_in_livingroom: on
