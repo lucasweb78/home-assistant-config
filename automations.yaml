@@ -15,11 +15,18 @@
     hide_entity: true
     trigger:
       platform: time
-      at: "06:15:00"
+      at: "06:30:00"
     condition:
       - condition: state
         entity_id: input_boolean.morning_alarm
         state: 'on'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
     action:
     - service: light.turn_on
       entity_id: group.bedroom_lamps
@@ -31,12 +38,30 @@
         transition: 900
         brightness: 255
 
+  - id: turn_on_downstairs_morning_weekdays
+    alias: Turn On Downstairs Morning Weekdays
+    hide_entity: true
+    trigger:
+      platform: time
+      at: "06:45:00"
+    condition:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+    action:
+    - service: scene.turn_on
+      entity_id: scene.good_morning
+
   - id: turn_off_upstairs_morning_weekdays
     alias: Turn Off Upstairs Morning Weekdays
     hide_entity: true
     trigger:
       platform: time
-      at: "07:55:00"
+      at: "07:30:00"
     condition:
       - condition: time
         weekday:

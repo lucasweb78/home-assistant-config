@@ -11,6 +11,7 @@ System:
 Devices:
 <ul>
 <li>GE 12722 Switches</li>
+<li>GE 12730 Switches</li>
 <li>TP-Link HS200 Smart Wi-Fi Light Switches</li>
 <li>Phillips Hue Hub and Bulbs</li>
 <li>Nest Thermostat</li>   

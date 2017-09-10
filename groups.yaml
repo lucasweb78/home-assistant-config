@@ -34,11 +34,17 @@
       - light.living_room_lamp
       - switch.living_room_light_switch
 
+  kitchen_view:
+    view: yes
+    name: "Kitchen"
+    entities:
+      - switch.kitchen_sink_light_switch
+
   bedroom_room_view:
     view: yes
     name: "Bedroom"
     entities:
-      - switch.bedroom_fan_switch
+      - fan.bedroom_fan_level
       - group.bedroom_lamps
 
   garage_view:
@@ -58,6 +64,7 @@
     entities:
       - light.living_room_lamp
       - switch.living_room_light_switch
+      - switch.kitchen_sink_light_switch
       - light.bedroom_lamp_1
       - light.bedroom_lamp_2
       - switch.garage_light
@@ -66,7 +73,7 @@
     name: Fans
     entities:
       - fan.living_room_fan_level
-      - switch.bedroom_fan_switch
+      - fan.bedroom_fan_level
 
   bedroom_lamps:
     name: Bedroom Lamps
@@ -123,6 +130,7 @@
   scenes:
     name: "Scenes"
     entities:
+      - scene.good_morning
+      - scene.evening
       - scene.going_to_bed
       - scene.goodnight
-      - scene.dim_the_lights
