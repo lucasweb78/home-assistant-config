@@ -57,6 +57,7 @@
     view: yes
     name: "Network"
     entities:
+      - sensor.current_version
       - group.network
 
   lights:

@@ -25,6 +25,9 @@
   device_tracker.rich_iphone:
     friendly_name: Rich
 
+  light.all_hue_lights:
+    hidden: true
+
   scene.good_morning:
     emulated_hue: true
     emulated_hue_name: "Good Morning"
