@@ -19,6 +19,10 @@
   switch.garage_light:
     emulated_hue: true
 
+  switch.outdoor_plug_switch:
+    friendly_name: Outdoor Switch
+    emulated_hue: true
+
   lock.front_door_lock_locked:
     friendly_name: Front Door Lock
 

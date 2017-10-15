@@ -10,6 +10,7 @@
       - group.locations
       - group.lights
       - group.fans
+      - group.plugs
       - group.alarms
       - lock.front_door_lock_locked
       - group.scenes
@@ -82,6 +83,11 @@
       - light.bedroom_lamp_1
       - light.bedroom_lamp_2
 
+  plugs:
+    name: Plugs
+    entities:
+      - switch.outdoor_plug_switch
+
   weather:
     name: Weather
     view: no
@@ -133,5 +139,5 @@
     entities:
       - scene.good_morning
       - scene.evening
-      - scene.going_to_bed
+      - scene.bedtime
       - scene.goodnight

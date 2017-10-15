@@ -12,13 +12,13 @@
       script.dimmed_in_livingroom: on
       switch.kitchen_sink_light_switch: on
 
-  - name: Going to Bed
+  - name: Bedtime
     entities:
       script.nightlight_in_bedroom: on
       fan.bedroom_fan_level: on
-      light.living_room_lamp: off
       fan.living_room_fan_level: off
       switch.living_room_light_switch: off
+      script.dimmed_in_livingroom: on
       switch.kitchen_sink_light_switch: off
       switch.garage_light: off
 
