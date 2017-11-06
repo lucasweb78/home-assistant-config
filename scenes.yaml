@@ -2,25 +2,26 @@
 
   - name: Good Morning
     entities:
-      script.bright_in_livingroom: on
+      script.bright_in_foyer: on
       switch.living_room_light_switch: on
+      switch.dining_room_light_switch: on
       switch.kitchen_sink_light_switch: on
 
   - name: Evening
     entities:
+      script.dimmed_in_foyer: on
+      script.relax_in_living_room: on
       switch.living_room_light_switch: off
-      script.dimmed_in_livingroom: on
+      switch.dining_room_light_switch: off
       switch.kitchen_sink_light_switch: on
 
   - name: Bedtime
     entities:
+      group.lights: off
       script.nightlight_in_bedroom: on
       fan.bedroom_fan_level: on
+      script.dimmed_in_foyer: on
       fan.living_room_fan_level: off
-      switch.living_room_light_switch: off
-      script.dimmed_in_livingroom: on
-      switch.kitchen_sink_light_switch: off
-      switch.garage_light: off
 
   - name: Goodnight
     entities:

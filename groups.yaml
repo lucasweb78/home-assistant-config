@@ -27,13 +27,25 @@
       - group.thermostat
       - group.weather
 
+  foyer_view:
+    view: yes
+    name: "Foyer"
+    entities:
+      - light.foyer_lamp
+
   living_room_view:
     view: yes
     name: "Living Room"
     entities:
       - fan.living_room_fan_level
-      - light.living_room_lamp
+      - light.living_room_lightstrip
       - switch.living_room_light_switch
+
+  dining_room_view:
+    view: yes
+    name: "Dining Room"
+    entities:
+      - switch.dining_room_light_switch
 
   kitchen_view:
     view: yes
@@ -54,6 +66,12 @@
     entities:
       - switch.garage_light
 
+  patio_view:
+    view: yes
+    name: "Patio"
+    entities:
+      - switch.patio_light_switch
+
   network_view:
     view: yes
     name: "Network"
@@ -64,11 +82,14 @@
   lights:
     name: Lights
     entities:
-      - light.living_room_lamp
+      - light.foyer_lamp
+      - light.living_room_lightstrip
       - switch.living_room_light_switch
+      - switch.dining_room_light_switch
       - switch.kitchen_sink_light_switch
-      - light.bedroom_lamp_1
-      - light.bedroom_lamp_2
+      - light.bedside_lamp_1
+      - light.bedside_lamp_2
+      - switch.patio_light_switch
       - switch.garage_light
 
   fans:
@@ -80,8 +101,8 @@
   bedroom_lamps:
     name: Bedroom Lamps
     entities:
-      - light.bedroom_lamp_1
-      - light.bedroom_lamp_2
+      - light.bedside_lamp_1
+      - light.bedside_lamp_2
 
   plugs:
     name: Plugs

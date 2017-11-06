@@ -15,7 +15,7 @@
     hide_entity: true
     trigger:
       platform: time
-      at: "06:30:00"
+      at: "07:30:00"
     condition:
       - condition: state
         entity_id: input_boolean.morning_alarm
@@ -43,7 +43,7 @@
     hide_entity: true
     trigger:
       platform: time
-      at: "06:45:00"
+      at: "06:30:00"
     condition:
       - condition: time
         weekday:
@@ -61,7 +61,7 @@
     hide_entity: true
     trigger:
       platform: time
-      at: "07:30:00"
+      at: "08:00:00"
     condition:
       - condition: time
         weekday:
@@ -110,12 +110,12 @@
           after: sunset
           after_offset: "-00:15:00"
         - condition: state
-          entity_id: light.living_room_lamp
+          entity_id: light.foyer_lamp
           state: 'off'
     action:
     - service: light.hue_activate_scene
       data:
-        group_name: "Living Room"
+        group_name: "Foyer"
         scene_name: "Dimmed"
 
   - id: sync_unlock
@@ -143,29 +143,30 @@
       - service: lock.lock
         entity_id: lock.front_door_lock_locked
 
-  - id: lock_door_using_scene
-    alias: Lock Front Door Using Scene
-    trigger:
-      - platform: event
-        event_type: call_service
-        event_data:
-          service_data:
-            entity_id: scene.bedtime
-          domain: scene
-          service: turn_on
-      - platform: event
-        event_type: call_service
-        event_data:
-          service_data:
-            entity_id: scene.goodnight
-          domain: scene
-          service: turn_on
-    action:
-      - service: lock.lock
-        entity_id: lock.front_door_lock_locked
+#  - id: lock_door_using_scene
+#    alias: Lock Front Door Using Scene
+#    trigger:
+#      - platform: event
+#        event_type: call_service
+#        event_data:
+#          service_data:
+#            entity_id: scene.bedtime
+#          domain: scene
+#          service: turn_on
+#      - platform: event
+#        event_type: call_service
+#        event_data:
+#          service_data:
+#            entity_id: scene.goodnight
+#          domain: scene
+#          service: turn_on
+#    action:
+#      - service: lock.lock
+#        entity_id: lock.front_door_lock_locked
 
   - id: holiday_lights_on
     alias: Holiday Lights On
+    initial_state: false
     hide_entity: true
     trigger:
       platform: sun
@@ -177,10 +178,11 @@
 
   - id: holiday_lights_off
     alias: Holiday Lights Off
+    initial_state: false
     hide_entity: true
     trigger:
       platform: time
-      at: "22:00:00"
+      at: "21:25:00"
     action:
     - service: switch.turn_off
       entity_id: switch.outdoor_plug_switch

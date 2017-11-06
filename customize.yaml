@@ -16,6 +16,10 @@
     friendly_name: Kitchen Sink Light
     emulated_hue: true
 
+  switch.patio_light_switch:
+    friendly_name: Patio Light
+    emulated_hue: true
+
   switch.garage_light:
     emulated_hue: true
 
@@ -42,9 +46,9 @@
     emulated_hue_name: "Evening"
     homebridge_hidden: true
 
-  scene.going_to_bed:
+  scene.bedtime:
     emulated_hue: true
-    emulated_hue_name: "Going to Bed"
+    emulated_hue_name: "Bedtime"
     homebridge_hidden: true
 
   scene.goodnight:
