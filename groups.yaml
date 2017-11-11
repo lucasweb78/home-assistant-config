@@ -98,8 +98,8 @@
       - fan.living_room_fan_level
       - fan.bedroom_fan_level
 
-  bedroom_lamps:
-    name: Bedroom Lamps
+  bedside_lamps:
+    name: Bedside Lamps
     entities:
       - light.bedside_lamp_1
       - light.bedside_lamp_2
