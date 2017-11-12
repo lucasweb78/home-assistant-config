@@ -7,17 +7,37 @@
       switch.dining_room_light_switch: on
       switch.kitchen_sink_light_switch: on
 
+  - name: Dinner Time
+    entities:
+      switch.dining_room_light_switch: on
+      script.dinner_time_in_dining_room: on
+
+  - name: Homework
+    entities:
+      switch.dining_room_light_switch: on
+      script.concentrate_in_dining_room: on
+
   - name: Evening
     entities:
       script.dimmed_in_foyer: on
       script.relax_in_living_room: on
       switch.living_room_light_switch: off
-      switch.dining_room_light_switch: off
+      switch.dining_room_light_switch: on
+      script.relax_in_dining_room: on
       switch.kitchen_sink_light_switch: on
+
+  - name: TV Time
+    entities:
+      script.dimmed_in_foyer: on
+      script.blue_in_living_room: on
+      switch.living_room_light_switch: off
+      switch.dining_room_light_switch: off
+      switch.kitchen_sink_light_switch: off
 
   - name: Bedtime
     entities:
       group.lights: off
+      group.switches: off
       script.nightlight_in_bedroom: on
       fan.bedroom_fan_level: on
       script.dimmed_in_foyer: on
@@ -26,4 +46,5 @@
   - name: Goodnight
     entities:
       group.lights: off
+      group.switches: off
       fan.living_room_fan_level: off

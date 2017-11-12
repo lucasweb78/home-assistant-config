@@ -28,6 +28,40 @@
           group_name: "Living Room"
           scene_name: "Relax"
 
+  blue_in_living_room:
+    sequence:
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Living Room"
+          scene_name: "Blue"
+
+  concentrate_in_dining_room:
+    sequence:
+      - delay:
+          milliseconds: 100
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Dining Room"
+          scene_name: "Concentrate"
+
+  relax_in_dining_room:
+    sequence:
+      - delay:
+          milliseconds: 100
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Dining Room"
+          scene_name: "Relax"
+
+  dinner_time_in_dining_room:
+    sequence:
+      - delay:
+          milliseconds: 100
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Dining Room"
+          scene_name: "Savanna sunset"
+
   timer_off_garage_light_timer:
     sequence:
       - delay:

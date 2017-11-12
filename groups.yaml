@@ -6,8 +6,10 @@
       - sun.sun
       - sensor.dark_sky_summary
       - sensor.dark_sky_temperature
+      - sensor.downstairs_thermostat_nest_temperature
       - climate.downstairs_nest
       - group.locations
+      - group.switches
       - group.lights
       - group.fans
       - group.plugs
@@ -20,9 +22,6 @@
     view: yes
     name: "Climate Control"
     entities:
-      - sun.sun
-      - sensor.dark_sky_summary
-      - sensor.dark_sky_temperature
       - climate.downstairs_nest
       - group.thermostat
       - group.weather
@@ -46,6 +45,7 @@
     name: "Dining Room"
     entities:
       - switch.dining_room_light_switch
+      - group.dining_room_lights
 
   kitchen_view:
     view: yes
@@ -58,7 +58,7 @@
     name: "Bedroom"
     entities:
       - fan.bedroom_fan_level
-      - group.bedroom_lamps
+      - group.bedside_lamps
 
   garage_view:
     view: yes
@@ -79,24 +79,36 @@
       - sensor.current_version
       - group.network
 
+  switches:
+    name: Switches
+    entities:
+      - switch.living_room_light_switch
+      - switch.dining_room_light_switch
+      - switch.kitchen_sink_light_switch
+      - switch.patio_light_switch
+      - switch.garage_light
+
   lights:
     name: Lights
     entities:
       - light.foyer_lamp
       - light.living_room_lightstrip
-      - switch.living_room_light_switch
-      - switch.dining_room_light_switch
-      - switch.kitchen_sink_light_switch
+      - light.dining_room_lamp_1
+      - light.dining_room_lamp_2
       - light.bedside_lamp_1
       - light.bedside_lamp_2
-      - switch.patio_light_switch
-      - switch.garage_light
 
   fans:
     name: Fans
     entities:
       - fan.living_room_fan_level
       - fan.bedroom_fan_level
+
+  dining_room_lights:
+      name: Dining Room Lights
+      entities:
+        - light.dining_room_lamp_1
+        - light.dining_room_lamp_2
 
   bedside_lamps:
     name: Bedside Lamps
@@ -113,6 +125,8 @@
     name: Weather
     view: no
     entities:
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
       - sensor.dark_sky_daily_high_temperature
       - sensor.dark_sky_daily_low_temperature
       - sensor.dark_sky_humidity
@@ -159,6 +173,9 @@
     name: "Scenes"
     entities:
       - scene.good_morning
+      - scene.dinner_time
+      - scene.homework
       - scene.evening
+      - scene.tv_time
       - scene.bedtime
       - scene.goodnight

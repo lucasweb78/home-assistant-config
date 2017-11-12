@@ -2,30 +2,26 @@
 
   fan.bedroom_fan_level:
     friendly_name: Bedroom Fan
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
 
   fan.living_room_fan_level:
-    friendly_name: Living Room Fan
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
 
   switch.living_room_light_switch:
-    friendly_name: Living Room Light
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
 
   switch.kitchen_sink_light_switch:
-    friendly_name: Kitchen Sink Light
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
 
   switch.dining_room_light_switch:
-    friendly_name: Dining Room Light
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
 
   switch.patio_light_switch:
-    friendly_name: Patio Light
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
 
   switch.garage_light:
-    emulated_hue_hidden: true
+    friendly_name: Garage Light Switch
+    emulated_hue_hidden: false
 
   switch.outdoor_plug_switch:
     friendly_name: Outdoor Switch
@@ -41,21 +37,21 @@
     hidden: true
 
   scene.good_morning:
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
     emulated_hue_name: "Good Morning"
     homebridge_hidden: true
 
   scene.evening:
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
     emulated_hue_name: "Evening"
     homebridge_hidden: true
 
   scene.bedtime:
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
     emulated_hue_name: "Bedtime"
     homebridge_hidden: true
 
   scene.goodnight:
-    emulated_hue_hidden: true
+    emulated_hue_hidden: false
     emulated_hue_name: "Goodnight"
     homebridge_hidden: true
