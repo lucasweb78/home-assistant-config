@@ -5,9 +5,10 @@
       script.bright_in_foyer: on
       switch.living_room_light_switch: on
       switch.dining_room_light_switch: on
+      script.bright_in_dining_room: on
       switch.kitchen_sink_light_switch: on
 
-  - name: Dinner Time
+  - name: Dinner time
     entities:
       switch.dining_room_light_switch: on
       script.dinner_time_in_dining_room: on
@@ -26,7 +27,7 @@
       script.relax_in_dining_room: on
       switch.kitchen_sink_light_switch: on
 
-  - name: TV Time
+  - name: TV time
     entities:
       script.dimmed_in_foyer: on
       script.blue_in_living_room: on
@@ -43,7 +44,7 @@
       script.dimmed_in_foyer: on
       fan.living_room_fan_level: off
 
-  - name: Goodnight
+  - name: Good Night
     entities:
       group.lights: off
       group.switches: off

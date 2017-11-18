@@ -41,6 +41,21 @@
     emulated_hue_name: "Good Morning"
     homebridge_hidden: true
 
+  scene.dinner_time:
+    emulated_hue_hidden: false
+    emulated_hue_name: "Dinner time"
+    homebridge_hidden: true
+
+  scene.homework:
+    emulated_hue_hidden: false
+    emulated_hue_name: "Homework"
+    homebridge_hidden: true
+
+  scene.tv_time:
+    emulated_hue_hidden: false
+    emulated_hue_name: "TV time"
+    homebridge_hidden: true
+
   scene.evening:
     emulated_hue_hidden: false
     emulated_hue_name: "Evening"
@@ -51,7 +66,7 @@
     emulated_hue_name: "Bedtime"
     homebridge_hidden: true
 
-  scene.goodnight:
+  scene.good_night:
     emulated_hue_hidden: false
-    emulated_hue_name: "Goodnight"
+    emulated_hue_name: "Good Night"
     homebridge_hidden: true

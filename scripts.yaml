@@ -35,6 +35,15 @@
           group_name: "Living Room"
           scene_name: "Blue"
 
+  bright_in_dining_room:
+    sequence:
+      - delay:
+          milliseconds: 100
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Dining Room"
+          scene_name: "Bright"
+
   concentrate_in_dining_room:
     sequence:
       - delay:

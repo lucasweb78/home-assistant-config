@@ -3,10 +3,6 @@
   default_view:
     view: yes
     entities:
-      - sun.sun
-      - sensor.dark_sky_summary
-      - sensor.dark_sky_temperature
-      - sensor.downstairs_thermostat_nest_temperature
       - climate.downstairs_nest
       - group.locations
       - group.switches
@@ -39,6 +35,7 @@
       - fan.living_room_fan_level
       - light.living_room_lightstrip
       - switch.living_room_light_switch
+      - scene.tv_time
 
   dining_room_view:
     view: yes
@@ -46,6 +43,8 @@
     entities:
       - switch.dining_room_light_switch
       - group.dining_room_lights
+      - scene.dinner_time
+      - scene.homework
 
   kitchen_view:
     view: yes
@@ -125,6 +124,7 @@
     name: Weather
     view: no
     entities:
+      - sun.sun
       - sensor.dark_sky_summary
       - sensor.dark_sky_temperature
       - sensor.dark_sky_daily_high_temperature
@@ -178,4 +178,4 @@
       - scene.evening
       - scene.tv_time
       - scene.bedtime
-      - scene.goodnight
+      - scene.good_night

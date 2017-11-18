@@ -85,10 +85,10 @@
       - service: light.turn_on
         entity_id: light.dining_room
       - service_template: >
-          {% if is_state('sun.sun', 'below_horizon') and now().hour > 19 %}
+          {% if is_state('sun.sun', 'below_horizon') and now().hour >= 19 %}
             script.relax_in_dining_room
           {% else %}
-            script.concentrate_in_dining_room
+            script.bright_in_dining_room
           {% endif %}
 
   - id: dinning_room_lighting_off
