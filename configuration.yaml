@@ -42,16 +42,6 @@ light:
   host: !secret hue_ip
   allow_hue_groups: true
 
-#emulated_hue:
-#  off_maps_to_on_domains:
-#    - script
-#    - scene
-#  exposed_domains:
-#    - scene
-#    - input_boolean
-#    - switch
-#    - fan
-
 ifttt:
   key: !secret ifttt_key
 

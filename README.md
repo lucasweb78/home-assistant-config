@@ -12,7 +12,9 @@ Devices:
 <ul>
 <li>GE 12722 Switches</li>
 <li>GE 12730 Switches</li>
-<li>TP-Link HS200 Smart Wi-Fi Light Switches</li>
+<li>GE 14291 Switches</li>
+<li>GE Z-Wave Plug-In Outdoor Smart Switch</li>
+<li>TP-Link HS200 Smart Wi-Fi Light Switch</li>
 <li>Phillips Hue Hub and Bulbs</li>
 <li>Nest Thermostat</li>   
 <li><Yale Real Living Lock/li> 
@@ -20,6 +22,6 @@ Devices:
 
 Voice Control:
 <ul>
-<li>Alexa via Emulated Hue Component</li>
+<li>Alexa via Haaska</li>
 <li>Siri via Homebridge-Homeassistant plugin</li>
 </ul>
