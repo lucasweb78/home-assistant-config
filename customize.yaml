@@ -5,6 +5,7 @@
     emulated_hue_hidden: false
 
   fan.living_room_fan_level:
+    friendly_name: Living Room Fan
     emulated_hue_hidden: false
 
   switch.living_room_light_switch:
