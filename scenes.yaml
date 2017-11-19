@@ -6,7 +6,8 @@
       switch.living_room_light_switch: on
       switch.dining_room_light_switch: on
       script.bright_in_dining_room: on
-      switch.kitchen_sink_light_switch: on
+      switch.kitchen_light_switch: on
+      switch.kitchen_under_cabinet_light_switch: on
 
   - name: Dinner time
     entities:
@@ -25,6 +26,8 @@
       switch.living_room_light_switch: off
       switch.dining_room_light_switch: on
       script.relax_in_dining_room: on
+      switch.kitchen_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: on
 
   - name: TV time
@@ -33,6 +36,8 @@
       script.blue_in_living_room: on
       switch.living_room_light_switch: off
       switch.dining_room_light_switch: off
+      switch.kitchen_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
 
   - name: Bedtime

@@ -83,6 +83,8 @@
     entities:
       - switch.living_room_light_switch
       - switch.dining_room_light_switch
+      - switch.kitchen_light_switch
+      - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
       - switch.patio_light_switch
       - switch.garage_light
