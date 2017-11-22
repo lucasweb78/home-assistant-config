@@ -11,7 +11,8 @@
       - group.plugs
       - group.alarms
       - lock.front_door_lock_locked
-      - group.scenes
+      - group.home_scenes
+      - group.room_scenes
       - configurator.philips_hue
 
   climate_view:
@@ -26,16 +27,17 @@
     view: yes
     name: "Foyer"
     entities:
-      - light.foyer_lamp
+      - light.hue_foyer_lamp
 
   living_room_view:
     view: yes
     name: "Living Room"
     entities:
       - fan.living_room_fan_level
-      - light.living_room_lightstrip
+      - light.hue_living_room_lightstrip
       - switch.living_room_light_switch
-      - scene.tv_time
+      - scene.relax_living_room
+      - scene.bright_living_room
 
   dining_room_view:
     view: yes
@@ -43,21 +45,26 @@
     entities:
       - switch.dining_room_light_switch
       - group.dining_room_lights
-      - scene.dinner_time
-      - scene.homework
+      - scene.relax_dining_room
+      - scene.concentrate_dining_room
+      - scene.bright_dining_room
 
   kitchen_view:
     view: yes
     name: "Kitchen"
     entities:
+      - switch.kitchen_light_switch
+      - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
+      - scene.relax_kitchen
+      - scene.bright_kitchen
 
   bedroom_room_view:
     view: yes
     name: "Bedroom"
     entities:
       - fan.bedroom_fan_level
-      - group.bedside_lamps
+      - group.bedroom_lamps
 
   garage_view:
     view: yes
@@ -92,12 +99,12 @@
   lights:
     name: Lights
     entities:
-      - light.foyer_lamp
-      - light.living_room_lightstrip
-      - light.dining_room_lamp_1
-      - light.dining_room_lamp_2
-      - light.bedside_lamp_1
-      - light.bedside_lamp_2
+      - light.hue_foyer_lamp
+      - light.hue_living_room_lightstrip
+      - light.hue_dining_room_lamp_1
+      - light.hue_dining_room_lamp_2
+      - light.hue_bedroom_lamp_1
+      - light.hue_bedroom_lamp_2
 
   fans:
     name: Fans
@@ -108,14 +115,14 @@
   dining_room_lights:
       name: Dining Room Lights
       entities:
-        - light.dining_room_lamp_1
-        - light.dining_room_lamp_2
+        - light.hue_dining_room_lamp_1
+        - light.hue_dining_room_lamp_2
 
-  bedside_lamps:
-    name: Bedside Lamps
+  bedroom_lamps:
+    name: Bedroom Lamps
     entities:
-      - light.bedside_lamp_1
-      - light.bedside_lamp_2
+      - light.hue_bedroom_lamp_1
+      - light.hue_bedroom_lamp_2
 
   plugs:
     name: Plugs
@@ -171,10 +178,10 @@
     entities:
      - input_boolean.morning_alarm
 
-  scenes:
+  home_scenes:
     name: "Scenes"
     entities:
-      - scene.good_morning
+      - scene.bright_downstairs
       - scene.dinner_time
       - scene.homework
       - scene.evening

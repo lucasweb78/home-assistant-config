@@ -1,6 +1,6 @@
 ## Scenes
 
-  - name: Good Morning
+  - name: Bright Downstairs
     entities:
       script.bright_in_foyer: on
       switch.living_room_light_switch: on
@@ -54,3 +54,46 @@
       group.lights: off
       group.switches: off
       fan.living_room_fan_level: off
+
+## Kitchen Scenes
+
+  - name: Relax Living Room
+    entities:
+      switch.living_room_light_switch: off
+      script.relax_in_living_room: on
+
+  - name: Bright Living Room
+    entities:
+      switch.living_room_light_switch: on
+
+## Kitchen Scenes
+
+  - name: Relax Kitchen
+    entities:
+      switch.kitchen_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: on
+
+  - name: Bright Kitchen
+    entities:
+      switch.kitchen_light_switch: on
+      switch.kitchen_under_cabinet_light_switch: on
+      switch.kitchen_sink_light_switch: off
+
+## Dining Room Scenes
+
+  - name: Relax Dining Room
+    entities:
+      switch.dining_room_light_switch: on
+      script.relax_in_dining_room: on
+
+  - name: Concentrate Dining Room
+    entities:
+      switch.dining_room_light_switch: on
+      script.concentrate_in_dining_room: on
+
+  - name: Bright Dining Room
+    entities:
+      switch.dining_room_light_switch: on
+      script.bright_in_dining_room: on
+

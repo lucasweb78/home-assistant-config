@@ -48,7 +48,25 @@
   light.patio:
     haaska_hidden: true
 
-  scene.good_morning:
+  light.hue_bedroom_lamp_1:
+    friendly_name: Bedroom Lamp 1
+
+  light.hue_bedroom_lamp_2:
+    friendly_name: Bedroom Lamp 2
+
+  light.hue_dining_room_lamp_1:
+    friendly_name: Dining Room Lamp 1
+
+  light.hue_dining_room_lamp_2:
+    friendly_name: Dining Room Lamp 2
+
+  light.hue_foyer_lamp:
+    friendly_name: Foyer Lamp
+
+  light.hue_living_room_lightstrip:
+    friendly_name: Living Room Lightstrip
+
+  scene.bright_downstairs:
     homebridge_hidden: true
 
   scene.dinner_time:

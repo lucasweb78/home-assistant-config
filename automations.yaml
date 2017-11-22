@@ -29,11 +29,11 @@
           - fri
     action:
     - service: light.turn_on
-      entity_id: group.bedside_lamps
+      entity_id: group.bedroom_lamps
       data:
         brightness: 1
     - service: light.turn_on
-      entity_id: group.bedside_lamps
+      entity_id: group.bedroom_lamps
       data:
         transition: 900
         brightness: 255
@@ -45,6 +45,9 @@
       platform: time
       at: "06:30:00"
     condition:
+      - condition: state
+        entity_id: 'device_tracker.rich_iphone'
+        state: 'home'
       - condition: time
         weekday:
           - mon
@@ -54,25 +57,29 @@
           - fri
     action:
     - service: scene.turn_on
-      entity_id: scene.good_morning
+      entity_id: scene.bright_downstairs
 
-  - id: turn_off_upstairs_morning_weekdays
-    alias: Turn Off Upstairs Morning Weekdays
+  - id: turn_on_downstairs_when_getting_dark
+    alias: Turn On Downstairs When Getting Dark
     hide_entity: true
     trigger:
-      platform: time
-      at: "08:00:00"
+      platform: sun
+      event: sunset
+      offset: '-00:15:00'
     condition:
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: 'device_tracker.rich_iphone'
+          state: 'home'
+        - condition: template
+          value_template: "{% if is_state_attr('climate.downstairs_nest', 'away_mode', 'off') %}true{% endif %}"
     action:
-    - service: light.turn_off
-      entity_id: group.bedroom_lamps
+    - service: scene.turn_on
+      entity_id: scene.bright_downstairs
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Downstairs lights turned on via automation"
 
   - id: dinning_room_lighting_on
     alias: Dining Room Lighting On
@@ -138,7 +145,7 @@
           after: sunset
           after_offset: "-00:15:00"
         - condition: state
-          entity_id: light.foyer_lamp
+          entity_id: light.hue_foyer_lamp
           state: 'off'
     action:
     - service: light.hue_activate_scene
