@@ -1,4 +1,4 @@
-# Groups
+# Views
 
   default_view:
     view: yes
@@ -36,8 +36,8 @@
       - fan.living_room_fan_level
       - light.hue_living_room_lightstrip
       - switch.living_room_light_switch
-      - scene.relax_living_room
       - scene.bright_living_room
+      - scene.dim_living_room
 
   dining_room_view:
     view: yes
@@ -45,19 +45,17 @@
     entities:
       - switch.dining_room_light_switch
       - group.dining_room_lights
-      - scene.relax_dining_room
-      - scene.concentrate_dining_room
       - scene.bright_dining_room
+      - scene.concentrate_dining_room
+      - scene.dim_dining_room
 
   kitchen_view:
     view: yes
     name: "Kitchen"
     entities:
-      - switch.kitchen_light_switch
-      - switch.kitchen_under_cabinet_light_switch
-      - switch.kitchen_sink_light_switch
-      - scene.relax_kitchen
+      - group.kitchen_light_switches
       - scene.bright_kitchen
+      - scene.dim_kitchen
 
   bedroom_room_view:
     view: yes
@@ -65,6 +63,9 @@
     entities:
       - fan.bedroom_fan_level
       - group.bedroom_lamps
+      - scene.bright_bedroom
+      - scene.dim_bedroom
+      - scene.nightlight_bedroom
 
   garage_view:
     view: yes
@@ -78,12 +79,15 @@
     entities:
       - switch.patio_light_switch
 
+
   network_view:
     view: yes
     name: "Network"
     entities:
       - sensor.current_version
       - group.network
+
+# Groups
 
   switches:
     name: Switches
@@ -117,6 +121,13 @@
       entities:
         - light.hue_dining_room_lamp_1
         - light.hue_dining_room_lamp_2
+
+  kitchen_light_switches:
+    name: Switches
+    entities:
+      - switch.kitchen_light_switch
+      - switch.kitchen_under_cabinet_light_switch
+      - switch.kitchen_sink_light_switch
 
   bedroom_lamps:
     name: Bedroom Lamps
@@ -182,9 +193,7 @@
     name: "Scenes"
     entities:
       - scene.bright_downstairs
-      - scene.dinner_time
-      - scene.homework
-      - scene.evening
+      - scene.dim_downstairs
       - scene.tv_time
       - scene.bedtime
       - scene.good_night

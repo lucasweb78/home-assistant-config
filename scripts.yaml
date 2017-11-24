@@ -1,11 +1,13 @@
 ## Scripts
 
-  nightlight_in_bedroom:
+  timer_off_garage_light_timer:
     sequence:
-      - service: light.hue_activate_scene
-        data:
-          group_name: "Bedroom"
-          scene_name: "Nightlight"
+      - delay:
+          minutes: 10
+      - service: switch.turn_off
+        entity_id: switch.garage_light
+
+## Activate Hue Scenes
 
   bright_in_foyer:
     sequence:
@@ -20,6 +22,35 @@
         data:
           group_name: "Foyer"
           scene_name: "Dimmed"
+
+  bright_in_bedroom:
+      sequence:
+        - service: light.hue_activate_scene
+          data:
+            group_name: "Bedroom"
+            scene_name: "Bright"
+
+  dimmed_in_bedroom:
+    sequence:
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Bedroom"
+          scene_name: "Dimmed"
+
+  nightlight_in_bedroom:
+    sequence:
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Bedroom"
+          scene_name: "Nightlight"
+
+
+  bright_in_living_room:
+    sequence:
+      - service: light.hue_activate_scene
+        data:
+          group_name: "Living Room"
+          scene_name: "Relax"
 
   relax_in_living_room:
     sequence:
@@ -62,18 +93,5 @@
           group_name: "Dining Room"
           scene_name: "Relax"
 
-  dinner_time_in_dining_room:
-    sequence:
-      - delay:
-          milliseconds: 100
-      - service: light.hue_activate_scene
-        data:
-          group_name: "Dining Room"
-          scene_name: "Savanna sunset"
 
-  timer_off_garage_light_timer:
-    sequence:
-      - delay:
-          minutes: 10
-      - service: switch.turn_off
-        entity_id: switch.garage_light
+
