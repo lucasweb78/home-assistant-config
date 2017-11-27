@@ -48,6 +48,9 @@
   light.patio:
     haaska_hidden: true
 
+  light.porch:
+    haaska_hidden: true
+
   light.hue_bedroom_lamp_1:
     friendly_name: Bedroom Lamp 1
 
@@ -65,6 +68,12 @@
 
   light.hue_living_room_lightstrip:
     friendly_name: Living Room Lightstrip
+
+  light.hue_porch_lamp_1:
+    friendly_name: Porch Lamp 1
+
+  light.hue_porch_lamp_2:
+    friendly_name: Porch Lamp 2
 
   scene.bright_downstairs:
     homebridge_hidden: true

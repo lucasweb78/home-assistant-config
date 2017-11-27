@@ -180,7 +180,6 @@
 
   - id: holiday_lights_on
     alias: Holiday Lights On
-    initial_state: false
     hide_entity: true
     trigger:
       platform: sun
@@ -188,15 +187,25 @@
       offset: "-00:15:00"
     action:
     - service: switch.turn_on
-      entity_id: switch.outdoor_plug_switch
+      entity_id: switch.front_porch_switch
+    - service: script.christmas_in_porch
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Holiday lights turned on via automation"
 
   - id: holiday_lights_off
     alias: Holiday Lights Off
-    initial_state: false
     hide_entity: true
     trigger:
       platform: time
       at: "21:25:00"
     action:
     - service: switch.turn_off
-      entity_id: switch.outdoor_plug_switch
+      entity_id: switch.front_porch_switch
+    - service: light.turn_off
+      entity_id: light.hue_porch_lamp_1
+    - service: light.turn_off
+      entity_id: light.hue_porch_lamp_2
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Holiday lights turned off via automation"

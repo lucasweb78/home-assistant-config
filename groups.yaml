@@ -23,6 +23,15 @@
       - group.thermostat
       - group.weather
 
+  porch_view:
+    view: yes
+    name: "Porch"
+    entities:
+      - group.porch_lights
+      - switch.porch_switch
+      - scene.bright_porch
+      - scene.christmas_porch
+
   foyer_view:
     view: yes
     name: "Foyer"
@@ -79,7 +88,6 @@
     entities:
       - switch.patio_light_switch
 
-
   network_view:
     view: yes
     name: "Network"
@@ -99,6 +107,7 @@
       - switch.kitchen_sink_light_switch
       - switch.patio_light_switch
       - switch.garage_light
+      - switch.porch_switch
 
   lights:
     name: Lights
@@ -109,6 +118,8 @@
       - light.hue_dining_room_lamp_2
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
+      - light.hue_porch_lamp_1
+      - light.hue_porch_lamp_2
 
   fans:
     name: Fans
@@ -134,6 +145,12 @@
     entities:
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
+
+  porch_lights:
+    name: Porch Lights
+    entities:
+      - light.hue_porch_lamp_1
+      - light.hue_porch_lamp_2
 
   plugs:
     name: Plugs

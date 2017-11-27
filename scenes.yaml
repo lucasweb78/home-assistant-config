@@ -8,6 +8,9 @@
       script.bright_in_dining_room: on
       switch.kitchen_light_switch: on
       switch.kitchen_under_cabinet_light_switch: on
+      switch.kitchen_sink_light_switch: off
+      script.bright_in_living_room: on
+
 
   - name: Dim Downstairs
     entities:
@@ -101,3 +104,13 @@
   - name: Nightlight Bedroom
     entities:
       script.nightlight_in_bedroom: on
+
+## Porch Scenes
+
+  - name: Bright Porch
+    entities:
+      script.bright_in_porch: on
+
+  - name: Christmas Porch
+    entities:
+      script.christmas_in_porch: on
