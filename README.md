@@ -16,7 +16,8 @@ Devices:
 <li>GE Z-Wave Plug-In Outdoor Smart Switch</li>
 <li>TP-Link HS200 Smart Wi-Fi Light Switch</li>
 <li>Phillips Hue Hub and Bulbs</li>
-<li>Nest Thermostat</li>   
+<li>Nest Thermostat</li>  
+<li>Nest Protect</li>   
 <li><Yale Real Living Lock/li> 
 </ul>
 

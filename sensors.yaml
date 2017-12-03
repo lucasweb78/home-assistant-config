@@ -1,7 +1,5 @@
 ## Sensors
 
-  - platform: version
-
   - platform: darksky
     api_key: !secret darksky_api_key
     monitored_conditions:
@@ -12,14 +10,6 @@
       - humidity
       - precip_probability
       - wind_speed
-
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
-
-  - platform: fastdotcom
 
   - platform: systemmonitor
     resources:
@@ -34,3 +24,13 @@
     unit_of_measurement: days
     scan_interval: 86400
     command: "ssl-cert-check -b -c /etc/letsencrypt/live/lucasweb.duckdns.org/cert.pem | awk '{ print $NF }'"
+
+  - platform: template
+    sensors:
+      nest_home_away:
+        value_template: >
+          {% if is_state_attr('climate.downstairs_nest', 'away_mode', 'off') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}

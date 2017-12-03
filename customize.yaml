@@ -17,6 +17,7 @@
 
   device_tracker.rich_iphone:
     friendly_name: Rich
+    icon: mdi:cellphone-iphone
 
   light.all_hue_lights:
     hidden: true
@@ -95,3 +96,28 @@
 
   scene.good_night:
     homebridge_hidden: true
+
+  sensor.dark_sky_temperature:
+    friendly_name: Outdoor Temp
+
+  sensor.dark_sky_humidity:
+    friendly_name: Outdoor Humidity
+
+  sensor.downstairs_thermostat_nest_temperature:
+    friendly_name: Indoor Temp
+
+  sensor.downstairs_thermostat_nest_humidity:
+    friendly_name: Indoor Humidity
+    icon: mdi:water-percent
+
+  sensor.nest_home_away:
+    friendly_name: Downstairs (Nest)
+    icon: mdi:nest-thermostat
+
+  binary_sensor.downstairs_nest_protect_online:
+    friendly_name: Downstairs
+    icon: mdi:nest-protect
+
+  binary_sensor.upstairs_nest_protect_online:
+    friendly_name: Upstairs
+    icon: mdi:nest-protect
