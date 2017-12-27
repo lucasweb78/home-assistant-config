@@ -34,3 +34,6 @@
           {% else %}
             Away
           {% endif %}
+          
+  - platform: ohmconnect
+    id: a2QvDkxy

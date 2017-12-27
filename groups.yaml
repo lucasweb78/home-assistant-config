@@ -8,7 +8,6 @@
       - group.switches
       - group.lights
       - group.fans
-      - group.protect
       - group.alarms
       - lock.front_door_lock_locked
       - group.home_scenes
@@ -80,11 +79,29 @@
     entities:
       - switch.patio_light_switch
 
-  network_view:
+  status_view:
     view: yes
-    name: "Network"
+    name: "Status"
     entities:
       - group.network
+      - group.utilities
+      - group.protect
+
+  automation_view:
+    view: yes
+    name: "Automation"
+    entities:
+      - automation.wakeup
+      - automation.arrive_home
+      - automation.arrive_home_night
+      - automation.dining_room_lighting_on
+      - automation.dining_room_lighting_off
+      - automation.holiday_lights_on
+      - automation.holiday_lights_off
+      - automation.sync_lock_state
+      - automation.sync_unlock_state
+      - automation.turn_on_downstairs_morning_weekdays
+      - automation.turn_on_downstairs_when_getting_dark
 
 # Groups
 
@@ -195,6 +212,11 @@
       - sensor.lucaswebduckdnsorg
       - sensor.ssl_cert_expiry
       - sensor.ipv4_address_en1
+
+  utilities:
+    name: "Utilities"
+    entities:
+      - sensor.ohmconnect_status
 
   alarms:
     name: "Alarms"

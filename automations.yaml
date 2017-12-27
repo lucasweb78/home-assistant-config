@@ -2,7 +2,7 @@
 
   - id: wakeup
     alias: Wakeup
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: time
       at: "07:30:00"
@@ -30,7 +30,7 @@
 
   - id: turn_on_downstairs_morning_weekdays
     alias: Turn On Downstairs Morning Weekdays
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: time
       at: "06:30:00"
@@ -51,7 +51,7 @@
 
   - id: turn_on_downstairs_when_getting_dark
     alias: Turn On Downstairs When Getting Dark
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: sun
       event: sunset
@@ -73,7 +73,7 @@
 
   - id: dinning_room_lighting_on
     alias: Dining Room Lighting On
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: state
       entity_id: switch.dining_room_light_switch
@@ -90,7 +90,7 @@
 
   - id: dinning_room_lighting_off
     alias: Dining Room Lighting Off
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: state
       entity_id: switch.dining_room_light_switch
@@ -101,7 +101,7 @@
 
   - id: arrive_home
     alias: Arrive Home
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: state
       entity_id: device_tracker.rich_iphone
@@ -118,7 +118,7 @@
 
   - id: arrive_home_night
     alias: Arrive Home Night
-    hide_entity: true
+    hide_entity: false
     trigger:
       - platform: state
         entity_id: device_tracker.rich_iphone
@@ -170,7 +170,7 @@
 
   - id: holiday_lights_on
     alias: Holiday Lights On
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: sun
       event: sunset
@@ -185,7 +185,7 @@
 
   - id: holiday_lights_off
     alias: Holiday Lights Off
-    hide_entity: true
+    hide_entity: false
     trigger:
       platform: time
       at: "21:25:00"
