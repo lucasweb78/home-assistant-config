@@ -24,33 +24,43 @@
 
   light.bedroom:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.dining_room:
-    haaska_hidden: true        
+    haaska_hidden: true
+    alexa_hidden: true
 
   light.entrance:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.foyer:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.garage:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.kitchen:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.living_room:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.office:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.patio:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.porch:
     haaska_hidden: true
+    alexa_hidden: true
 
   light.hue_bedroom_lamp_1:
     friendly_name: Bedroom Lamp 1

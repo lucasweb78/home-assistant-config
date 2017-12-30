@@ -46,6 +46,16 @@ light:
 ifttt:
   key: !secret ifttt_key
 
+cloud:
+  alexa:
+      filter:
+        include_domains:
+          - switch
+          - light
+          - lock
+          - fan
+          - scene
+
 input_boolean: !include input_boolean.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
