@@ -117,17 +117,6 @@
       - switch.garage_light
       - switch.porch_switch
 
-  switches_excluding_porch:
-    name: Switches  Excluding Porch
-    entities:
-      - switch.living_room_light_switch
-      - switch.dining_room_light_switch
-      - switch.kitchen_light_switch
-      - switch.kitchen_under_cabinet_light_switch
-      - switch.kitchen_sink_light_switch
-      - switch.patio_light_switch
-      - switch.garage_light
-
   lights:
     name: Lights
     entities:
@@ -139,6 +128,8 @@
       - light.hue_bedroom_lamp_2
       - light.hue_porch_lamp_1
       - light.hue_porch_lamp_2
+      - light.downstairs_lights
+      - light.kitchen_lights
 
   lights_excluding_porch:
     name: Lights Excluding Porch

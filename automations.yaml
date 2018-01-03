@@ -81,12 +81,6 @@
     action:
       - service: light.turn_on
         entity_id: light.dining_room
-      - service_template: >
-          {% if is_state('sun.sun', 'below_horizon') and now().hour >= 19 %}
-            script.relax_in_dining_room
-          {% else %}
-            script.bright_in_dining_room
-          {% endif %}
 
   - id: dinning_room_lighting_off
     alias: Dining Room Lighting Off
@@ -167,35 +161,3 @@
     action:
       - service: lock.lock
         entity_id: lock.front_door_lock_locked
-
-  - id: holiday_lights_on
-    alias: Holiday Lights On
-    hide_entity: false
-    trigger:
-      platform: sun
-      event: sunset
-      offset: "-00:15:00"
-    action:
-    - service: switch.turn_on
-      entity_id: switch.porch_switch
-    - service: script.christmas_in_porch
-    - service: notify.ios_rich_iphone
-      data:
-        message: "Holiday lights turned on via automation"
-
-  - id: holiday_lights_off
-    alias: Holiday Lights Off
-    hide_entity: false
-    trigger:
-      platform: time
-      at: "21:25:00"
-    action:
-    - service: switch.turn_off
-      entity_id: switch.porch_switch
-    - service: light.turn_off
-      entity_id: light.hue_porch_lamp_1
-    - service: light.turn_off
-      entity_id: light.hue_porch_lamp_2
-    - service: notify.ios_rich_iphone
-      data:
-        message: "Holiday lights turned off via automation"

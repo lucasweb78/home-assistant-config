@@ -36,7 +36,7 @@
   - name: Bedtime
     entities:
       group.lights_excluding_porch: off
-      group.switches_excluding_porch: off
+      group.switches: off
       script.nightlight_in_bedroom: on
       fan.bedroom_fan_level: on
       script.dimmed_in_foyer: on
@@ -45,7 +45,7 @@
   - name: Good Night
     entities:
       group.lights_excluding_porch: off
-      group.switches_excluding_porch: off
+      group.switches: off
       fan.living_room_fan_level: off
 
 ## Living Room Scenes
@@ -110,7 +110,3 @@
   - name: Bright Porch
     entities:
       script.bright_in_porch: on
-
-  - name: Christmas Porch
-    entities:
-      script.christmas_in_porch: on

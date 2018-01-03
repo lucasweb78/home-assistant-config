@@ -38,11 +38,6 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
-light:
-  platform: hue
-  host: !secret hue_ip
-  allow_hue_groups: true
-
 ifttt:
   key: !secret ifttt_key
 
@@ -64,3 +59,4 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml
 zone: !include zones.yaml
+light: !include lights.yaml

@@ -93,16 +93,7 @@
           group_name: "Dining Room"
           scene_name: "Relax"
 
-  christmas_in_porch:
-    sequence:
-      - delay:
-          milliseconds: 100
-      - service: hue.hue_activate_scene
-        data:
-          group_name: "Porch"
-          scene_name: "Christmas"
-
-  bright_in_porch:
+  bright_porch:
     sequence:
       - delay:
           milliseconds: 100

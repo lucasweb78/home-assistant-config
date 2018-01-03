@@ -1,0 +1,49 @@
+## Lights
+
+  - platform: hue
+    host: !secret hue_ip
+    allow_hue_groups: true
+
+  - platform: template
+    lights:
+      downstairs_lights:
+        friendly_name: "Downstairs Lights"
+        turn_on:
+          - service: switch.turn_on
+            entity_id: switch.living_room_light_switch
+          - service: switch.turn_on
+            entity_id: switch.dining_room_light_switch
+          - service: switch.turn_on
+            entity_id: switch.kitchen_light_switch
+          - service: switch.turn_on
+            entity_id: switch.kitchen_under_cabinet_light_switch
+        turn_off:
+          - service: switch.turn_off
+            entity_id: switch.living_room_light_switch
+          - service: switch.turn_off
+            entity_id: switch.dining_room_light_switch
+          - service: switch.turn_off
+            entity_id: switch.kitchen_light_switch
+          - service: switch.turn_off
+            entity_id: switch.kitchen_sink_light_switch
+          - service: switch.turn_off
+            entity_id: switch.kitchen_under_cabinet_light_switch
+
+  - platform: template
+    lights:
+       kitchen_lights:
+         friendly_name: "Kitchen Lights"
+         turn_on:
+           - service: switch.turn_on
+             entity_id: switch.kitchen_light_switch
+           - service: switch.turn_on
+             entity_id: switch.kitchen_under_cabinet_light_switch
+         turn_off:
+           - service: switch.turn_off
+             entity_id: switch.kitchen_light_switch
+           - service: switch.turn_off
+             entity_id: switch.kitchen_sink_light_switch
+           - service: switch.turn_off
+             entity_id: switch.kitchen_under_cabinet_light_switch
+
+
