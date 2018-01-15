@@ -9,18 +9,18 @@
 
 ## Activate Hue Scenes
 
-  bright_in_foyer:
+  bright_in_living_room:
     sequence:
       - service: hue.hue_activate_scene
         data:
-          group_name: "Foyer"
+          group_name: "Living_room"
           scene_name: "Bright"
 
-  dimmed_in_foyer:
+  dimmed_in_living_room:
     sequence:
       - service: hue.hue_activate_scene
         data:
-          group_name: "Foyer"
+          group_name: "Living_room"
           scene_name: "Dimmed"
 
   bright_in_bedroom:
@@ -45,25 +45,25 @@
           scene_name: "Nightlight"
 
 
-  bright_in_living_room:
+  bright_in_family_room:
     sequence:
       - service: hue.hue_activate_scene
         data:
-          group_name: "Living Room"
+          group_name: "Family Room"
           scene_name: "Relax"
 
-  relax_in_living_room:
+  relax_in_family_room:
     sequence:
       - service: hue.hue_activate_scene
         data:
-          group_name: "Living Room"
+          group_name: "Family Room"
           scene_name: "Relax"
 
-  blue_in_living_room:
+  blue_in_family_room:
     sequence:
       - service: hue.hue_activate_scene
         data:
-          group_name: "Living Room"
+          group_name: "Family Room"
           scene_name: "Blue"
 
   bright_in_dining_room:

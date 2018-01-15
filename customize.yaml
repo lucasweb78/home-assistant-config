@@ -3,8 +3,8 @@
   fan.bedroom_fan_level:
     friendly_name: Bedroom Fan
 
-  fan.living_room_fan_level:
-    friendly_name: Living Room Fan
+  fan.family_room_fan_level:
+    friendly_name: Family Room Fan
 
   switch.garage_light:
     friendly_name: Garage Light Switch
@@ -22,46 +22,6 @@
   light.all_hue_lights:
     hidden: true
 
-  light.bedroom:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.dining_room:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.entrance:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.foyer:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.garage:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.kitchen:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.living_room:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.office:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.patio:
-    haaska_hidden: true
-    alexa_hidden: true
-
-  light.porch:
-    haaska_hidden: true
-    alexa_hidden: true
-
   light.hue_bedroom_lamp_1:
     friendly_name: Bedroom Lamp 1
 
@@ -74,11 +34,11 @@
   light.hue_dining_room_lamp_2:
     friendly_name: Dining Room Lamp 2
 
-  light.hue_foyer_lamp:
-    friendly_name: Foyer Lamp
+  light.hue_living_room_lamp:
+    friendly_name: Living Room Lamp
 
-  light.hue_living_room_lightstrip:
-    friendly_name: Living Room Lightstrip
+  light.hue_family_room_lightstrip:
+    friendly_name: Family Room Lightstrip
 
   light.hue_porch_lamp_1:
     friendly_name: Porch Lamp 1

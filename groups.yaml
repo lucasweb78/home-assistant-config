@@ -23,21 +23,21 @@
       - scene.bright_porch
       - scene.christmas_porch
 
-  foyer_view:
-    view: yes
-    name: "Foyer"
-    entities:
-      - light.hue_foyer_lamp
-
   living_room_view:
     view: yes
     name: "Living Room"
     entities:
-      - fan.living_room_fan_level
-      - light.hue_living_room_lightstrip
-      - switch.living_room_light_switch
-      - scene.bright_living_room
-      - scene.dim_living_room
+      - light.hue_living_room_lamp
+
+  family_room_view:
+    view: yes
+    name: "Family Room"
+    entities:
+      - fan.family_room_fan_level
+      - light.hue_family_room_lightstrip
+      - switch.family_room_light_switch
+      - scene.bright_family_room
+      - scene.dim_family_room
 
   dining_room_view:
     view: yes
@@ -96,8 +96,6 @@
       - automation.arrive_home_night
       - automation.dining_room_lighting_on
       - automation.dining_room_lighting_off
-      - automation.holiday_lights_on
-      - automation.holiday_lights_off
       - automation.sync_lock_state
       - automation.sync_unlock_state
       - automation.turn_on_downstairs_morning_weekdays
@@ -108,7 +106,7 @@
   switches:
     name: Switches
     entities:
-      - switch.living_room_light_switch
+      - switch.family_room_light_switch
       - switch.dining_room_light_switch
       - switch.kitchen_light_switch
       - switch.kitchen_under_cabinet_light_switch
@@ -120,31 +118,19 @@
   lights:
     name: Lights
     entities:
-      - light.hue_foyer_lamp
-      - light.hue_living_room_lightstrip
+      - light.hue_living_room_lamp
+      - light.hue_family_room_lightstrip
       - light.hue_dining_room_lamp_1
       - light.hue_dining_room_lamp_2
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
       - light.hue_porch_lamp_1
       - light.hue_porch_lamp_2
-      - light.downstairs_lights
-      - light.kitchen_lights
-
-  lights_excluding_porch:
-    name: Lights Excluding Porch
-    entities:
-      - light.hue_foyer_lamp
-      - light.hue_living_room_lightstrip
-      - light.hue_dining_room_lamp_1
-      - light.hue_dining_room_lamp_2
-      - light.hue_bedroom_lamp_1
-      - light.hue_bedroom_lamp_2
 
   fans:
     name: Fans
     entities:
-      - fan.living_room_fan_level
+      - fan.family_room_fan_level
       - fan.bedroom_fan_level
 
   dining_room_lights:
@@ -171,7 +157,6 @@
     entities:
       - light.hue_porch_lamp_1
       - light.hue_porch_lamp_2
-
 
   climate:
     name: Climate

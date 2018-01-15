@@ -129,12 +129,12 @@
           after: sunset
           after_offset: "-00:15:00"
         - condition: state
-          entity_id: light.hue_foyer_lamp
+          entity_id: light.hue_living_room_lamp
           state: 'off'
     action:
     - service: hue.hue_activate_scene
       data:
-        group_name: "Foyer"
+        group_name: "Living Room"
         scene_name: "Dimmed"
 
   - id: sync_unlock

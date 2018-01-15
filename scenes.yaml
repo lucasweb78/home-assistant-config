@@ -2,21 +2,21 @@
 
   - name: Bright Downstairs
     entities:
-      script.bright_in_foyer: on
-      switch.living_room_light_switch: on
+      script.bright_in_living_room: on
+      switch.family_room_light_switch: on
       switch.dining_room_light_switch: on
       script.bright_in_dining_room: on
       switch.kitchen_light_switch: on
       switch.kitchen_under_cabinet_light_switch: on
       switch.kitchen_sink_light_switch: off
-      script.bright_in_living_room: on
+      script.bright_in_family_room: on
 
 
   - name: Dim Downstairs
     entities:
-      script.dimmed_in_foyer: on
-      script.relax_in_living_room: on
-      switch.living_room_light_switch: off
+      script.dimmed_in_living_room: on
+      script.relax_in_family_room: on
+      switch.family_room_light_switch: off
       switch.dining_room_light_switch: on
       script.relax_in_dining_room: on
       switch.kitchen_light_switch: off
@@ -25,9 +25,9 @@
 
   - name: TV time
     entities:
-      script.dimmed_in_foyer: on
-      script.blue_in_living_room: on
-      switch.living_room_light_switch: off
+      script.dimmed_in_living_room: on
+      script.blue_in_family_room: on
+      switch.family_room_light_switch: off
       switch.dining_room_light_switch: off
       switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
@@ -39,26 +39,26 @@
       group.switches: off
       script.nightlight_in_bedroom: on
       fan.bedroom_fan_level: on
-      script.dimmed_in_foyer: on
-      fan.living_room_fan_level: off
+      script.dimmed_in_living_room: on
+      fan.family_room_fan_level: off
 
   - name: Good Night
     entities:
       group.lights_excluding_porch: off
       group.switches: off
-      fan.living_room_fan_level: off
+      fan.family_room_fan_level: off
 
-## Living Room Scenes
+## Family Room Scenes
 
-  - name: Dim Living Room
+  - name: Dim Family Room
     entities:
-      switch.living_room_light_switch: off
-      script.relax_in_living_room: on
+      switch.family_room_light_switch: off
+      script.relax_in_family_room: on
 
-  - name: Bright Living Room
+  - name: Bright Family Room
     entities:
-      switch.living_room_light_switch: on
-      script.bright_in_living_room: on
+      switch.family_room_light_switch: on
+      script.bright_in_family_room: on
 
 ## Kitchen Scenes
 

@@ -1,0 +1,35 @@
+  alexa:
+      filter:
+        include_domains:
+          - switch
+          - light
+          - lock
+          - fan
+          - scene
+        exclude_entities:
+          - light.bedroom
+          - light.dining_room
+          - light.entrance
+          - light.living_room
+          - light.garage
+          - light.kitchen
+          - light.family_room
+          - light.office
+          - light.patio
+          - light.porch
+          - light.hallway
+      entity_config:
+        switch.family_room_light_switch:
+          display_categories: LIGHT
+        switch.dining_room_light_switch:
+          display_categories: LIGHT
+        switch.kitchen_light_switch:
+          display_categories: LIGHT
+        switch.kitchen_under_cabinet_light_switch:
+          display_categories: LIGHT
+        switch.kitchen_sink_light_switch:
+          display_categories: LIGHT
+        switch.patio_light_switch:
+          display_categories: LIGHT
+        switch.garage_light:
+          display_categories: LIGHT
