@@ -2,12 +2,11 @@
 
   - name: Bright Downstairs
     entities:
-      script.bright_in_living_room: on
       switch.family_room_light_switch: on
       switch.dining_room_light_switch: on
       script.bright_in_dining_room: on
       switch.kitchen_light_switch: on
-      switch.kitchen_under_cabinet_light_switch: on
+      switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
       script.bright_in_family_room: on
 
@@ -35,7 +34,7 @@
 
   - name: Bedtime
     entities:
-      group.lights_excluding_porch: off
+      group.lights: off
       group.switches: off
       script.nightlight_in_bedroom: on
       fan.bedroom_fan_level: on
@@ -44,7 +43,7 @@
 
   - name: Good Night
     entities:
-      group.lights_excluding_porch: off
+      group.lights: off
       group.switches: off
       fan.family_room_fan_level: off
 
@@ -71,8 +70,8 @@
   - name: Bright Kitchen
     entities:
       switch.kitchen_light_switch: on
-      switch.kitchen_under_cabinet_light_switch: on
-      switch.kitchen_sink_light_switch: on
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: off
 
 ## Dining Room Scenes
 
