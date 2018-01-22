@@ -34,6 +34,15 @@
           {% else %}
             Away
           {% endif %}
+      battery_front_door_lock:
+        friendly_name: 'Front Door Lock Battery Level'
+        value_template: >-
+                {%- if states.zwave.front_door_lock -%}
+                  {{ states.zwave.front_door_lock.attributes.battery_level }}
+                {%- else -%}
+                  100
+                {%- endif -%}
+        unit_of_measurement: '%'
           
   - platform: ohmconnect
     id: a2QvDkxy

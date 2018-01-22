@@ -38,6 +38,9 @@
       - condition: state
         entity_id: 'device_tracker.rich_iphone'
         state: 'home'
+      - condition: sun
+        before: sunrise
+        before_offset: "00:30:00"
       - condition: time
         weekday:
           - mon
@@ -48,6 +51,24 @@
     action:
     - service: scene.turn_on
       entity_id: scene.bright_downstairs
+
+  - id: turn_off_downstairs_morning_weekdays
+    alias: Turn Off Downstairs Morning Weekdays
+    hide_entity: false
+    trigger:
+      platform: time
+      at: "08:00:00"
+    condition:
+     - condition: time
+       weekday:
+         - mon
+         - tue
+         - wed
+         - thu
+         - fri
+    action:
+    - service: group.turn_off
+      entity_id: group.downstaris_lights
 
   - id: turn_on_downstairs_when_getting_dark
     alias: Turn On Downstairs When Getting Dark
@@ -129,13 +150,11 @@
           after: sunset
           after_offset: "-00:15:00"
         - condition: state
-          entity_id: light.hue_living_room_lamp
+          entity_id: group.living_room_lamps
           state: 'off'
     action:
-    - service: hue.hue_activate_scene
-      data:
-        group_name: "Living Room"
-        scene_name: "Dimmed"
+    - service: scene.turn_on
+      entity_id: scene.dimmed_in_living_room
 
   - id: sync_unlock
     alias: Sync Unlock State
@@ -161,3 +180,66 @@
     action:
       - service: lock.lock
         entity_id: lock.front_door_lock_locked
+
+  - id: nest_set_to_home
+    alias: Nest Set to Home
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: sensor.nest_home_away
+      from: 'Away'
+      to: 'Home'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Nest Thermostat set to Home"
+
+  - id: nest_set_to_away
+    alias: Nest Set to Away
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: sensor.nest_home_away
+      from: 'Home'
+      to: 'Away'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Nest Thermostat set to Away"
+
+  - id: ohm_connect_hour_active
+    alias: OhmConnect Hour Active
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: sensor.ohmconnect_status
+      from: 'Inactive'
+      to: 'Active'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "OhmHour started"
+
+  - id: ohm_connect_hour_inactive
+    alias: OhmConnect Hour Inactive
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: sensor.ohmconnect_status
+      from: 'Active'
+      to: 'Inactive'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "OhmHour ended"
+
+  - id: battery_low_alert_front_door_lock
+    alias: Low Battery Alert - Front Door Lock
+    trigger:
+      platform: template
+      value_template: '{{ states.sensor.battery_front_door_lock.state | int > 1 and states.sensor.battery_front_door_lock.state | int < 5 }}'
+    action:
+      - service: notify.ios_rich_iphone
+        data_template:
+          message: >
+            Low Battery Alert - Front Door Lock is at {{ states.sensor.battery_front_door_lock.state }} %

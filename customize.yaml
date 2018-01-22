@@ -34,8 +34,14 @@
   light.hue_dining_room_lamp_2:
     friendly_name: Dining Room Lamp 2
 
-  light.hue_living_room_lamp:
-    friendly_name: Living Room Lamp
+  light.hue_living_room_lamp_1:
+    friendly_name: Living Room Lamp 1
+
+  light.hue_living_room_lamp_2:
+    friendly_name: Living Room Lamp 2
+
+  light.hue_living_room_lamp_3:
+      friendly_name: Living Room Lamp 3
 
   light.hue_family_room_lightstrip:
     friendly_name: Family Room Lightstrip
@@ -45,27 +51,6 @@
 
   light.hue_porch_lamp_2:
     friendly_name: Porch Lamp 2
-
-  scene.bright_downstairs:
-    homebridge_hidden: true
-
-  scene.dinner_time:
-    homebridge_hidden: true
-
-  scene.homework:
-    homebridge_hidden: true
-
-  scene.tv_time:
-    homebridge_hidden: true
-
-  scene.evening:
-    homebridge_hidden: true
-
-  scene.bedtime:
-    homebridge_hidden: true
-
-  scene.good_night:
-    homebridge_hidden: true
 
   sensor.dark_sky_temperature:
     friendly_name: Outdoor Temp
@@ -91,3 +76,7 @@
   binary_sensor.upstairs_nest_protect_online:
     friendly_name: Upstairs
     icon: mdi:nest-protect
+
+  group.all_automations:
+    friendly_name: Automations
+    hidden: false

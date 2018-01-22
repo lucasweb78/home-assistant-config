@@ -8,10 +8,10 @@
       switch.kitchen_light_switch: on
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
-      script.bright_in_family_room: on
+      script.bright_in_living_room: on
 
 
-  - name: Dim Downstairs
+  - name: Dimmed Downstairs
     entities:
       script.dimmed_in_living_room: on
       script.relax_in_family_room: on
@@ -22,9 +22,18 @@
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: on
 
+  - name: Daytime Downstairs
+    entities:
+      switch.family_room_light_switch: off
+      switch.dining_room_light_switch: off
+      switch.kitchen_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: on
+      group.living_room_lamps: off
+
   - name: TV time
     entities:
-      script.dimmed_in_living_room: on
+      script.nightlight_in_living_room: on
       script.blue_in_family_room: on
       switch.family_room_light_switch: off
       switch.dining_room_light_switch: off
@@ -38,7 +47,7 @@
       group.switches: off
       script.nightlight_in_bedroom: on
       fan.bedroom_fan_level: on
-      script.dimmed_in_living_room: on
+      script.nightlight_in_living_room: on
       fan.family_room_fan_level: off
 
   - name: Good Night
@@ -47,27 +56,42 @@
       group.switches: off
       fan.family_room_fan_level: off
 
+## Living Room Scenes
+
+  - name: Nightlight in Living Room
+    entities:
+      script.nightlight_in_living_room: on
+
+  - name: Dimmed in Living Room
+    entities:
+      script.dimmed_in_living_room: on
+
+  - name: Bright in Living Room
+    entities:
+      script.bright_in_living_room: on
+
+
 ## Family Room Scenes
 
-  - name: Dim Family Room
+  - name: Dimmed in Family Room
     entities:
       switch.family_room_light_switch: off
       script.relax_in_family_room: on
 
-  - name: Bright Family Room
+  - name: Bright in Family Room
     entities:
       switch.family_room_light_switch: on
       script.bright_in_family_room: on
 
 ## Kitchen Scenes
 
-  - name: Dim Kitchen
+  - name: Dimmed in Kitchen
     entities:
       switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: on
 
-  - name: Bright Kitchen
+  - name: Bright in Kitchen
     entities:
       switch.kitchen_light_switch: on
       switch.kitchen_under_cabinet_light_switch: off
@@ -75,37 +99,31 @@
 
 ## Dining Room Scenes
 
-  - name: Dim Dining Room
+  - name: Dimmed in Dining Room
     entities:
       switch.dining_room_light_switch: on
       script.relax_in_dining_room: on
 
-  - name: Concentrate Dining Room
+  - name: Concentrate in Dining Room
     entities:
       switch.dining_room_light_switch: on
       script.concentrate_in_dining_room: on
 
-  - name: Bright Dining Room
+  - name: Bright in Dining Room
     entities:
       switch.dining_room_light_switch: on
       script.bright_in_dining_room: on
 
 ## Bedroom Room Scenes
 
-  - name: Bright Bedroom
-    entities:
-      script.bright_in_bedroom: on
-
-  - name: Dim Bedroom
-    entities:
-      script.dimmed_in_bedroom: on
-
-  - name: Nightlight Bedroom
+  - name: Nightlight in Bedroom
     entities:
       script.nightlight_in_bedroom: on
 
-## Porch Scenes
-
-  - name: Bright Porch
+  - name: Dimmed in Bedroom
     entities:
-      script.bright_in_porch: on
+      script.dimmed_in_bedroom: on
+
+  - name: Bright in Bedroom
+    entities:
+      script.bright_in_bedroom: on

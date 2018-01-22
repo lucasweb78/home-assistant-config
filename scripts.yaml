@@ -13,15 +13,22 @@
     sequence:
       - service: hue.hue_activate_scene
         data:
-          group_name: "Living_room"
+          group_name: "Living Room"
           scene_name: "Bright"
 
   dimmed_in_living_room:
     sequence:
       - service: hue.hue_activate_scene
         data:
-          group_name: "Living_room"
+          group_name: "Living Room"
           scene_name: "Dimmed"
+
+  nightlight_in_living_room:
+    sequence:
+      - service: hue.hue_activate_scene
+        data:
+          group_name: "Living Room"
+          scene_name: "Nightlight"
 
   bright_in_bedroom:
       sequence:
@@ -43,7 +50,6 @@
         data:
           group_name: "Bedroom"
           scene_name: "Nightlight"
-
 
   bright_in_family_room:
     sequence:

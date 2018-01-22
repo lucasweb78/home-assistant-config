@@ -20,14 +20,15 @@
     entities:
       - group.porch_lights
       - switch.porch_switch
-      - scene.bright_porch
-      - scene.christmas_porch
 
   living_room_view:
     view: yes
     name: "Living Room"
     entities:
       - light.hue_living_room_lamp
+      - scene.bright_in_living_room
+      - scene.dimmed_in_living_room
+      - scene.nightlight_in_living_room
 
   family_room_view:
     view: yes
@@ -36,8 +37,8 @@
       - fan.family_room_fan_level
       - light.hue_family_room_lightstrip
       - switch.family_room_light_switch
-      - scene.bright_family_room
-      - scene.dim_family_room
+      - scene.bright_in_family_room
+      - scene.dimmed_in_family_room
 
   dining_room_view:
     view: yes
@@ -45,17 +46,17 @@
     entities:
       - switch.dining_room_light_switch
       - group.dining_room_lights
-      - scene.bright_dining_room
-      - scene.concentrate_dining_room
-      - scene.dim_dining_room
+      - scene.bright_in_dining_room
+      - scene.concentrate_in_dining_room
+      - scene.dimmed_in_dining_room
 
   kitchen_view:
     view: yes
     name: "Kitchen"
     entities:
       - group.kitchen_light_switches
-      - scene.bright_kitchen
-      - scene.dim_kitchen
+      - scene.bright_in_kitchen
+      - scene.dimmed_in_kitchen
 
   bedroom_room_view:
     view: yes
@@ -63,9 +64,9 @@
     entities:
       - fan.bedroom_fan_level
       - group.bedroom_lamps
-      - scene.bright_bedroom
-      - scene.dim_bedroom
-      - scene.nightlight_bedroom
+      - scene.bright_in_bedroom
+      - scene.dimmed_in_bedroom
+      - scene.nightlight_in_bedroom
 
   garage_view:
     view: yes
@@ -86,20 +87,13 @@
       - group.network
       - group.utilities
       - group.protect
+      - group.batteries
 
   automation_view:
     view: yes
-    name: "Automation"
+    name: "Automations"
     entities:
-      - automation.wakeup
-      - automation.arrive_home
-      - automation.arrive_home_night
-      - automation.dining_room_lighting_on
-      - automation.dining_room_lighting_off
-      - automation.sync_lock_state
-      - automation.sync_unlock_state
-      - automation.turn_on_downstairs_morning_weekdays
-      - automation.turn_on_downstairs_when_getting_dark
+      - group.all_automations
 
 # Groups
 
@@ -118,7 +112,9 @@
   lights:
     name: Lights
     entities:
-      - light.hue_living_room_lamp
+      - light.hue_living_room_lamp_1
+      - light.hue_living_room_lamp_2
+      - light.hue_living_room_lamp_3
       - light.hue_family_room_lightstrip
       - light.hue_dining_room_lamp_1
       - light.hue_dining_room_lamp_2
@@ -146,6 +142,13 @@
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
 
+  living_room_lamps:
+    name: Living Room Lamps
+    entities:
+      - light.hue_living_room_lamp_1
+      - light.hue_living_room_lamp_2
+      - light.hue_living_room_lamp_3
+
   bedroom_lamps:
     name: Bedroom Lamps
     entities:
@@ -157,6 +160,16 @@
     entities:
       - light.hue_porch_lamp_1
       - light.hue_porch_lamp_2
+
+  downstaris_lights:
+    name: Downstairs Lights
+    entities:
+      - group.porch_lights
+      - group.living_room_lamps
+      - light.hue_family_room_lightstrip
+      - switch.family_room_light_switch
+      - switch.dining_room_light_switch
+      - group.kitchen_light_switches
 
   climate:
     name: Climate
@@ -194,6 +207,11 @@
     entities:
       - sensor.ohmconnect_status
 
+  batteries:
+    name: "Batteries"
+    entities:
+      - sensor.battery_front_door_lock
+
   alarms:
     name: "Alarms"
     entities:
@@ -203,7 +221,7 @@
     name: "Scenes"
     entities:
       - scene.bright_downstairs
-      - scene.dim_downstairs
+      - scene.dimmed_downstairs
       - scene.tv_time
       - scene.bedtime
       - scene.good_night
