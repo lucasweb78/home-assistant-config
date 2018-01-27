@@ -20,18 +20,21 @@ sun:
 
 http:
   api_password: !secret http_password
-  ssl_certificate: /etc/letsencrypt/live/lucasweb.duckdns.org/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/lucasweb.duckdns.org/privkey.pem
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
   base_url: !secret http_base_url
 
 logger:
   default: warn
 
+recorder:
+  purge_interval: 2
+  purge_keep_days: 7
+
 ios:
 
 zwave:
-  usb_path: /dev/cu.usbmodem1411
-  new_entity_ids: true
+  usb_path: /dev/ttyACM0
   network_key: !secret z_wave_network_key
 
 nest:

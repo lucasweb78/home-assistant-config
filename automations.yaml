@@ -67,8 +67,10 @@
          - thu
          - fri
     action:
-    - service: group.turn_off
-      entity_id: group.downstaris_lights
+    - service: light.turn_off
+      entity_id: group.downstairs_lights
+    - service: switch.turn_off
+      entity_id: group.downstairs_lights
 
   - id: turn_on_downstairs_when_getting_dark
     alias: Turn On Downstairs When Getting Dark

@@ -4,7 +4,7 @@ https://home-assistant.io
 
 System:
 <ul>
-<li>Mac Mini running macOS Sierra (version 10.12)</li>
+<li>Raspberry Pi 3 running hass.io</li>
 <li>Sigma Designs USB Z-Stick (ACC-UZB2-U)</li>
 </ul>
 
@@ -23,6 +23,6 @@ Devices:
 
 Voice Control:
 <ul>
-<li>Alexa via Haaska</li>
+<li>Alexa via HA Cloud</li>
 <li>Siri via Homebridge-Homeassistant plugin</li>
 </ul>

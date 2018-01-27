@@ -11,19 +11,8 @@
       - precip_probability
       - wind_speed
 
-  - platform: systemmonitor
-    resources:
-      - type: ipv4_address
-        arg: en1
-
   - platform: dnsip
     hostname: lucasweb.duckdns.org
-
-  - platform: command_line
-    name: SSL cert expiry
-    unit_of_measurement: days
-    scan_interval: 86400
-    command: "ssl-cert-check -b -c /etc/letsencrypt/live/lucasweb.duckdns.org/cert.pem | awk '{ print $NF }'"
 
   - platform: template
     sensors:

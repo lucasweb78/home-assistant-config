@@ -25,7 +25,7 @@
     view: yes
     name: "Living Room"
     entities:
-      - light.hue_living_room_lamp
+      - group.living_room_lamps
       - scene.bright_in_living_room
       - scene.dimmed_in_living_room
       - scene.nightlight_in_living_room
@@ -161,7 +161,7 @@
       - light.hue_porch_lamp_1
       - light.hue_porch_lamp_2
 
-  downstaris_lights:
+  downstairs_lights:
     name: Downstairs Lights
     entities:
       - group.porch_lights
@@ -199,8 +199,6 @@
     name: "Network"
     entities:
       - sensor.lucaswebduckdnsorg
-      - sensor.ssl_cert_expiry
-      - sensor.ipv4_address_en1
 
   utilities:
     name: "Utilities"
