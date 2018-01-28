@@ -49,6 +49,9 @@ mqtt:
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
+  - platform: ping
+    hosts:
+      rich_ping: 10.0.1.17
 
 ifttt:
   key: !secret ifttt_key

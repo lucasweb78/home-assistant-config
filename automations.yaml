@@ -120,10 +120,14 @@
     alias: Arrive Home
     hide_entity: false
     trigger:
-      platform: state
-      entity_id: device_tracker.rich_iphone
-      from: 'not_home'
-      to: 'home'
+      - platform: state
+        entity_id: device_tracker.rich_iphone
+        from: 'not_home'
+        to: 'home'
+      - platform: state
+        entity_id: device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
+        from: 'not_home'
+        to: 'home'
     condition:
       - condition: state
         entity_id: switch.garage_light
@@ -142,6 +146,10 @@
         from: 'not_home'
         to: 'home'
       - platform: state
+        entity_id: device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
+        from: 'not_home'
+        to: 'home'
+      - platform: state
         entity_id: lock.front_door_lock_locked
         from: 'locked'
         to: 'unlocked'
@@ -157,6 +165,23 @@
     action:
     - service: scene.turn_on
       entity_id: scene.dimmed_in_living_room
+
+  - id: notify_ios_arrive_home
+    alias: Notify iOS Arrive Home
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: device_tracker.rich_ping
+        from: 'not_home'
+        to: 'home'
+      - platform: state
+        entity_id: device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
+        from: 'not_home'
+        to: 'home'
+    action:
+      service: notify.ios_rich_iphone
+      data:
+        message: "request_location_update"
 
   - id: sync_unlock
     alias: Sync Unlock State
