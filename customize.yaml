@@ -15,10 +15,6 @@
   lock.front_door_lock_locked:
     friendly_name: Front Door Lock
 
-  device_tracker.rich_iphone:
-    friendly_name: Rich
-    icon: mdi:cellphone-iphone
-
   light.all_hue_lights:
     hidden: true
 
@@ -80,3 +76,11 @@
   group.all_automations:
     friendly_name: Automations
     hidden: false
+
+  device_tracker.rich_iphone:
+    friendly_name: Rich iPhone
+    icon: mdi:cellphone-iphone
+
+  device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74:
+    friendly_name: Rich OwnTracks
+    icon: mdi:crosshairs-gps

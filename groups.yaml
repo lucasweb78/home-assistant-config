@@ -194,6 +194,7 @@
     entities:
       - sensor.nest_home_away
       - device_tracker.rich_iphone
+      - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
       
   network:
     name: "Network"

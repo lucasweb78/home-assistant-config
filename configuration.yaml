@@ -41,6 +41,15 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
+mqtt:
+  broker: localhost
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+
 ifttt:
   key: !secret ifttt_key
 
