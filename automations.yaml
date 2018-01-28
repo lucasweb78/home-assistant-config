@@ -35,19 +35,25 @@
       platform: time
       at: "06:30:00"
     condition:
-      - condition: state
-        entity_id: 'device_tracker.rich_iphone'
-        state: 'home'
-      - condition: sun
-        before: sunrise
-        before_offset: "00:30:00"
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
+      condition: and
+      conditions:
+        - condition: sun
+          before: sunrise
+          before_offset: "00:30:00"
+        - condition: time
+          weekday:
+            - mon
+            - tue
+            - wed
+            - thu
+            - fri
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: 'device_tracker.rich_iphone'
+              state: 'home'
+            - condition: template
+              value_template: "{% if is_state_attr('climate.downstairs_nest', 'away_mode', 'off') %}true{% endif %}"
     action:
     - service: scene.turn_on
       entity_id: scene.bright_downstairs
@@ -128,6 +134,10 @@
         entity_id: device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
         from: 'not_home'
         to: 'home'
+      - platform: state
+        entity_id: device_tracker.rich_ping
+        from: 'not_home'
+        to: 'home'
     condition:
       - condition: state
         entity_id: switch.garage_light
@@ -150,9 +160,17 @@
         from: 'not_home'
         to: 'home'
       - platform: state
+        entity_id: device_tracker.rich_ping
+        from: 'not_home'
+        to: 'home'
+      - platform: state
         entity_id: lock.front_door_lock_locked
         from: 'locked'
         to: 'unlocked'
+      - platform: state
+        entity_id: sensor.nest_home_away
+        from: 'Away'
+        to: 'Home'
     condition:
       condition: and
       conditions:
