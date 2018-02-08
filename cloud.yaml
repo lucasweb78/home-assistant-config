@@ -6,6 +6,8 @@
           - lock
           - fan
           - scene
+          - media_player
+          - input_boolean
         exclude_entities:
           - light.bedroom
           - light.dining_room
@@ -33,3 +35,12 @@
           display_categories: LIGHT
         switch.garage_light:
           display_categories: LIGHT
+        media_player.vizio_smartcast:
+          display_categories: TV
+          name: TV
+        media_player.apple_tv_family_room:
+          display_categories: TV
+          name: Apple TV
+        media_player.apple_tv_bedroom:
+          display_categories: TV
+          name: Bedroom Apple TV

@@ -100,6 +100,56 @@
       data:
         message: "Downstairs lights turned on via automation"
 
+  - id: turn_off_tv
+    alias: Turn Off TV
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: media_player.apple_tv_family_room
+      to: 'off'
+    condition:
+      - condition: state
+        entity_id: media_player.vizio_smartcast
+        state: 'on'
+    action:
+    - service: media_player.turn_off
+      entity_id: media_player.vizio_smartcast
+
+  - id: turn_on_apple_tv
+    alias: Turn On Apple TV
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: media_player.vizio_smartcast
+      to: 'on'
+    condition:
+      - condition: state
+        entity_id: media_player.apple_tv_family_room
+        state: 'off'
+    action:
+    - service: media_player.turn_on
+      entity_id: media_player.apple_tv_family_room
+
+  - id: turn_off_apple_tv
+    alias: Turn Off Apple TV
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: media_player.vizio_smartcast
+      to: 'off'
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: media_player.apple_tv_family_room
+          state: 'on'
+        - condition: state
+          entity_id: media_player.apple_tv_family_room
+          state: 'idle'
+    action:
+    - service: media_player.turn_off
+      entity_id: media_player.apple_tv_family_room
+
   - id: dinning_room_lighting_on
     alias: Dining Room Lighting On
     hide_entity: false
@@ -130,14 +180,6 @@
         entity_id: device_tracker.rich_iphone
         from: 'not_home'
         to: 'home'
-      - platform: state
-        entity_id: device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
-        from: 'not_home'
-        to: 'home'
-      - platform: state
-        entity_id: device_tracker.rich_ping
-        from: 'not_home'
-        to: 'home'
     condition:
       - condition: state
         entity_id: switch.garage_light
@@ -153,14 +195,6 @@
     trigger:
       - platform: state
         entity_id: device_tracker.rich_iphone
-        from: 'not_home'
-        to: 'home'
-      - platform: state
-        entity_id: device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
-        from: 'not_home'
-        to: 'home'
-      - platform: state
-        entity_id: device_tracker.rich_ping
         from: 'not_home'
         to: 'home'
       - platform: state
@@ -184,23 +218,6 @@
     - service: scene.turn_on
       entity_id: scene.dimmed_in_living_room
 
-  - id: notify_ios_arrive_home
-    alias: Notify iOS Arrive Home
-    hide_entity: false
-    trigger:
-      - platform: state
-        entity_id: device_tracker.rich_ping
-        from: 'not_home'
-        to: 'home'
-      - platform: state
-        entity_id: device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
-        from: 'not_home'
-        to: 'home'
-    action:
-      service: notify.ios_rich_iphone
-      data:
-        message: "request_location_update"
-
   - id: sync_unlock
     alias: Sync Unlock State
     trigger:
@@ -219,9 +236,9 @@
       platform: state
       entity_id: sensor.front_door_lock_alarm_type
     condition:
-        - condition: state
-          entity_id: 'sensor.front_door_lock_alarm_type'
-          state: '21'
+      - condition: state
+        entity_id: 'sensor.front_door_lock_alarm_type'
+        state: '21'
     action:
       - service: lock.lock
         entity_id: lock.front_door_lock_locked

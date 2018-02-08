@@ -40,6 +40,7 @@
       switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
+      media_player.apple_tv_family_room: on
 
   - name: Bedtime
     entities:
@@ -49,12 +50,16 @@
       fan.bedroom_fan_level: on
       script.nightlight_in_living_room: on
       fan.family_room_fan_level: off
+      media_player.apple_tv_family_room: off
+      media_player.apple_tv_bedroom: off
 
   - name: Good Night
     entities:
       group.lights: off
       group.switches: off
       fan.family_room_fan_level: off
+      media_player.apple_tv_family_room: off
+      media_player.apple_tv_bedroom: off
 
 ## Living Room Scenes
 

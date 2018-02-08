@@ -84,7 +84,3 @@
   device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74:
     friendly_name: OwnTracks (Rich)
     icon: mdi:crosshairs-gps
-
-  device_tracker.rich_ping:
-    friendly_name: WiFi (Rich)
-    icon: mdi:wifi
