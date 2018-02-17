@@ -137,15 +137,6 @@
       platform: state
       entity_id: media_player.vizio_smartcast
       to: 'off'
-    condition:
-      condition: or
-      conditions:
-        - condition: state
-          entity_id: media_player.apple_tv_family_room
-          state: 'on'
-        - condition: state
-          entity_id: media_player.apple_tv_family_room
-          state: 'idle'
     action:
     - service: media_player.turn_off
       entity_id: media_player.apple_tv_family_room

@@ -3,3 +3,5 @@
   - platform: vizio
     host: !secret vizio_ip
     access_token: !secret vizio_token
+    suppress_warning: true
+    volume_step: 2
