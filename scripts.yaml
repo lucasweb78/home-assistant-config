@@ -7,10 +7,12 @@
       - service: switch.turn_off
         entity_id: switch.garage_light
 
-## Activate Hue Scenes
+## living room hue scenes
 
   bright_in_living_room:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Living Room"
@@ -18,6 +20,8 @@
 
   dimmed_in_living_room:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Living Room"
@@ -25,20 +29,28 @@
 
   nightlight_in_living_room:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Living Room"
           scene_name: "Nightlight"
 
+## bedroom hue scenes
+
   bright_in_bedroom:
-      sequence:
-        - service: hue.hue_activate_scene
-          data:
-            group_name: "Bedroom"
-            scene_name: "Bright"
+    sequence:
+      - delay:
+          milliseconds: 100
+      - service: hue.hue_activate_scene
+        data:
+          group_name: "Bedroom"
+          scene_name: "Bright"
 
   dimmed_in_bedroom:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Bedroom"
@@ -46,13 +58,19 @@
 
   nightlight_in_bedroom:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Bedroom"
           scene_name: "Nightlight"
 
+## family room hue scenes
+
   bright_in_family_room:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Family Room"
@@ -60,6 +78,8 @@
 
   relax_in_family_room:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Family Room"
@@ -67,10 +87,14 @@
 
   blue_in_family_room:
     sequence:
+      - delay:
+          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Family Room"
           scene_name: "Blue"
+
+## dining room hue scenes
 
   bright_in_dining_room:
     sequence:
@@ -81,28 +105,17 @@
           group_name: "Dining Room"
           scene_name: "Bright"
 
-  concentrate_in_dining_room:
-    sequence:
-      - delay:
-          milliseconds: 100
-      - service: hue.hue_activate_scene
-        data:
-          group_name: "Dining Room"
-          scene_name: "Concentrate"
-
   relax_in_dining_room:
     sequence:
-      - delay:
-          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Dining Room"
           scene_name: "Relax"
 
+## porch hue scenes
+
   bright_porch:
     sequence:
-      - delay:
-          milliseconds: 100
       - service: hue.hue_activate_scene
         data:
           group_name: "Porch"

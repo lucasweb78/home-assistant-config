@@ -109,11 +109,6 @@
       switch.dining_room_light_switch: on
       script.relax_in_dining_room: on
 
-  - name: Concentrate in Dining Room
-    entities:
-      switch.dining_room_light_switch: on
-      script.concentrate_in_dining_room: on
-
   - name: Bright in Dining Room
     entities:
       switch.dining_room_light_switch: on

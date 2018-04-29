@@ -1,11 +1,13 @@
-## Automation
+# Automations
+
+## Wakeup Automations
 
   - id: wakeup
     alias: Wakeup
     hide_entity: false
     trigger:
       platform: time
-      at: "07:15:00"
+      at: "07:13:00"
     condition:
       - condition: state
         entity_id: input_boolean.morning_alarm
@@ -28,74 +30,7 @@
         transition: 900
         brightness: 255
 
-  - id: turn_on_downstairs_morning_weekdays
-    alias: Turn On Downstairs Morning Weekdays
-    hide_entity: false
-    trigger:
-      platform: time
-      at: "06:35:00"
-    condition:
-      condition: and
-      conditions:
-        - condition: time
-          weekday:
-            - mon
-            - tue
-            - wed
-            - thu
-            - fri
-        - condition: or
-          conditions:
-            - condition: state
-              entity_id: 'device_tracker.rich_iphone'
-              state: 'home'
-            - condition: template
-              value_template: "{% if is_state_attr('climate.downstairs_nest', 'away_mode', 'off') %}true{% endif %}"
-    action:
-    - service: scene.turn_on
-      entity_id: scene.bright_downstairs
-
-  - id: turn_off_downstairs_morning_weekdays
-    alias: Turn Off Downstairs Morning Weekdays
-    hide_entity: false
-    trigger:
-      platform: time
-      at: "08:15:00"
-    condition:
-     - condition: time
-       weekday:
-         - mon
-         - tue
-         - wed
-         - thu
-         - fri
-    action:
-    - service: light.turn_off
-      entity_id: group.downstairs_lights
-    - service: switch.turn_off
-      entity_id: group.downstairs_lights
-
-  - id: turn_on_downstairs_when_getting_dark
-    alias: Turn On Downstairs When Getting Dark
-    hide_entity: false
-    trigger:
-      platform: sun
-      event: sunset
-      offset: '-00:35:00'
-    condition:
-      condition: or
-      conditions:
-        - condition: state
-          entity_id: 'device_tracker.rich_iphone'
-          state: 'home'
-        - condition: template
-          value_template: "{% if is_state_attr('climate.downstairs_nest', 'away_mode', 'off') %}true{% endif %}"
-    action:
-    - service: scene.turn_on
-      entity_id: scene.bright_downstairs
-    - service: notify.ios_rich_iphone
-      data:
-        message: "Downstairs lights turned on via automation"
+## TV Automations
 
   - id: turn_off_tv
     alias: Turn Off TV
@@ -138,6 +73,8 @@
     - service: media_player.turn_off
       entity_id: media_player.apple_tv_family_room
 
+## Dining Room Light Automations
+
   - id: dinning_room_lighting_on
     alias: Dining Room Lighting On
     hide_entity: false
@@ -159,6 +96,8 @@
     action:
       - service: light.turn_off
         entity_id: light.dining_room
+
+## Arrive Home Automations
 
   - id: arrive_home
     alias: Arrive Home
@@ -206,6 +145,8 @@
     - service: scene.turn_on
       entity_id: scene.dimmed_in_living_room
 
+## Front Door Automations
+
   - id: sync_unlock
     alias: Sync Unlock State
     trigger:
@@ -231,31 +172,18 @@
       - service: lock.lock
         entity_id: lock.front_door_lock_locked
 
-  - id: nest_set_to_home
-    alias: Nest Set to Home
-    hide_entity: false
+  - id: battery_low_alert_front_door_lock
+    alias: Low Battery Alert - Front Door Lock
     trigger:
-      platform: state
-      entity_id: sensor.nest_home_away
-      from: 'Away'
-      to: 'Home'
+      platform: template
+      value_template: '{{ states.sensor.battery_front_door_lock.state | int > 1 and states.sensor.battery_front_door_lock.state | int < 5 }}'
     action:
-    - service: notify.ios_rich_iphone
-      data:
-        message: "Nest Thermostat set to Home"
+      - service: notify.ios_rich_iphone
+        data_template:
+          message: >
+            Low Battery Alert - Front Door Lock is at {{ states.sensor.battery_front_door_lock.state }} %
 
-  - id: nest_set_to_away
-    alias: Nest Set to Away
-    hide_entity: false
-    trigger:
-      platform: state
-      entity_id: sensor.nest_home_away
-      from: 'Home'
-      to: 'Away'
-    action:
-    - service: notify.ios_rich_iphone
-      data:
-        message: "Nest Thermostat set to Away"
+## OhmConnect Notifications
 
   - id: ohm_connect_hour_active
     alias: OhmConnect Hour Active
@@ -282,14 +210,3 @@
     - service: notify.ios_rich_iphone
       data:
         message: "OhmHour ended"
-
-  - id: battery_low_alert_front_door_lock
-    alias: Low Battery Alert - Front Door Lock
-    trigger:
-      platform: template
-      value_template: '{{ states.sensor.battery_front_door_lock.state | int > 1 and states.sensor.battery_front_door_lock.state | int < 5 }}'
-    action:
-      - service: notify.ios_rich_iphone
-        data_template:
-          message: >
-            Low Battery Alert - Front Door Lock is at {{ states.sensor.battery_front_door_lock.state }} %

@@ -14,6 +14,7 @@
       - group.home_scenes
       - group.room_scenes
       - configurator.philips_hue
+      - group.vacuum
 
   porch_view:
     view: yes
@@ -51,7 +52,6 @@
       - switch.dining_room_light_switch
       - group.dining_room_lights
       - scene.bright_in_dining_room
-      - scene.concentrate_in_dining_room
       - scene.dimmed_in_dining_room
 
   kitchen_view:
@@ -194,6 +194,12 @@
     entities:
       - binary_sensor.downstairs_nest_protect_online
       - binary_sensor.upstairs_nest_protect_online
+
+  vacuum:
+    name: Vacuum
+    view: no
+    entities:
+      - vacuum.roomba
 
   presence:
     name: "Presence"

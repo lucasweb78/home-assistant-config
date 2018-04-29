@@ -64,6 +64,12 @@ apple_tv:
     name: Apple TV Bedroom
     start_off: true
 
+vacuum:
+  - platform: roomba
+    host: !secret roomba_ip
+    username: !secret roomba_username
+    password: !secret roomba_password
+
 cloud: !include cloud.yaml
 input_boolean: !include input_boolean.yaml
 sensor: !include sensors.yaml
