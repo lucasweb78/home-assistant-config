@@ -20,6 +20,7 @@
           - light.patio
           - light.porch
           - light.hallway
+          - media_player.vizio_smartcast
       entity_config:
         switch.family_room_light_switch:
           display_categories: LIGHT
