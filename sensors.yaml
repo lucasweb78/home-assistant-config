@@ -34,4 +34,4 @@
         unit_of_measurement: '%'
           
   - platform: ohmconnect
-    id: a2QvDkxy
+    id: !secret ohm_connect_id

@@ -29,9 +29,6 @@
     name: "Living Room"
     entities:
       - group.living_room_lamps
-      - scene.bright_in_living_room
-      - scene.dimmed_in_living_room
-      - scene.nightlight_in_living_room
 
   family_room_view:
     view: yes
@@ -40,8 +37,6 @@
       - fan.family_room_fan_level
       - light.hue_family_room_lightstrip
       - switch.family_room_light_switch
-      - scene.bright_in_family_room
-      - scene.dimmed_in_family_room
       - media_player.vizio_smartcast
       - media_player.apple_tv_family_room
       - remote.apple_tv_family_room
@@ -52,16 +47,12 @@
     entities:
       - switch.dining_room_light_switch
       - group.dining_room_lights
-      - scene.bright_in_dining_room
-      - scene.dimmed_in_dining_room
 
   kitchen_view:
     view: yes
     name: "Kitchen"
     entities:
       - group.kitchen_light_switches
-      - scene.bright_in_kitchen
-      - scene.dimmed_in_kitchen
 
   bedroom_view:
     view: yes
@@ -69,9 +60,6 @@
     entities:
       - fan.bedroom_fan_level
       - group.bedroom_lamps
-      - scene.bright_in_bedroom
-      - scene.dimmed_in_bedroom
-      - scene.nightlight_in_bedroom
       - media_player.apple_tv_bedroom
       - remote.apple_tv_bedroom
 

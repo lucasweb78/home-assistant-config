@@ -4,37 +4,45 @@
     entities:
       switch.family_room_light_switch: on
       switch.dining_room_light_switch: on
-      script.bright_in_dining_room: on
+      light.dining_room:
+        state: on
+        brightness: 254
       switch.kitchen_light_switch: on
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
-      script.bright_in_living_room: on
-
+      light.living_room:
+        state: on
+        brightness: 254
+      light.hue_family_room_lightstrip: off
 
   - name: Dimmed Downstairs
     entities:
-      script.dimmed_in_living_room: on
-      script.relax_in_family_room: on
+      light.living_room:
+        state: on
+        brightness: 77
+      light.hue_family_room_lightstrip:
+        state: on
+        brightness: 144
+        xy_color: [0.502,0.414]
       switch.family_room_light_switch: off
       switch.dining_room_light_switch: on
-      script.relax_in_dining_room: on
+      light.dining_room:
+        state: on
+        brightness: 144
+        color_temp: 443
       switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: on
-
-  - name: Daytime Downstairs
-    entities:
-      switch.family_room_light_switch: off
-      switch.dining_room_light_switch: off
-      switch.kitchen_light_switch: off
-      switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: on
-      group.living_room_lamps: off
 
   - name: TV time
     entities:
-      script.nightlight_in_living_room: on
-      script.blue_in_family_room: on
+      light.living_room:
+        state: on
+        brightness: 1
+      light.hue_family_room_lightstrip:
+        state: on
+        brightness: 254
+        xy_color: [0.158,0.089]
       switch.family_room_light_switch: off
       switch.dining_room_light_switch: off
       switch.kitchen_light_switch: off
@@ -46,9 +54,13 @@
     entities:
       group.lights: off
       group.switches: off
-      script.nightlight_in_bedroom: on
+      light.bedroom:
+        state: on
+        brightness: 1
       fan.bedroom_fan_level: on
-      script.nightlight_in_living_room: on
+      light.living_room:
+        state: on
+        brightness: 1
       fan.family_room_fan_level: off
       media_player.apple_tv_family_room: off
       media_player.apple_tv_bedroom: off
@@ -60,70 +72,3 @@
       fan.family_room_fan_level: off
       media_player.apple_tv_family_room: off
       media_player.apple_tv_bedroom: off
-
-## Living Room Scenes
-
-  - name: Nightlight in Living Room
-    entities:
-      script.nightlight_in_living_room: on
-
-  - name: Dimmed in Living Room
-    entities:
-      script.dimmed_in_living_room: on
-
-  - name: Bright in Living Room
-    entities:
-      script.bright_in_living_room: on
-
-
-## Family Room Scenes
-
-  - name: Dimmed in Family Room
-    entities:
-      switch.family_room_light_switch: off
-      script.relax_in_family_room: on
-
-  - name: Bright in Family Room
-    entities:
-      switch.family_room_light_switch: on
-      script.bright_in_family_room: on
-
-## Kitchen Scenes
-
-  - name: Dimmed in Kitchen
-    entities:
-      switch.kitchen_light_switch: off
-      switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: on
-
-  - name: Bright in Kitchen
-    entities:
-      switch.kitchen_light_switch: on
-      switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: off
-
-## Dining Room Scenes
-
-  - name: Dimmed in Dining Room
-    entities:
-      switch.dining_room_light_switch: on
-      script.relax_in_dining_room: on
-
-  - name: Bright in Dining Room
-    entities:
-      switch.dining_room_light_switch: on
-      script.bright_in_dining_room: on
-
-## Bedroom Room Scenes
-
-  - name: Nightlight in Bedroom
-    entities:
-      script.nightlight_in_bedroom: on
-
-  - name: Dimmed in Bedroom
-    entities:
-      script.dimmed_in_bedroom: on
-
-  - name: Bright in Bedroom
-    entities:
-      script.bright_in_bedroom: on

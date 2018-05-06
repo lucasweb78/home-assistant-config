@@ -7,7 +7,7 @@
     hide_entity: false
     trigger:
       platform: time
-      at: "07:13:00"
+      at: "07:30:00"
     condition:
       - condition: state
         entity_id: input_boolean.morning_alarm
