@@ -6,6 +6,12 @@
   fan.family_room_fan_level:
     friendly_name: Family Room Fan
 
+  fan.boys_bedroom_fan_level:
+    friendly_name: Boys Bedroom Fan
+
+  fan.playroom_fan_level:
+    friendly_name: PlayRoom Fan
+
   switch.garage_light:
     friendly_name: Garage Light Switch
 
@@ -63,15 +69,15 @@
 
   sensor.nest_home_away:
     friendly_name: Downstairs (Nest)
-    icon: mdi:nest-thermostat
+    icon: mdi:thermostat
 
   binary_sensor.downstairs_nest_protect_online:
     friendly_name: Downstairs
-    icon: mdi:nest-protect
+    icon: mdi:smoke-detector
 
   binary_sensor.upstairs_nest_protect_online:
     friendly_name: Upstairs
-    icon: mdi:nest-protect
+    icon: mdi:smoke-detector
 
   group.all_automations:
     friendly_name: Automations

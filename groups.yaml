@@ -21,6 +21,7 @@
     name: "Porch"
     entities:
       - group.porch_lights
+      - switch.porch_light_switch
       - switch.porch_switch
 
   living_room_view:
@@ -62,7 +63,7 @@
       - scene.bright_in_kitchen
       - scene.dimmed_in_kitchen
 
-  bedroom_room_view:
+  bedroom_view:
     view: yes
     name: "Bedroom"
     entities:
@@ -73,6 +74,20 @@
       - scene.nightlight_in_bedroom
       - media_player.apple_tv_bedroom
       - remote.apple_tv_bedroom
+
+  boys_bedroom_view:
+    view: yes
+    name: "Boys Bedroom"
+    entities:
+      - switch.boys_bedroom_light_switch
+      - fan.boys_bedroom_fan_level
+
+  playroom_view:
+    view: yes
+    name: "Playroom"
+    entities:
+      - switch.playroom_light_switch
+      - fan.playroom_fan_level
 
   garage_view:
     view: yes
@@ -113,6 +128,9 @@
       - switch.kitchen_sink_light_switch
       - switch.patio_light_switch
       - switch.garage_light
+      - switch.boys_bedroom_light_switch
+      - switch.playroom_light_switch
+      - switch.porch_light_switch
       - switch.porch_switch
 
   lights:
@@ -134,6 +152,8 @@
     entities:
       - fan.family_room_fan_level
       - fan.bedroom_fan_level
+      - fan.boys_bedroom_fan_level
+      - fan.playroom_fan_level
 
   dining_room_lights:
       name: Dining Room Lights

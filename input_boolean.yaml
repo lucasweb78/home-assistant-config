@@ -2,5 +2,5 @@
 
   morning_alarm:
     name: Morning Alarm
-    initial: on
+    initial: off
     icon: mdi:alarm
