@@ -52,8 +52,11 @@
 
   - name: Bedtime
     entities:
-      group.lights: off
-      group.switches: off
+      group.porch_lights: off
+      light.hue_family_room_lightstrip: off
+      switch.family_room_light_switch: off
+      switch.dining_room_light_switch: off
+      group.kitchen_light_switches: off
       light.bedroom:
         state: on
         brightness: 1

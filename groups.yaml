@@ -16,78 +16,37 @@
       - configurator.philips_hue
       - group.vacuum
 
-  porch_view:
+  downstairs_view:
     view: yes
-    name: "Porch"
+    name: "Downstairs"
+    entities:
+      - group.living_room_lights
+      - group.family_room_lights
+      - group.dining_room_lights
+      - group.kitchen_lights
+      - fan.family_room_fan_level
+      - group.downstairs_media
+
+  upstairs_view:
+    view: yes
+    name: "Upstairs"
+    entities:
+      - group.bedroom_lights
+      - group.boys_bedroom_lights
+      - group.playroom_lights
+      - fan.bedroom_fan_level
+      - fan.boys_bedroom_fan_level
+      - fan.playroom_fan_level
+      - group.upstairs_media
+
+  outside_view:
+    view: yes
+    name: "Outside"
     entities:
       - group.porch_lights
-      - switch.porch_light_switch
+      - group.patio_lights
+      - group.garage_lights
       - switch.porch_switch
-
-  living_room_view:
-    view: yes
-    name: "Living Room"
-    entities:
-      - group.living_room_lamps
-
-  family_room_view:
-    view: yes
-    name: "Family Room"
-    entities:
-      - fan.family_room_fan_level
-      - light.hue_family_room_lightstrip
-      - switch.family_room_light_switch
-      - media_player.vizio_smartcast
-      - media_player.apple_tv_family_room
-      - remote.apple_tv_family_room
-
-  dining_room_view:
-    view: yes
-    name: "Dining Room"
-    entities:
-      - switch.dining_room_light_switch
-      - group.dining_room_lights
-
-  kitchen_view:
-    view: yes
-    name: "Kitchen"
-    entities:
-      - group.kitchen_light_switches
-
-  bedroom_view:
-    view: yes
-    name: "Bedroom"
-    entities:
-      - fan.bedroom_fan_level
-      - group.bedroom_lamps
-      - media_player.apple_tv_bedroom
-      - remote.apple_tv_bedroom
-
-  boys_bedroom_view:
-    view: yes
-    name: "Boys Bedroom"
-    entities:
-      - switch.boys_bedroom_light_switch
-      - fan.boys_bedroom_fan_level
-
-  playroom_view:
-    view: yes
-    name: "Playroom"
-    entities:
-      - switch.playroom_light_switch
-      - fan.playroom_fan_level
-
-  garage_view:
-    view: yes
-    name: "Garage"
-    entities:
-      - switch.garage_light
-
-  patio_view:
-    view: yes
-    name: "Patio"
-    entities:
-      - switch.patio_light_switch
 
   status_view:
     view: yes
@@ -97,6 +56,7 @@
       - group.utilities
       - group.protect
       - group.batteries
+      - group.motion
 
   automation_view:
     view: yes
@@ -143,47 +103,78 @@
       - fan.boys_bedroom_fan_level
       - fan.playroom_fan_level
 
-  dining_room_lights:
-      name: Dining Room Lights
-      entities:
-        - light.hue_dining_room_lamp_1
-        - light.hue_dining_room_lamp_2
-
-  kitchen_light_switches:
-    name: Switches
-    entities:
-      - switch.kitchen_light_switch
-      - switch.kitchen_under_cabinet_light_switch
-      - switch.kitchen_sink_light_switch
-
-  living_room_lamps:
-    name: Living Room Lamps
+  living_room_lights:
+    name: Living Room Lights
     entities:
       - light.hue_living_room_lamp_1
       - light.hue_living_room_lamp_2
       - light.hue_living_room_lamp_3
 
-  bedroom_lamps:
-    name: Bedroom Lamps
+  family_room_lights:
+    name: Family Room Lights
+    entities:
+      - light.hue_family_room_lightstrip
+      - switch.family_room_light_switch
+
+  dining_room_lights:
+    name: Dining Room Lights
+    entities:
+      - switch.dining_room_light_switch
+      - light.hue_dining_room_lamp_1
+      - light.hue_dining_room_lamp_2
+
+  kitchen_lights:
+    name: Kitchen Lights
+    entities:
+      - switch.kitchen_light_switch
+      - switch.kitchen_under_cabinet_light_switch
+      - switch.kitchen_sink_light_switch
+
+  bedroom_lights:
+    name: Bedroom Lights
     entities:
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
 
+  boys_bedroom_lights:
+    name: Boys Bedroom Lights
+    entities:
+      - switch.boys_bedroom_light_switch
+
+  playroom_lights:
+    name: Playroom Lights
+    entities:
+      - switch.playroom_light_switch
+
   porch_lights:
     name: Porch Lights
     entities:
+      - switch.porch_light_switch
       - light.hue_porch_lamp_1
       - light.hue_porch_lamp_2
 
-  downstairs_lights:
-    name: Downstairs Lights
+  patio_lights:
+    name: Patio Lights
     entities:
-      - group.porch_lights
-      - group.living_room_lamps
-      - light.hue_family_room_lightstrip
-      - switch.family_room_light_switch
-      - switch.dining_room_light_switch
-      - group.kitchen_light_switches
+      - switch.patio_light_switch
+
+  garage_lights:
+    name: Garage Lights
+    entities:
+      - switch.garage_light
+
+  downstairs_media:
+    name: Downstairs Media
+    entities:
+      - media_player.vizio_smartcast
+      - media_player.apple_tv_family_room
+      - remote.apple_tv_family_room  
+
+  upstairs_media:
+    name: Upstairs Media
+    entities:
+      - media_player.apple_tv_bedroom
+      - remote.apple_tv_bedroom
 
   climate:
     name: Climate
@@ -236,6 +227,12 @@
     entities:
      - input_boolean.morning_alarm
 
+  motion:
+    name: "Motion"
+    entities:
+      - binary_sensor.downstairs_motion_detector_sensor
+      - sensor.downstairs_motion_detector_luminance
+    
   home_scenes:
     name: "Scenes"
     entities:

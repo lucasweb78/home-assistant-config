@@ -101,7 +101,7 @@
 ## Porch Light Automations
 
   - id: porch_lighting_on
-    alias: porch Lighting On
+    alias: Porch Lighting On
     hide_entity: false
     trigger:
       platform: state
