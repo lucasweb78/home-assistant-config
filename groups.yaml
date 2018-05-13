@@ -31,12 +31,9 @@
     view: yes
     name: "Upstairs"
     entities:
-      - group.bedroom_lights
-      - group.boys_bedroom_lights
-      - group.playroom_lights
-      - fan.bedroom_fan_level
-      - fan.boys_bedroom_fan_level
-      - fan.playroom_fan_level
+      - group.bedroom
+      - group.boys_bedroom
+      - group.playroom
       - group.upstairs_media
 
   outside_view:
@@ -130,16 +127,34 @@
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
 
+  bedroom:
+    name: Bedroom
+    entities:
+      - group.bedroom_lights
+      - fan.bedroom_fan_level
+
   bedroom_lights:
     name: Bedroom Lights
     entities:
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
 
+  boys_bedroom:
+    name: Boys Bedroom
+    entities:
+      - group.boys_bedroom_lights
+      - fan.boys_bedroom_fan_level
+
   boys_bedroom_lights:
     name: Boys Bedroom Lights
     entities:
       - switch.boys_bedroom_light_switch
+
+  playroom:
+    name: Playroom
+    entities:
+      - group.playroom_lights
+      - fan.playroom_fan_level
 
   playroom_lights:
     name: Playroom Lights

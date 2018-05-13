@@ -26,13 +26,17 @@
         xy_color: [0.502,0.414]
       switch.family_room_light_switch: off
       switch.dining_room_light_switch: on
+      script.dim_dining_room_with_delay: on
+      switch.kitchen_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: on
+
+  - name: Dimmed Dining Room
+    entities:
       light.dining_room:
         state: on
         brightness: 144
         color_temp: 443
-      switch.kitchen_light_switch: off
-      switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: on
 
   - name: TV time
     entities:
@@ -53,10 +57,9 @@
   - name: Bedtime
     entities:
       group.porch_lights: off
-      light.hue_family_room_lightstrip: off
-      switch.family_room_light_switch: off
+      group.family_room_lights: off
+      group.kitchen_lights: off
       switch.dining_room_light_switch: off
-      group.kitchen_light_switches: off
       light.bedroom:
         state: on
         brightness: 1

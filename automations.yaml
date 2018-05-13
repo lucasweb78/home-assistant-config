@@ -21,11 +21,11 @@
           - fri
     action:
     - service: light.turn_on
-      entity_id: group.bedroom_lamps
+      entity_id: group.bedroom_lights
       data:
         brightness: 1
     - service: light.turn_on
-      entity_id: group.bedroom_lamps
+      entity_id: group.bedroom_lights
       data:
         transition: 900
         brightness: 255
