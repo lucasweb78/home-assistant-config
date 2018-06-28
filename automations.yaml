@@ -164,7 +164,7 @@
           after: sunset
           after_offset: "-00:15:00"
         - condition: state
-          entity_id: group.living_room_lamps
+          entity_id: group.living_room_lights
           state: 'off'
     action:
     - service: scene.turn_on
