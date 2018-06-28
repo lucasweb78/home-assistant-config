@@ -16,7 +16,7 @@
 
   - platform: template
     sensors:
-      nest_home_away:
+      home_away_status:
         value_template: >
           {% if is_state_attr('climate.downstairs_nest', 'away_mode', 'off') %}
             Home

@@ -154,7 +154,7 @@
         from: 'locked'
         to: 'unlocked'
       - platform: state
-        entity_id: sensor.nest_home_away
+        entity_id: sensor.home_away_status
         from: 'Away'
         to: 'Home'
     condition:

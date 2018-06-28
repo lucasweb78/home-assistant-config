@@ -4,13 +4,13 @@
     view: yes
     name: "Home"
     entities:
+      - group.house_status
       - group.climate
-      - group.presence
+      - group.rich_devices
       - group.switches
       - group.lights
       - group.fans
       - group.alarms
-      - lock.front_door_lock_locked
       - group.home_scenes
       - group.room_scenes
       - configurator.philips_hue
@@ -215,13 +215,12 @@
     entities:
       - vacuum.roomba
 
-  presence:
-    name: "Presence"
+  house_status:
+    name: "House"
     entities:
-      - sensor.nest_home_away
-      - device_tracker.rich_iphone
-      - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
-      
+      - sensor.home_away_status
+      - lock.front_door_lock_locked
+
   network:
     name: "Network"
     entities:
@@ -247,7 +246,13 @@
     entities:
       - binary_sensor.downstairs_motion_detector_sensor
       - sensor.downstairs_motion_detector_luminance
-    
+
+  rich_devices:
+    name: "Rich"
+    entities:
+      - device_tracker.rich_iphone
+      - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
+
   home_scenes:
     name: "Scenes"
     entities:

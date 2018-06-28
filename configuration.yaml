@@ -9,6 +9,7 @@ homeassistant:
 
 frontend:
   javascript_version: latest
+
 config:
 updater:
 discovery:

@@ -67,9 +67,12 @@
     friendly_name: Indoor Humidity
     icon: mdi:water-percent
 
-  sensor.nest_home_away:
-    friendly_name: Downstairs (Nest)
-    icon: mdi:thermostat
+  sensor.home_away_status:
+    friendly_name: Status
+    icon: mdi:home
+
+  sensor.richs_iphone_battery_level:
+    friendly_name: iPhone Battery
 
   binary_sensor.downstairs_nest_protect_online:
     friendly_name: Downstairs
@@ -84,9 +87,19 @@
     hidden: false
 
   device_tracker.rich_iphone:
-    friendly_name: iPhone (Rich)
+    friendly_name: iPhone
     icon: mdi:cellphone-iphone
 
   device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74:
-    friendly_name: OwnTracks (Rich)
+    friendly_name: OwnTracks
     icon: mdi:crosshairs-gps
+
+  group.house_status:
+    order: 1
+
+  group.rich_devices:
+    order: 2
+
+  group.climate:
+    order: 2
+
