@@ -5,26 +5,23 @@
     name: "Home"
     entities:
       - group.house_status
-      - group.climate
       - group.rich_devices
+      - group.climate
       - group.switches
       - group.lights
       - group.fans
       - group.alarms
       - group.home_scenes
-      - group.room_scenes
-      - configurator.philips_hue
       - group.vacuum
 
   downstairs_view:
     view: yes
     name: "Downstairs"
     entities:
-      - group.living_room_lights
-      - group.family_room_lights
-      - group.dining_room_lights
-      - group.kitchen_lights
-      - fan.family_room_fan_level
+      - group.living_room
+      - group.family_room
+      - group.dining_room
+      - group.kitchen
       - group.downstairs_media
 
   upstairs_view:
@@ -100,6 +97,11 @@
       - fan.boys_bedroom_fan_level
       - fan.playroom_fan_level
 
+  living_room:
+    name: Living Room
+    entities:
+      - group.living_room_lights
+
   living_room_lights:
     name: Living Room Lights
     entities:
@@ -107,18 +109,29 @@
       - light.hue_living_room_lamp_2
       - light.hue_living_room_lamp_3
 
-  family_room_lights:
-    name: Family Room Lights
+  family_room:
+    name: Family Room
     entities:
-      - light.hue_family_room_lightstrip
       - switch.family_room_light_switch
+      - light.hue_family_room_lightstrip
+      - fan.family_room_fan_level
+
+  dining_room:
+      name: Dining Room
+      entities:
+        - switch.dining_room_light_switch
+        - group.dining_room_lights
 
   dining_room_lights:
     name: Dining Room Lights
     entities:
-      - switch.dining_room_light_switch
       - light.hue_dining_room_lamp_1
       - light.hue_dining_room_lamp_2
+
+  kitchen:
+    name: Kitchen
+    entities:
+      - group.kitchen_lights
 
   kitchen_lights:
     name: Kitchen Lights
