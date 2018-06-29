@@ -34,4 +34,4 @@
         state: 'off'
     action:
     - service: homeassistant.turn_off
-      entity_id: group.downstairs_main_lights
+      entity_id: group.downstairs_all_lights
