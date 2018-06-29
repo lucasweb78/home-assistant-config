@@ -1,0 +1,35 @@
+  - id: sync_unlock
+    alias: Sync Unlock State
+    trigger:
+      platform: state
+      entity_id: sensor.front_door_lock_alarm_type
+    condition:
+      - condition: template
+        value_template: '{{ is_state("sensor.front_door_lock_alarm_type", "19") or is_state("sensor.front_door_lock_alarm_type", "22")  }}'
+    action:
+      - service: lock.unlock
+        entity_id: lock.front_door_lock_locked
+
+  - id: sync_lock
+    alias: Sync Lock State
+    trigger:
+      platform: state
+      entity_id: sensor.front_door_lock_alarm_type
+    condition:
+      - condition: state
+        entity_id: 'sensor.front_door_lock_alarm_type'
+        state: '21'
+    action:
+      - service: lock.lock
+        entity_id: lock.front_door_lock_locked
+
+  - id: battery_low_alert_front_door_lock
+    alias: Low Battery Alert - Front Door Lock
+    trigger:
+      platform: template
+      value_template: '{{ states.sensor.battery_front_door_lock.state | int > 1 and states.sensor.battery_front_door_lock.state | int < 5 }}'
+    action:
+      - service: notify.ios_rich_iphone
+        data_template:
+          message: >
+            Low Battery Alert - Front Door Lock is at {{ states.sensor.battery_front_door_lock.state }} %

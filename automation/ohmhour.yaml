@@ -1,0 +1,25 @@
+  - id: ohm_connect_hour_active
+    alias: OhmConnect Hour Active
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: sensor.ohmconnect_status
+      from: 'Inactive'
+      to: 'Active'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "OhmHour started"
+
+  - id: ohm_connect_hour_inactive
+    alias: OhmConnect Hour Inactive
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: sensor.ohmconnect_status
+      from: 'Active'
+      to: 'Inactive'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "OhmHour ended"

@@ -1,0 +1,45 @@
+  - id: arrive_home
+    alias: Arrive Home
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: device_tracker.rich_iphone
+        from: 'not_home'
+        to: 'home'
+    condition:
+      - condition: state
+        entity_id: switch.garage_light
+        state: 'off'
+    action:
+    - service: switch.turn_on
+      entity_id: switch.garage_light
+    - service: script.timer_off_garage_light_timer
+
+  - id: arrive_home_night
+    alias: Arrive Home Night
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: device_tracker.rich_iphone
+        from: 'not_home'
+        to: 'home'
+      - platform: state
+        entity_id: lock.front_door_lock_locked
+        from: 'locked'
+        to: 'unlocked'
+      - platform: state
+        entity_id: sensor.home_away_status
+        from: 'Away'
+        to: 'Home'
+    condition:
+      condition: and
+      conditions:
+        - condition: sun
+          after: sunset
+          after_offset: "-00:15:00"
+        - condition: state
+          entity_id: group.living_room_lights
+          state: 'off'
+    action:
+    - service: scene.turn_on
+      entity_id: scene.dimmed_in_living_room

@@ -1,0 +1,22 @@
+  - id: porch_lighting_on
+    alias: Porch Lighting On
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: switch.porch_light_switch
+      to: 'on'
+    action:
+      - service: light.turn_on
+        entity_id: light.porch
+
+  - id: porch_lighting_off
+    alias: Porch Lighting Off
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: switch.porch_light_switch
+      to: 'off'
+    action:
+      - service: light.turn_off
+        entity_id: light.porch
+

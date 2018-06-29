@@ -75,7 +75,7 @@ cloud: !include cloud.yaml
 input_boolean: !include input_boolean.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml

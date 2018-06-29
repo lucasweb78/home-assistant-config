@@ -140,6 +140,21 @@
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
 
+  downstairs_all_lights:
+    entities:
+      - group.living_room_lights
+      - switch.family_room_light_switch
+      - light.hue_family_room_lightstrip
+      - switch.dining_room_light_switch
+      - group.dining_room_lights
+      - group.kitchen_lights
+
+  downstairs_main_lights:
+    entities:
+      - switch.family_room_light_switch
+      - switch.dining_room_light_switch
+      - switch.kitchen_light_switch
+
   bedroom:
     name: Bedroom
     entities:
