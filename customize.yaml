@@ -82,6 +82,18 @@
     friendly_name: Upstairs
     icon: mdi:smoke-detector
 
+  media_player.apple_tv_bedroom:
+    friendly_name: Apple TV - Bedroom
+
+  media_player.apple_tv_family_room:
+    friendly_name: Apple TV - Family Room
+
+  media_player.family_room_tv:
+    friendly_name: Cast - Family Room
+
+  media_player.vizio_smartcast:
+    friendly_name: TV - Family Room
+
   group.all_automations:
     friendly_name: Automations
     hidden: false

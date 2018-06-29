@@ -226,6 +226,7 @@
     name: Downstairs Media
     entities:
       - media_player.vizio_smartcast
+      - media_player.family_room_tv
       - media_player.apple_tv_family_room
       - remote.apple_tv_family_room  
 
