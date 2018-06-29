@@ -1,0 +1,37 @@
+  - id: turn_on_downstairs_lights
+    alias: Turn on downstains lights
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        from: 'off'
+        to: 'on'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: group.downstairs_all_lights
+          state: 'off'
+        - condition: numeric_state
+          entity_id: sensor.downstairs_motion_detector_luminance
+          below: '30'
+    action:
+    - service: homeassistant.turn_on
+      entity_id: group.downstairs_main_lights
+
+
+  - id: turn_off_downstairs_lights
+    alias: Turn off downstains lights
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        to: 'off'
+        for:
+          minutes: 30
+    condition:
+      - condition: state
+        entity_id: media_player.vizio_smartcast
+        state: 'off'
+    action:
+    - service: homeassistant.turn_off
+      entity_id: group.downstairs_main_lights
