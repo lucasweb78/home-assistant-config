@@ -37,10 +37,10 @@
     view: yes
     name: "Outside"
     entities:
-      - group.porch_lights
-      - group.patio_lights
-      - group.garage_lights
-      - switch.porch_switch
+      - group.porch
+      - group.patio
+      - group.garage
+
 
   status_view:
     view: yes
@@ -174,17 +174,33 @@
     entities:
       - switch.playroom_light_switch
 
+  porch:
+    name: Porch
+    entities:
+      - switch.porch_switch
+      - switch.porch_light_switch
+      - group.porch_lights
+
   porch_lights:
     name: Porch Lights
     entities:
-      - switch.porch_light_switch
       - light.hue_porch_lamp_1
       - light.hue_porch_lamp_2
+
+  patio:
+    name: Patio
+    entities:
+      - group.patio_lights
 
   patio_lights:
     name: Patio Lights
     entities:
       - switch.patio_light_switch
+
+  garage:
+    name: Garage
+    entities:
+      - group.garage_lights
 
   garage_lights:
     name: Garage Lights
