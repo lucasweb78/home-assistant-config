@@ -14,7 +14,7 @@
           state: 'off'
         - condition: numeric_state
           entity_id: sensor.downstairs_motion_detector_luminance
-          below: '30'
+          below: '20'
     action:
     - service: homeassistant.turn_on
       entity_id: group.downstairs_main_lights
