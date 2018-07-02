@@ -29,7 +29,7 @@
     name: "Upstairs"
     entities:
       - group.bedroom
-      - group.boys_bedroom
+      - group.kids_room
       - group.playroom
       - group.upstairs_media
 
@@ -70,7 +70,7 @@
       - switch.kitchen_sink_light_switch
       - switch.patio_light_switch
       - switch.garage_light
-      - switch.boys_bedroom_light_switch
+      - switch.kids_room_light_switch
       - switch.playroom_light_switch
       - switch.porch_light_switch
       - switch.porch_switch
@@ -94,7 +94,7 @@
     entities:
       - fan.family_room_fan_level
       - fan.bedroom_fan_level
-      - fan.boys_bedroom_fan_level
+      - fan.kids_room_fan_level
       - fan.playroom_fan_level
 
   living_room:
@@ -167,16 +167,16 @@
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
 
-  boys_bedroom:
-    name: Boys Bedroom
+  kids_room:
+    name: Kids Room
     entities:
-      - group.boys_bedroom_lights
-      - fan.boys_bedroom_fan_level
+      - group.kids_room_lights
+      - fan.kids_room_fan_level
 
-  boys_bedroom_lights:
-    name: Boys Bedroom Lights
+  kids_room_lights:
+    name: Kids Room Lights
     entities:
-      - switch.boys_bedroom_light_switch
+      - switch.kids_room_light_switch
 
   playroom:
     name: Playroom
@@ -228,7 +228,8 @@
       - media_player.vizio_smartcast
       - media_player.family_room_tv
       - media_player.apple_tv_family_room
-      - remote.apple_tv_family_room  
+      - remote.apple_tv_family_room
+      - media_player.googlehome7716
 
   upstairs_media:
     name: Upstairs Media
@@ -240,12 +241,12 @@
     name: Climate
     view: no
     entities:
-      - climate.downstairs_nest
+      - climate.downstairs
       - sun.sun
       - sensor.dark_sky_temperature
       - sensor.dark_sky_humidity
-      - sensor.downstairs_thermostat_nest_temperature
-      - sensor.downstairs_thermostat_nest_humidity
+      - sensor.downstairs_thermostat_temperature
+      - sensor.downstairs_thermostat_humidity
 
   protect:
     name: Smoke Alarms
@@ -265,6 +266,7 @@
     entities:
       - sensor.home_away_status
       - lock.front_door_lock_locked
+      - input_boolean.house_alerts
 
   network:
     name: "Network"

@@ -27,7 +27,7 @@
         entity_id: binary_sensor.downstairs_motion_detector_sensor
         to: 'off'
         for:
-          minutes: 30
+          minutes: 20
     condition:
       - condition: state
         entity_id: media_player.vizio_smartcast

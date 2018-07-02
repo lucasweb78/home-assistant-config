@@ -4,3 +4,8 @@
     name: Morning Alarm
     initial: on
     icon: mdi:alarm
+
+  house_alerts:
+    name: House Alerts
+    initial: off
+    icon: mdi:home-lock

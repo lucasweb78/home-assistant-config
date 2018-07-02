@@ -6,8 +6,8 @@
   fan.family_room_fan_level:
     friendly_name: Family Room Fan
 
-  fan.boys_bedroom_fan_level:
-    friendly_name: Boys Bedroom Fan
+  fan.kids_room_fan_level:
+    friendly_name: Kids Room Fan
 
   fan.playroom_fan_level:
     friendly_name: PlayRoom Fan
@@ -60,10 +60,10 @@
   sensor.dark_sky_humidity:
     friendly_name: Outdoor Humidity
 
-  sensor.downstairs_thermostat_nest_temperature:
+  sensor.downstairs_thermostat_temperature:
     friendly_name: Indoor Temp
 
-  sensor.downstairs_thermostat_nest_humidity:
+  sensor.downstairs_thermostat_humidity:
     friendly_name: Indoor Humidity
     icon: mdi:water-percent
 

@@ -36,7 +36,7 @@
           display_categories: LIGHT
         switch.garage_light:
           display_categories: LIGHT
-        switch.boys_bedroom_light_switch:
+        switch.kids_room_light_switch:
           display_categories: LIGHT
         switch.playroom_light_switch:
           display_categories: LIGHT
@@ -47,4 +47,33 @@
           name: Apple TV
         media_player.apple_tv_bedroom:
           display_categories: TV
+          name: Bedroom Apple TV
+
+  google_actions:
+      filter:
+        include_domains:
+          - switch
+          - light
+          - lock
+          - fan
+          - scene
+          - media_player
+          - input_boolean
+        exclude_entities:
+          - light.bedroom
+          - light.dining_room
+          - light.entrance
+          - light.living_room
+          - light.garage
+          - light.kitchen
+          - light.family_room
+          - light.office
+          - light.patio
+          - light.porch
+          - light.hallway
+          - media_player.vizio_smartcast
+      entity_config:
+        media_player.apple_tv_family_room:
+          name: Apple TV
+        media_player.apple_tv_bedroom:
           name: Bedroom Apple TV
