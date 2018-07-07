@@ -6,7 +6,6 @@
           - lock
           - fan
           - scene
-          - media_player
           - input_boolean
         exclude_entities:
           - light.bedroom
@@ -20,7 +19,6 @@
           - light.patio
           - light.porch
           - light.hallway
-          - media_player.vizio_smartcast
       entity_config:
         switch.family_room_light_switch:
           display_categories: LIGHT
@@ -42,12 +40,6 @@
           display_categories: LIGHT
         switch.porch_light_switch:
           display_categories: LIGHT
-        media_player.apple_tv_family_room:
-          display_categories: TV
-          name: Apple TV
-        media_player.apple_tv_bedroom:
-          display_categories: TV
-          name: Bedroom Apple TV
 
   google_actions:
       filter:
@@ -57,7 +49,6 @@
           - lock
           - fan
           - scene
-          - media_player
           - input_boolean
         exclude_entities:
           - light.bedroom
@@ -71,9 +62,3 @@
           - light.patio
           - light.porch
           - light.hallway
-          - media_player.vizio_smartcast
-      entity_config:
-        media_player.apple_tv_family_room:
-          name: Apple TV
-        media_player.apple_tv_bedroom:
-          name: Bedroom Apple TV

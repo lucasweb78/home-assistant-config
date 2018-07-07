@@ -22,7 +22,7 @@
       - group.family_room
       - group.dining_room
       - group.kitchen
-      - group.downstairs_media
+      - group.downstairs_motion
 
   upstairs_view:
     view: yes
@@ -31,7 +31,6 @@
       - group.bedroom
       - group.kids_room
       - group.playroom
-      - group.upstairs_media
 
   outside_view:
     view: yes
@@ -50,7 +49,7 @@
       - group.utilities
       - group.protect
       - group.batteries
-      - group.motion
+
 
   automation_view:
     view: yes
@@ -222,21 +221,6 @@
     entities:
       - switch.garage_light
 
-  downstairs_media:
-    name: Downstairs Media
-    entities:
-      - media_player.vizio_smartcast
-      - media_player.family_room_tv
-      - media_player.apple_tv_family_room
-      - remote.apple_tv_family_room
-      - media_player.googlehome7716
-
-  upstairs_media:
-    name: Upstairs Media
-    entities:
-      - media_player.apple_tv_bedroom
-      - remote.apple_tv_bedroom
-
   climate:
     name: Climate
     view: no
@@ -288,7 +272,7 @@
     entities:
      - input_boolean.morning_alarm
 
-  motion:
+  downstairs_motion:
     name: "Motion"
     entities:
       - binary_sensor.downstairs_motion_detector_sensor
