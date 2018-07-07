@@ -23,6 +23,13 @@
           {% else %}
             Away
           {% endif %}
+      rich_away_status:
+        value_template: >
+          {% if is_state('binary_sensor.rich_home', 'on') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}
       battery_front_door_lock:
         friendly_name: 'Front Door Lock Battery Level'
         value_template: >-

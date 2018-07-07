@@ -51,6 +51,9 @@ mqtt:
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
+  - platform: ping
+    hosts:
+      rich_ping: 10.0.1.17
 
 ifttt:
   key: !secret ifttt_key
@@ -73,6 +76,7 @@ vacuum:
 
 cloud: !include cloud.yaml
 input_boolean: !include input_boolean.yaml
+binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 automation: !include_dir_merge_list automation

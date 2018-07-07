@@ -5,7 +5,7 @@
     name: "Home"
     entities:
       - group.house_status
-      - group.rich_devices
+      - group.presence
       - group.climate
       - group.switches
       - group.lights
@@ -278,11 +278,10 @@
       - binary_sensor.downstairs_motion_detector_sensor
       - sensor.downstairs_motion_detector_luminance
 
-  rich_devices:
-    name: "Rich"
+  presence:
+    name: "Presence"
     entities:
-      - device_tracker.rich_iphone
-      - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
+      - sensor.rich_away_status
 
   home_scenes:
     name: "Scenes"

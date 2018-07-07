@@ -71,6 +71,10 @@
     friendly_name: Status
     icon: mdi:home
 
+  sensor.rich_away_status:
+    friendly_name: Rich
+    icon: mdi:account
+
   sensor.richs_iphone_battery_level:
     friendly_name: iPhone Battery
 
@@ -109,7 +113,7 @@
   group.house_status:
     order: 1
 
-  group.rich_devices:
+  group.presence:
     order: 2
 
   group.climate:
