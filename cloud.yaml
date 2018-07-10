@@ -11,14 +11,20 @@
           - light.bedroom
           - light.dining_room
           - light.entrance
-          - light.living_room
-          - light.garage
-          - light.kitchen
           - light.family_room
+          - light.garage
+          - light.hallway
+          - light.kids_room
+          - light.kitchen
+          - light.living_room
           - light.office
           - light.patio
           - light.porch
-          - light.hallway
+          - switch.rachio2942f0_in_standby_mode
+          - switch.back_yard_lawn
+          - switch.back_yard_shrubs
+          - switch.front_yard_lawn
+          - switch.front_yard_shrubs
       entity_config:
         switch.family_room_light_switch:
           display_categories: LIGHT
@@ -54,11 +60,17 @@
           - light.bedroom
           - light.dining_room
           - light.entrance
-          - light.living_room
-          - light.garage
-          - light.kitchen
           - light.family_room
+          - light.garage
+          - light.hallway
+          - light.kids_room
+          - light.kitchen
+          - light.living_room
           - light.office
           - light.patio
           - light.porch
-          - light.hallway
+          - switch.rachio2942f0_in_standby_mode
+          - switch.back_yard_lawn
+          - switch.back_yard_shrubs
+          - switch.front_yard_lawn
+          - switch.front_yard_shrubs

@@ -54,6 +54,9 @@
   light.hue_porch_lamp_2:
     friendly_name: Porch Lamp 2
 
+  light.hue_kids_room_lamp:
+    friendly_name: Kids Room Lamp
+
   sensor.dark_sky_temperature:
     friendly_name: Outdoor Temp
 
@@ -67,17 +70,6 @@
     friendly_name: Indoor Humidity
     icon: mdi:water-percent
 
-  sensor.home_away_status:
-    friendly_name: Status
-    icon: mdi:home
-
-  sensor.rich_away_status:
-    friendly_name: Rich
-    icon: mdi:account
-
-  sensor.richs_iphone_battery_level:
-    friendly_name: iPhone Battery
-
   binary_sensor.downstairs_nest_protect_online:
     friendly_name: Downstairs
     icon: mdi:smoke-detector
@@ -85,6 +77,9 @@
   binary_sensor.upstairs_nest_protect_online:
     friendly_name: Upstairs
     icon: mdi:smoke-detector
+
+  binary_sensor.rachio2942f0_online:
+    friendly_name: Rachio Status
 
   media_player.apple_tv_bedroom:
     friendly_name: Apple TV - Bedroom
@@ -97,6 +92,9 @@
 
   media_player.vizio_smartcast:
     friendly_name: TV - Family Room
+
+  switch.rachio2942f0_in_standby_mode:
+    friendly_name: Rachio Standby Mode
 
   group.all_automations:
     friendly_name: Automations

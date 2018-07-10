@@ -30,8 +30,8 @@ logger:
   default: error
 
 recorder:
-  purge_interval: 2
-  purge_keep_days: 7
+  purge_interval: 1
+  purge_keep_days: 2
 
 ios:
 
@@ -68,11 +68,20 @@ apple_tv:
     name: Apple TV Bedroom
     start_off: true
 
+rachio:
+  api_key: !secret rachio_api_key
+
 vacuum:
   - platform: roomba
     host: !secret roomba_ip
     username: !secret roomba_username
     password: !secret roomba_password
+
+homekit:
+  auto_start: false
+  filter:
+    include_domains:
+      - lock
 
 cloud: !include cloud.yaml
 input_boolean: !include input_boolean.yaml

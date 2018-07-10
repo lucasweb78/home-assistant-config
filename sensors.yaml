@@ -16,15 +16,21 @@
 
   - platform: template
     sensors:
-      home_away_status:
-        value_template: >
+      home_presence_status:
+        friendly_name: Status
+        icon_template: >-
+          mdi:home
+        value_template: >-
           {% if is_state_attr('climate.downstairs', 'away_mode', 'off') %}
             Home
           {% else %}
             Away
           {% endif %}
-      rich_away_status:
-        value_template: >
+      rich_presence_status:
+        friendly_name: Rich
+        icon_template: >-
+         mdi:account
+        value_template: >-
           {% if is_state('binary_sensor.rich_home', 'on') %}
             Home
           {% else %}
@@ -33,11 +39,11 @@
       battery_front_door_lock:
         friendly_name: 'Front Door Lock Battery Level'
         value_template: >-
-                {%- if states.zwave.front_door_lock -%}
-                  {{ states.zwave.front_door_lock.attributes.battery_level }}
-                {%- else -%}
-                  100
-                {%- endif -%}
+          {%- if states.zwave.front_door_lock -%}
+            {{ states.zwave.front_door_lock.attributes.battery_level }}
+          {%- else -%}
+            100
+          {%- endif -%}
         unit_of_measurement: '%'
           
   - platform: ohmconnect

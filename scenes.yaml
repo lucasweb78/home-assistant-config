@@ -54,6 +54,20 @@
       switch.kitchen_sink_light_switch: off
       media_player.apple_tv_family_room: on
 
+  - name: Kids Bedtime
+    entities:
+      switch.kids_room_light_switch: off
+      light.hue_kids_room_lamp:
+        state: on
+        brightness: 178
+      fan.kids_room_fan_level: on
+
+  - name: Kids Good Night
+    entities:
+      switch.kids_room_light_switch: off
+      group.kids_room_lights: off
+      fan.kids_room_fan_level: on
+
   - name: Bedtime
     entities:
       group.porch: off

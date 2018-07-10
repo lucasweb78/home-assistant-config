@@ -3,3 +3,5 @@
   - platform: tplink
     host: !secret tp_link_switch_1_ip
     name: Garage Light
+
+  - platform: rachio
