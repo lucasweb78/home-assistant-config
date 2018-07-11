@@ -266,24 +266,27 @@
     entities:
       - switch.garage_light
 
-# Status
+# Debug
 
-  status_view:
+  debug_view:
     view: yes
-    name: "Status"
+    name: Debug
     entities:
       - group.network
       - group.utilities
       - group.protect
       - group.batteries
+      - group.presence_debug
+      - group.all_automations
+      - group.all_scripts
 
   network:
-    name: "Network"
+    name: Network
     entities:
       - sensor.lucaswebduckdnsorg
 
   utilities:
-    name: "Utilities"
+    name: Utilities
     entities:
       - sensor.ohmconnect_status
 
@@ -294,15 +297,19 @@
       - binary_sensor.downstairs_nest_protect_online
       - binary_sensor.upstairs_nest_protect_online
 
+  presence_debug:
+    name: Presence
+    view: no
+    entities:
+      - sensor.rich_presence_probability
+      - device_tracker.rich_ping
+      - device_tracker.rich_iphone
+      - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
+
   batteries:
     name: "Batteries"
     entities:
       - sensor.battery_front_door_lock
+      - sensor.battery_downstairs_motion_detector
+      - sensor.battery_vacuum_roomba
 
-# Automations
-
-  automation_view:
-    view: yes
-    name: "Automations"
-    entities:
-      - group.all_automations

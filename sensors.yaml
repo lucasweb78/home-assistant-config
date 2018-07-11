@@ -36,11 +36,39 @@
           {% else %}
             Away
           {% endif %}
+      rich_presence_probability:
+        friendly_name: Probability Rich Home
+        value_template: >-
+          {{ states.binary_sensor.rich_home.attributes.probability }}
       battery_front_door_lock:
-        friendly_name: 'Front Door Lock Battery Level'
+        friendly_name: 'Front Door Lock'
+        icon_template: >-
+          mdi:battery
         value_template: >-
           {%- if states.zwave.front_door_lock -%}
             {{ states.zwave.front_door_lock.attributes.battery_level }}
+          {%- else -%}
+            100
+          {%- endif -%}
+        unit_of_measurement: '%'
+      battery_downstairs_motion_detector:
+        friendly_name: 'Downstairs Motion Detector'
+        icon_template: >-
+          mdi:battery
+        value_template: >-
+          {%- if states.zwave.downstairs_motion_detector -%}
+            {{ states.zwave.downstairs_motion_detector.attributes.battery_level }}
+          {%- else -%}
+            100
+          {%- endif -%}
+        unit_of_measurement: '%'
+      battery_vacuum_roomba:
+        friendly_name: 'Roomba'
+        icon_template: >-
+          mdi:battery
+        value_template: >-
+          {%- if states.vacuum.roomba -%}
+            {{ states.vacuum.roomba.attributes.battery_level }}
           {%- else -%}
             100
           {%- endif -%}

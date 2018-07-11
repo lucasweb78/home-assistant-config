@@ -35,3 +35,14 @@
     action:
     - service: homeassistant.turn_off
       entity_id: group.downstairs_all_lights
+
+  - id: battery_low_alert_downstairs_motion_detector
+    alias: Low Battery Alert - Downstairs Motion Detector
+    trigger:
+      platform: template
+      value_template: '{{ states.sensor.battery_downstairs_motion_detector.state | int > 1 and states.sensor.battery_downstairs_motion_detector.state | int < 5 }}'
+    action:
+      - service: notify.ios_rich_iphone
+        data_template:
+          message: >
+            Low Battery Alert - Downstairs Motion Detector is at {{ states.sensor.battery_downstairs_motion_detector.state }} %

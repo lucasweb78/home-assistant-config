@@ -100,6 +100,10 @@
     friendly_name: Automations
     hidden: false
 
+  device_tracker.rich_ping:
+    friendly_name: Ping
+    icon: mdi:wifi
+
   device_tracker.rich_iphone:
     friendly_name: iPhone
     icon: mdi:cellphone-iphone
