@@ -77,12 +77,7 @@ vacuum:
     username: !secret roomba_username
     password: !secret roomba_password
 
-homekit:
-  auto_start: false
-  filter:
-    include_domains:
-      - lock
-
+homekit: !include homekit.yaml
 cloud: !include cloud.yaml
 input_boolean: !include input_boolean.yaml
 binary_sensor: !include binary_sensors.yaml

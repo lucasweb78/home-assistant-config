@@ -1,0 +1,7 @@
+  auto_start: false
+    filter:
+      include_domains:
+        - lock
+      include_entities:
+        - switch.porch_light_switch
+        - switch.garage_light
