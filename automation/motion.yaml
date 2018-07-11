@@ -1,5 +1,5 @@
-  - id: turn_on_downstairs_lights
-    alias: Turn on downstains lights
+  - id: turn_on_downstairs_lights_daytime
+    alias: Turn on downstains lights daytime
     hide_entity: false
     trigger:
       - platform: state
@@ -15,10 +15,62 @@
         - condition: numeric_state
           entity_id: sensor.downstairs_motion_detector_luminance
           below: '20'
+        - condition: sun
+          after: sunrise
+        - condition: time
+          before: '20:00:00'
     action:
     - service: homeassistant.turn_on
       entity_id: group.downstairs_main_lights
 
+  - id: turn_on_downstairs_lights_evening
+    alias: Turn on downstains lights evening
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        from: 'off'
+        to: 'on'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: group.downstairs_all_lights
+          state: 'off'
+        - condition: numeric_state
+          entity_id: sensor.downstairs_motion_detector_luminance
+          below: '20'
+        - condition: time
+          after: '20:00:00'
+          before: '23:00:00'
+    action:
+    - service: scene.turn_on
+      entity_id: scene.dimmed_downstairs
+
+  - id: turn_on_downstairs_lights_night
+    alias: Turn on downstains lights night
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        from: 'off'
+        to: 'on'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: group.downstairs_all_lights
+          state: 'off'
+        - condition: numeric_state
+          entity_id: sensor.downstairs_motion_detector_luminance
+          below: '20'
+        - condition: time
+          after: '23:00:00'
+        - condition: sun
+          before: sunrise
+    action:
+    - service: scene.turn_on
+      entity_id: scene.nightlight_downstairs
 
   - id: turn_off_downstairs_lights
     alias: Turn off downstains lights
