@@ -57,6 +57,18 @@
   light.hue_kids_room_lamp:
     friendly_name: Kids Room Lamp
 
+  light.bedroom:
+    friendly_name: Bedroom Lamps
+
+  light.dining_room:
+    friendly_name: Dining Room Lamps
+
+  light.living_room:
+    friendly_name: Living Room Lamps
+
+  light.porch:
+    friendly_name: Porch Lamps
+
   sensor.dark_sky_temperature:
     friendly_name: Outdoor Temp
 
@@ -98,6 +110,10 @@
 
   group.all_automations:
     friendly_name: Automations
+    hidden: false
+
+  group.all_scripts:
+    friendly_name: Scripts
     hidden: false
 
   device_tracker.rich_ping:

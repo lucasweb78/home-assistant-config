@@ -37,8 +37,14 @@
       - sensor.downstairs_thermostat_temperature
       - sensor.downstairs_thermostat_humidity
 
-  switches:
-    name: Switches
+  lights:
+    name: Lights
+    entities:
+     - group.light_switches
+     - group.bulbs
+
+  light_switches:
+    name: Light Switches
     entities:
       - switch.family_room_light_switch
       - switch.dining_room_light_switch
@@ -52,8 +58,8 @@
       - switch.porch_light_switch
       - switch.porch_switch
 
-  lights:
-    name: Lights
+  bulbs:
+    name: Bulbs
     entities:
       - light.hue_living_room_lamp_1
       - light.hue_living_room_lamp_2
@@ -81,6 +87,7 @@
       - scene.bright_downstairs
       - scene.dimmed_downstairs
       - scene.nightlight_downstairs
+      - scene.off_downstairs
       - scene.tv_time
       - scene.bedtime
       - scene.good_night
@@ -103,6 +110,7 @@
     view: yes
     name: "Downstairs"
     entities:
+      - group.downstairs_scenes
       - group.living_room
       - group.family_room
       - group.dining_room
@@ -112,14 +120,7 @@
   living_room:
     name: Living Room
     entities:
-      - group.living_room_lights
-
-  living_room_lights:
-    name: Living Room Lights
-    entities:
-      - light.hue_living_room_lamp_1
-      - light.hue_living_room_lamp_2
-      - light.hue_living_room_lamp_3
+      - light.living_room
 
   family_room:
     name: Family Room
@@ -129,16 +130,10 @@
       - fan.family_room_fan_level
 
   dining_room:
-      name: Dining Room
-      entities:
-        - switch.dining_room_light_switch
-        - group.dining_room_lights
-
-  dining_room_lights:
-    name: Dining Room Lights
+    name: Dining Room
     entities:
-      - light.hue_dining_room_lamp_1
-      - light.hue_dining_room_lamp_2
+      - switch.dining_room_light_switch
+      - light.dining_room
 
   kitchen:
     name: Kitchen
@@ -149,12 +144,11 @@
 
   downstairs_all_lights:
     entities:
-      - group.living_room_lights
+      - light.living_room
       - switch.family_room_light_switch
       - light.hue_family_room_lightstrip
-      - switch.dining_room_light_switch
-      - group.dining_room_lights
-      - group.kitchen_lights
+      - group.dining_room
+      - group.kitchen
 
   downstairs_main_lights:
     entities:
@@ -167,6 +161,15 @@
     entities:
       - binary_sensor.downstairs_motion_detector_sensor
       - sensor.downstairs_motion_detector_luminance
+
+  downstairs_scenes:
+    name: Scenes
+    entities:
+      - scene.bright_downstairs
+      - scene.dimmed_downstairs
+      - scene.nightlight_downstairs
+      - scene.off_downstairs
+      - scene.tv_time
 
 # Upstairs
 
@@ -181,28 +184,17 @@
   bedroom:
     name: Bedroom
     entities:
-      - group.bedroom_lights
+      - light.bedroom
       - fan.bedroom_fan_level
-
-  bedroom_lights:
-    name: Bedroom Lights
-    entities:
-      - light.hue_bedroom_lamp_1
-      - light.hue_bedroom_lamp_2
 
   kids_room:
     name: Kids Room
     entities:
       - switch.kids_room_light_switch
-      - group.kids_room_lights
+      - light.hue_kids_room_lamp
       - fan.kids_room_fan_level
       - scene.kids_bedtime
       - scene.kids_good_night
-
-  kids_room_lights:
-    name: Kids Room Lights
-    entities:
-      - light.hue_kids_room_lamp
 
   playroom:
     name: Playroom
@@ -249,13 +241,7 @@
     entities:
       - switch.porch_switch
       - switch.porch_light_switch
-      - group.porch_lights
-
-  porch_lights:
-    name: Porch Lights
-    entities:
-      - light.hue_porch_lamp_1
-      - light.hue_porch_lamp_2
+      - light.porch
 
   patio:
     name: Patio
@@ -275,9 +261,9 @@
     entities:
       - group.network
       - group.utilities
+      - group.presence_debug
       - group.protect
       - group.batteries
-      - group.presence_debug
       - group.all_automations
       - group.all_scripts
 
@@ -308,7 +294,7 @@
       - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
 
   batteries:
-    name: "Batteries"
+    name: Batteries
     entities:
       - sensor.battery_front_door_lock
       - sensor.battery_downstairs_motion_detector

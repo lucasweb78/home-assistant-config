@@ -45,6 +45,19 @@
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
 
+  - name: Off Downstairs
+    entities:
+      light.living_room:
+        state: off
+      light.hue_family_room_lightstrip:
+        state: off
+      switch.family_room_light_switch: off
+      switch.dining_room_light_switch: off
+      script.nightlight_dining_room_with_delay: off
+      switch.kitchen_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: off
+
   - name: Dimmed Dining Room
     entities:
       light.dining_room:
@@ -86,7 +99,7 @@
   - name: Kids Good Night
     entities:
       switch.kids_room_light_switch: off
-      group.kids_room_lights: off
+      light.hue_kids_room_lamp: off
       fan.kids_room_fan_level: on
 
   - name: Bedtime
@@ -108,7 +121,6 @@
   - name: Good Night
     entities:
       group.lights: off
-      group.switches: off
       fan.family_room_fan_level: off
       media_player.apple_tv_family_room: off
       media_player.apple_tv_bedroom: off
