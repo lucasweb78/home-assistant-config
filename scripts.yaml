@@ -10,13 +10,13 @@
   dim_dining_room_with_delay:
     sequence:
       - delay:
-          milliseconds: 100
+          milliseconds: 200
       - service: scene.turn_on
         entity_id: scene.dimmed_dining_room
 
   nightlight_dining_room_with_delay:
     sequence:
       - delay:
-          milliseconds: 100
+          milliseconds: 200
       - service: scene.turn_on
         entity_id: scene.nightlight_dining_room
