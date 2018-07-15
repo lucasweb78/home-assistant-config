@@ -58,16 +58,6 @@ device_tracker:
 ifttt:
   key: !secret ifttt_key
 
-apple_tv:
-  - host: !secret apple_tv_1_ip
-    login_id: !secret apple_tv_1_login
-    name: Apple TV Family Room
-    start_off: true
-  - host: !secret apple_tv_2_ip
-    login_id: !secret apple_tv_2_login
-    name: Apple TV Bedroom
-    start_off: true
-
 rachio:
   api_key: !secret rachio_api_key
 

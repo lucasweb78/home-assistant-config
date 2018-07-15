@@ -93,12 +93,6 @@
   binary_sensor.rachio2942f0_online:
     friendly_name: Rachio Status
 
-  media_player.apple_tv_bedroom:
-    friendly_name: Apple TV - Bedroom
-
-  media_player.apple_tv_family_room:
-    friendly_name: Apple TV - Family Room
-
   media_player.family_room_tv:
     friendly_name: Cast - Family Room
 

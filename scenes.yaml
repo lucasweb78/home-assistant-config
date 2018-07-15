@@ -86,7 +86,7 @@
       switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
-      media_player.apple_tv_family_room: on
+      media_player.vizio_smartcast: on
 
   - name: Kids Bedtime
     entities:
@@ -115,12 +115,10 @@
       light.living_room:
         state: on
         brightness: 1
-      media_player.apple_tv_family_room: off
-      media_player.apple_tv_bedroom: off
+      media_player.vizio_smartcast: off
 
   - name: Good Night
     entities:
       group.lights: off
       fan.family_room_fan_level: off
-      media_player.apple_tv_family_room: off
-      media_player.apple_tv_bedroom: off
+      media_player.vizio_smartcast: off
