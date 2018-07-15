@@ -19,6 +19,7 @@ discovery:
 history:
 logbook:
 sun:
+python_script:
 
 http:
   api_password: !secret http_password

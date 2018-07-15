@@ -26,20 +26,6 @@
           {% else %}
             Away
           {% endif %}
-      rich_presence_status:
-        friendly_name: Rich
-        icon_template: >-
-         mdi:account
-        value_template: >-
-          {% if is_state('binary_sensor.rich_home', 'on') %}
-            Home
-          {% else %}
-            Away
-          {% endif %}
-      rich_presence_probability:
-        friendly_name: Probability Rich Home
-        value_template: >-
-          {{ states.binary_sensor.rich_home.attributes.probability }}
       battery_front_door_lock:
         friendly_name: 'Front Door Lock'
         icon_template: >-

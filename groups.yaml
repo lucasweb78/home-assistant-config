@@ -7,12 +7,11 @@
       - group.house_status
       - group.presence
       - group.climate
+      - group.alarms
       - group.switches
       - group.lights
       - group.fans
-      - group.alarms
-      - group.home_scenes
-      - group.vacuum
+      - group.vacuums
 
   house_status:
     name: "House"
@@ -24,7 +23,7 @@
   presence:
     name: Presence
     entities:
-      - sensor.rich_presence_status
+      - device_tracker.rich
 
   climate:
     name: Climate
@@ -81,19 +80,8 @@
       - fan.kids_room_fan_level
       - fan.playroom_fan_level
 
-  home_scenes:
-    name: Scenes
-    entities:
-      - scene.bright_downstairs
-      - scene.dimmed_downstairs
-      - scene.nightlight_downstairs
-      - scene.off_downstairs
-      - scene.tv_time
-      - scene.bedtime
-      - scene.good_night
-
-  vacuum:
-    name: Vacuum
+  vacuums:
+    name: Vacuums
     view: no
     entities:
       - vacuum.roomba
@@ -102,7 +90,6 @@
     name: "Alarms"
     entities:
      - input_boolean.morning_alarm
-
 
 # Downstairs
 
@@ -177,6 +164,7 @@
     view: yes
     name: "Upstairs"
     entities:
+      - group.upstairs_scenes
       - group.bedroom
       - group.kids_room
       - group.playroom
@@ -193,14 +181,20 @@
       - switch.kids_room_light_switch
       - light.hue_kids_room_lamp
       - fan.kids_room_fan_level
-      - scene.kids_bedtime
-      - scene.kids_good_night
 
   playroom:
     name: Playroom
     entities:
       - switch.playroom_light_switch
       - fan.playroom_fan_level
+
+  upstairs_scenes:
+    name: Scenes
+    entities:
+      - scene.kids_bedtime
+      - scene.kids_good_night
+      - scene.bedtime
+      - scene.good_night
 
 # Outside
 
@@ -288,7 +282,7 @@
     name: Presence
     view: no
     entities:
-      - sensor.rich_presence_probability
+      - device_tracker.rich
       - device_tracker.rich_ping
       - device_tracker.rich_iphone
       - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74

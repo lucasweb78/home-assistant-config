@@ -3,7 +3,7 @@
     hide_entity: false
     trigger:
       - platform: state
-        entity_id: device_tracker.rich_iphone
+        entity_id: device_tracker.rich
         from: 'not_home'
         to: 'home'
     condition:
@@ -20,7 +20,7 @@
     hide_entity: false
     trigger:
       - platform: state
-        entity_id: device_tracker.rich_iphone
+        entity_id: device_tracker.rich
         from: 'not_home'
         to: 'home'
       - platform: state
@@ -42,4 +42,4 @@
           state: 'off'
     action:
     - service: scene.turn_on
-      entity_id: scene.dimmed_in_living_room
+      entity_id: scene.nightlight_downstairs

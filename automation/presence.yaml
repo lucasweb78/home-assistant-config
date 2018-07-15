@@ -1,0 +1,31 @@
+  - alias: "Setup Rich's Device Tracker"
+    trigger:
+      - platform: homeassistant
+        event: start
+    action:
+      service: python_script.device_tracker
+      data_template:
+        entity_id: 'device_tracker.rich_iphone'
+        tracker_name: 'rich'
+
+  - alias: "Update Rich's Device Tracker Home"
+    trigger:
+      - platform: state
+        entity_id: device_tracker.rich_iphone, device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74, device_tracker.rich_ping
+        to: 'home'
+    action:
+      service: python_script.device_tracker
+      data_template:
+        entity_id: '{{trigger.entity_id}}'
+        tracker_name: 'rich'
+
+  - alias: "Update Rich's Device Tracker Away"
+    trigger:
+      - platform: state
+        entity_id: device_tracker.rich_iphone, device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74, device_tracker.rich_ping
+        to: 'not_home'
+    action:
+      service: python_script.device_tracker
+      data_template:
+        entity_id: '{{trigger.entity_id}}'
+        tracker_name: 'rich'
