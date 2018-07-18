@@ -26,6 +26,26 @@
           {% else %}
             Away
           {% endif %}
+      downstairs_lights_status:
+        friendly_name: 'Downstairs Lights'
+        icon_template: >-
+          {% if is_state('group.downstairs_all_lights', 'on') %}
+            mdi:lightbulb
+          {% else %}
+            mdi:lightbulb-outline
+          {% endif %}            
+        value_template: >-
+          {% if is_state('group.downstairs_all_lights', 'on') %}
+            on
+          {% else %}
+            off
+          {% endif %}
+      downstairs_last_motion:
+        friendly_name: 'Downstairs Last Motion'
+        icon_template: >-
+          mdi:eye
+        value_template: >-
+          {{ relative_time(states.sensor.downstairs_motion_detector.last_changed) }}
       battery_front_door_lock:
         friendly_name: 'Front Door Lock'
         icon_template: >-

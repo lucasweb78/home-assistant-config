@@ -116,9 +116,11 @@
         state: on
         brightness: 1
       media_player.vizio_smartcast: off
+      input_boolean.downstairs_motion: on
 
   - name: Good Night
     entities:
       group.lights: off
       fan.family_room_fan_level: off
       media_player.vizio_smartcast: off
+      input_boolean.downstairs_motion: on

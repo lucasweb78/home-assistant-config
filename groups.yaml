@@ -97,13 +97,20 @@
     view: yes
     name: "Downstairs"
     entities:
+      - group.downstairs_status
       - group.downstairs_scenes
       - group.living_room
       - group.family_room
       - group.dining_room
       - group.kitchen
-      - group.downstairs_motion
 
+  downstairs_status:
+    name: Status
+    entities:
+      - sensor.downstairs_lights_status
+      - sensor.downstairs_motion_detector_luminance
+      - sensor.downstairs_last_motion
+      - input_boolean.downstairs_motion
   living_room:
     name: Living Room
     entities:
@@ -142,12 +149,6 @@
       - switch.family_room_light_switch
       - switch.dining_room_light_switch
       - switch.kitchen_light_switch
-
-  downstairs_motion:
-    name: "Motion"
-    entities:
-      - binary_sensor.downstairs_motion_detector_sensor
-      - sensor.downstairs_motion_detector_luminance
 
   downstairs_scenes:
     name: Scenes
