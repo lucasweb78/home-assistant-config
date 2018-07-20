@@ -1,5 +1,4 @@
-  - id: ohm_connect_hour_active
-    alias: OhmConnect Hour Active
+  - alias: OhmConnect Hour Active
     hide_entity: false
     trigger:
       platform: state
@@ -11,8 +10,7 @@
       data:
         message: "OhmHour started"
 
-  - id: ohm_connect_hour_inactive
-    alias: OhmConnect Hour Inactive
+  - alias: OhmConnect Hour Inactive
     hide_entity: false
     trigger:
       platform: state

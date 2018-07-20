@@ -1,0 +1,47 @@
+  - alias: Motion Detected
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        from: 'off'
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.home_alerts
+        state: 'on'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Motion detected downstairs"
+
+  - alias: Door Unlocked
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: lock.front_door_lock_locked
+        from: 'locked'
+        to: 'unlocked'
+    condition:
+      - condition: state
+        entity_id: input_boolean.home_alerts
+        state: 'on'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Front door unlocked"
+
+  - alias: Door Locked
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: lock.front_door_lock_locked
+        from: 'unlocked'
+        to: 'locked'
+    condition:
+      - condition: state
+        entity_id: input_boolean.home_alerts
+        state: 'on'
+    action:
+    - service: notify.ios_rich_iphone
+      data:
+        message: "Front door locked"

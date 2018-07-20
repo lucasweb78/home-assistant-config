@@ -17,7 +17,7 @@
   - platform: template
     sensors:
       home_presence_status:
-        friendly_name: Status
+        friendly_name: Presence
         icon_template: >-
           mdi:home
         value_template: >-
@@ -26,22 +26,48 @@
           {% else %}
             Away
           {% endif %}
-      downstairs_lights_status:
-        friendly_name: 'Downstairs Lights'
+      lights_status:
+        friendly_name: 'Lights'
         icon_template: >-
-          {% if is_state('group.downstairs_all_lights', 'on') %}
-            mdi:lightbulb
+          mdi:lightbulb
+        value_template: >-
+          {% if is_state('group.lights', 'on') %}
+            on
           {% else %}
-            mdi:lightbulb-outline
-          {% endif %}            
+            off
+          {% endif %}
+      fans_status:
+        friendly_name: 'Fans'
+        icon_template: >-
+          mdi:fan
+        value_template: >-
+          {% if is_state('group.fans', 'on') %}
+            on
+          {% else %}
+            off
+          {% endif %}
+      downstairs_lights_status:
+        friendly_name: 'Lights'
+        icon_template: >-
+          mdi:lightbulb
         value_template: >-
           {% if is_state('group.downstairs_all_lights', 'on') %}
             on
           {% else %}
             off
           {% endif %}
+      downstairs_tv_status:
+        friendly_name: 'TV'
+        icon_template: >-
+          mdi:television
+        value_template: >-
+          {% if is_state('media_player.vizio_smartcast', 'on') %}
+            on
+          {% else %}
+            off
+          {% endif %}
       downstairs_last_motion:
-        friendly_name: 'Downstairs Last Motion'
+        friendly_name: 'Last Motion'
         icon_template: >-
           mdi:eye
         value_template: >-

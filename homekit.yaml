@@ -2,6 +2,9 @@
   filter:
     include_domains:
       - lock
+      - input_boolean
     include_entities:
       - switch.porch_light_switch
       - switch.garage_light
+    exclude_entities:
+      - input_boolean.morning_alarm

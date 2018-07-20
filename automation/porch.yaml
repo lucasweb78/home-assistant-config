@@ -1,5 +1,4 @@
-  - id: porch_lighting_on
-    alias: Porch Lighting On
+  - alias: Porch Lighting On
     hide_entity: false
     trigger:
       platform: state
@@ -9,8 +8,7 @@
       - service: light.turn_on
         entity_id: light.porch
 
-  - id: porch_lighting_off
-    alias: Porch Lighting Off
+  - alias: Porch Lighting Off
     hide_entity: false
     trigger:
       platform: state

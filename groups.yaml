@@ -4,7 +4,7 @@
     view: yes
     name: "Home"
     entities:
-      - group.house_status
+      - group.home_status
       - group.presence
       - group.climate
       - group.alarms
@@ -13,13 +13,16 @@
       - group.fans
       - group.vacuums
 
-  house_status:
-    name: "House"
+  home_status:
+    name: "Status"
     entities:
       - sensor.home_presence_status
+      - sensor.downstairs_last_motion
       - lock.front_door_lock_locked
-      - input_boolean.house_alerts
-
+      - sensor.lights_status
+      - sensor.fans_status
+      - sensor.downstairs_tv_status
+      - input_boolean.home_alerts
   presence:
     name: Presence
     entities:
@@ -108,9 +111,10 @@
     name: Status
     entities:
       - sensor.downstairs_lights_status
+      - sensor.downstairs_tv_status
       - sensor.downstairs_motion_detector_luminance
       - sensor.downstairs_last_motion
-      - input_boolean.downstairs_motion
+      - input_boolean.disable_downstairs_motion
   living_room:
     name: Living Room
     entities:

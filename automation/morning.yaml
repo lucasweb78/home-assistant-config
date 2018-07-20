@@ -1,5 +1,4 @@
-  - id: wakeup
-    alias: Wakeup
+  - alias: Wakeup
     hide_entity: false
     trigger:
       platform: time

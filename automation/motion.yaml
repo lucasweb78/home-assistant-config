@@ -1,5 +1,4 @@
-  - id: turn_on_downstairs_lights_daytime
-    alias: Turn on downstains lights daytime
+  - alias: Turn on downstains lights daytime
     hide_entity: false
     trigger:
       - platform: state
@@ -10,8 +9,8 @@
       condition: and
       conditions:
         - condition: state
-          entity_id: input_boolean.downstairs_motion
-          state: 'on'
+          entity_id: input_boolean.disable_downstairs_motion
+          state: 'off'
         - condition: state
           entity_id: group.downstairs_all_lights
           state: 'off'
@@ -26,8 +25,7 @@
     - service: homeassistant.turn_on
       entity_id: group.downstairs_main_lights
 
-  - id: turn_on_downstairs_lights_evening
-    alias: Turn on downstains lights evening
+  - alias: Turn on downstains lights evening
     hide_entity: false
     trigger:
       - platform: state
@@ -38,8 +36,8 @@
       condition: and
       conditions:
         - condition: state
-          entity_id: input_boolean.downstairs_motion
-          state: 'on'
+          entity_id: input_boolean.disable_downstairs_motion
+          state: 'off'
         - condition: state
           entity_id: group.downstairs_all_lights
           state: 'off'
@@ -53,8 +51,7 @@
     - service: scene.turn_on
       entity_id: scene.dimmed_downstairs
 
-  - id: turn_on_downstairs_lights_night
-    alias: Turn on downstains lights night
+  - alias: Turn on downstains lights night
     hide_entity: false
     trigger:
       - platform: state
@@ -65,8 +62,8 @@
       condition: and
       conditions:
         - condition: state
-          entity_id: input_boolean.downstairs_motion
-          state: 'on'
+          entity_id: input_boolean.disable_downstairs_motion
+          state: 'off'
         - condition: state
           entity_id: group.downstairs_all_lights
           state: 'off'
@@ -81,8 +78,7 @@
     - service: scene.turn_on
       entity_id: scene.nightlight_downstairs
 
-  - id: turn_off_downstairs_lights
-    alias: Turn off downstains lights
+  - alias: Turn off downstains lights
     trigger:
       - platform: state
         entity_id: binary_sensor.downstairs_motion_detector_sensor
@@ -91,8 +87,8 @@
           minutes: 20
     condition:
       - condition: state
-        entity_id: input_boolean.downstairs_motion
-        state: 'on'
+        entity_id: input_boolean.disable_downstairs_motion
+        state: 'off'
       - condition: state
         entity_id: media_player.vizio_smartcast
         state: 'off'
@@ -102,8 +98,7 @@
     - service: homeassistant.turn_off
       entity_id: group.downstairs_all_lights
 
-  - id: battery_low_alert_downstairs_motion_detector
-    alias: Low Battery Alert - Downstairs Motion Detector
+  - alias: Low Battery Alert - Downstairs Motion Detector
     trigger:
       platform: template
       value_template: '{{ states.sensor.battery_downstairs_motion_detector.state | int > 1 and states.sensor.battery_downstairs_motion_detector.state | int < 5 }}'
