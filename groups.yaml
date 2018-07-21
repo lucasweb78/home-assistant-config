@@ -111,10 +111,12 @@
     name: Status
     entities:
       - sensor.downstairs_lights_status
+      - sensor.downstairs_fans_status
       - sensor.downstairs_tv_status
       - sensor.downstairs_motion_detector_luminance
       - sensor.downstairs_last_motion
       - input_boolean.disable_downstairs_motion
+
   living_room:
     name: Living Room
     entities:
@@ -154,6 +156,10 @@
       - switch.dining_room_light_switch
       - switch.kitchen_light_switch
 
+  downstairs_fans:
+    entities:
+      - fan.family_room_fan_level
+
   downstairs_scenes:
     name: Scenes
     entities:
@@ -169,10 +175,17 @@
     view: yes
     name: "Upstairs"
     entities:
+      - group.upstairs_status
       - group.upstairs_scenes
       - group.bedroom
       - group.kids_room
       - group.playroom
+
+  upstairs_status:
+    name: Status
+    entities:
+      - sensor.upstairs_lights_status
+      - sensor.upstairs_fans_status
 
   bedroom:
     name: Bedroom
@@ -193,6 +206,19 @@
       - switch.playroom_light_switch
       - fan.playroom_fan_level
 
+  upstairs_lights:
+    entities:
+      - light.bedroom
+      - switch.kids_room_light_switch
+      - switch.playroom_light_switch
+      - light.hue_kids_room_lamp
+
+  upstairs_fans:
+    entities:
+      - fan.bedroom_fan_level
+      - fan.kids_room_fan_level
+      - fan.playroom_fan_level
+
   upstairs_scenes:
     name: Scenes
     entities:
@@ -207,33 +233,39 @@
     view: yes
     name: "Outside"
     entities:
+      - group.outside_status
       - group.porch
       - group.patio
       - group.garage
       - group.sprinklers
 
+  outside_status:
+    name: Status
+    entities:
+      - sensor.outside_lights_status
+
   sprinklers:
     name: Sprinklers
     icon: mdi:water-pump
     entities:
-    - binary_sensor.rachio2942f0_online
-    - switch.rachio2942f0_in_standby_mode
-    - group.zones_front
-    - group.zones_back
+      - binary_sensor.rachio2942f0_online
+      - switch.rachio2942f0_in_standby_mode
+      - group.zones_front
+      - group.zones_back
 
   zones_front:
     name: Front Yard
     view: false
     entities:
-    - switch.front_yard_lawn
-    - switch.front_yard_shrubs
+      - switch.front_yard_lawn
+      - switch.front_yard_shrubs
 
   zones_back:
     name: Back Yard
     view: false
     entities:
-    - switch.back_yard_lawn
-    - switch.back_yard_shrubs
+      - switch.back_yard_lawn
+      - switch.back_yard_shrubs
 
   porch:
     name: Porch
@@ -251,6 +283,15 @@
     name: Garage
     entities:
       - switch.garage_light
+
+  outside_lights:
+    entities:
+      - switch.garage_light
+      - switch.patio_light_switch
+      - switch.playroom_light_switch
+      - switch.porch_switch
+      - switch.porch_light_switch
+      - light.porch
 
 # Debug
 
