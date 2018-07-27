@@ -1,4 +1,31 @@
-## Customizations
+## Binary Sensors
+
+  binary_sensor.downstairs_nest_protect_online:
+    friendly_name: Downstairs
+    icon: mdi:smoke-detector
+
+  binary_sensor.upstairs_nest_protect_online:
+    friendly_name: Upstairs
+    icon: mdi:smoke-detector
+
+  binary_sensor.rachio2942f0_online:
+    friendly_name: Rachio Status
+
+## Device Trackers
+
+  device_tracker.rich_ping:
+    friendly_name: Ping
+    icon: mdi:wifi
+
+  device_tracker.rich_iphone:
+    friendly_name: iPhone
+    icon: mdi:cellphone-iphone
+
+  device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74:
+    friendly_name: OwnTracks
+    icon: mdi:crosshairs-gps
+
+## Fans
 
   fan.bedroom_fan_level:
     friendly_name: Bedroom Fan
@@ -12,14 +39,17 @@
   fan.playroom_fan_level:
     friendly_name: PlayRoom Fan
 
-  switch.garage_light:
-    friendly_name: Garage Light Switch
+## Groups
 
-  switch.outdoor_plug_switch:
-    friendly_name: Outdoor Switch
+  group.all_automations:
+    friendly_name: Automations
+    hidden: false
 
-  lock.front_door_lock_locked:
-    friendly_name: Front Door Lock
+  group.all_scripts:
+    friendly_name: Scripts
+    hidden: false
+
+## Lights
 
   light.all_hue_lights:
     hidden: true
@@ -43,7 +73,7 @@
     friendly_name: Living Room Lamp 2
 
   light.hue_living_room_lamp_3:
-      friendly_name: Living Room Lamp 3
+    friendly_name: Living Room Lamp 3
 
   light.hue_family_room_lightstrip:
     friendly_name: Family Room Lightstrip
@@ -69,6 +99,13 @@
   light.porch:
     friendly_name: Porch Lamps
 
+## Locks
+
+  lock.front_door_lock_locked:
+    friendly_name: Front Door Lock
+
+## Sensors
+
   sensor.dark_sky_temperature:
     friendly_name: Outdoor Temp
 
@@ -86,52 +123,13 @@
     friendly_name: Downstairs Luminance
     icon: mdi:brightness-7
 
-  binary_sensor.downstairs_nest_protect_online:
-    friendly_name: Downstairs
-    icon: mdi:smoke-detector
+## Switches
 
-  binary_sensor.upstairs_nest_protect_online:
-    friendly_name: Upstairs
-    icon: mdi:smoke-detector
+  switch.garage_light:
+    friendly_name: Garage Light Switch
 
-  binary_sensor.rachio2942f0_online:
-    friendly_name: Rachio Status
-
-  media_player.family_room_tv:
-    friendly_name: Cast - Family Room
-
-  media_player.vizio_smartcast:
-    friendly_name: TV - Family Room
+  switch.outdoor_plug_switch:
+    friendly_name: Outdoor Switch
 
   switch.rachio2942f0_in_standby_mode:
     friendly_name: Rachio Standby Mode
-
-  group.all_automations:
-    friendly_name: Automations
-    hidden: false
-
-  group.all_scripts:
-    friendly_name: Scripts
-    hidden: false
-
-  device_tracker.rich_ping:
-    friendly_name: Ping
-    icon: mdi:wifi
-
-  device_tracker.rich_iphone:
-    friendly_name: iPhone
-    icon: mdi:cellphone-iphone
-
-  device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74:
-    friendly_name: OwnTracks
-    icon: mdi:crosshairs-gps
-
-  group.house_status:
-    order: 1
-
-  group.presence:
-    order: 2
-
-  group.climate:
-    order: 2
-

@@ -2,27 +2,30 @@
 
   default_view:
     view: yes
-    name: "Home"
+    name: Home
     entities:
-      - group.home_status
+      - group.status
+      - group.controls
       - group.presence
       - group.climate
       - group.alarms
-      - group.switches
-      - group.lights
-      - group.fans
       - group.vacuums
 
-  home_status:
-    name: "Status"
+  status:
+    name: Status
     entities:
       - sensor.home_presence_status
-      - sensor.downstairs_last_motion
       - lock.front_door_lock_locked
+      - sensor.downstairs_last_motion
       - sensor.lights_status
       - sensor.fans_status
       - sensor.downstairs_tv_status
+
+  controls:
+    name: Controls
+    entities:
       - input_boolean.home_alerts
+
   presence:
     name: Presence
     entities:
@@ -30,7 +33,6 @@
 
   climate:
     name: Climate
-    view: no
     entities:
       - climate.downstairs
       - sun.sun
@@ -39,68 +41,24 @@
       - sensor.downstairs_thermostat_temperature
       - sensor.downstairs_thermostat_humidity
 
-  lights:
-    name: Lights
+  alarms:
+    name: Alarms
     entities:
-     - group.light_switches
-     - group.bulbs
-
-  light_switches:
-    name: Light Switches
-    entities:
-      - switch.family_room_light_switch
-      - switch.dining_room_light_switch
-      - switch.kitchen_light_switch
-      - switch.kitchen_under_cabinet_light_switch
-      - switch.kitchen_sink_light_switch
-      - switch.patio_light_switch
-      - switch.garage_light
-      - switch.kids_room_light_switch
-      - switch.playroom_light_switch
-      - switch.porch_light_switch
-      - switch.porch_switch
-
-  bulbs:
-    name: Bulbs
-    entities:
-      - light.hue_living_room_lamp_1
-      - light.hue_living_room_lamp_2
-      - light.hue_living_room_lamp_3
-      - light.hue_family_room_lightstrip
-      - light.hue_dining_room_lamp_1
-      - light.hue_dining_room_lamp_2
-      - light.hue_bedroom_lamp_1
-      - light.hue_bedroom_lamp_2
-      - light.hue_kids_room_lamp
-      - light.hue_porch_lamp_1
-      - light.hue_porch_lamp_2
-
-  fans:
-    name: Fans
-    entities:
-      - fan.family_room_fan_level
-      - fan.bedroom_fan_level
-      - fan.kids_room_fan_level
-      - fan.playroom_fan_level
+     - input_boolean.morning_alarm
 
   vacuums:
     name: Vacuums
-    view: no
     entities:
       - vacuum.roomba
-
-  alarms:
-    name: "Alarms"
-    entities:
-     - input_boolean.morning_alarm
 
 # Downstairs
 
   downstairs_view:
     view: yes
-    name: "Downstairs"
+    name: Downstairs
     entities:
       - group.downstairs_status
+      - group.downstairs_controls
       - group.downstairs_scenes
       - group.living_room
       - group.family_room
@@ -115,7 +73,20 @@
       - sensor.downstairs_tv_status
       - sensor.downstairs_motion_detector_luminance
       - sensor.downstairs_last_motion
+
+  downstairs_controls:
+    name: Controls
+    entities:
       - input_boolean.disable_downstairs_motion
+
+  downstairs_scenes:
+    name: Scenes
+    entities:
+      - scene.bright_downstairs
+      - scene.dimmed_downstairs
+      - scene.nightlight_downstairs
+      - scene.off_downstairs
+      - scene.tv_time
 
   living_room:
     name: Living Room
@@ -160,15 +131,6 @@
     entities:
       - fan.family_room_fan_level
 
-  downstairs_scenes:
-    name: Scenes
-    entities:
-      - scene.bright_downstairs
-      - scene.dimmed_downstairs
-      - scene.nightlight_downstairs
-      - scene.off_downstairs
-      - scene.tv_time
-
 # Upstairs
 
   upstairs_view:
@@ -186,6 +148,14 @@
     entities:
       - sensor.upstairs_lights_status
       - sensor.upstairs_fans_status
+
+  upstairs_scenes:
+    name: Scenes
+    entities:
+      - scene.kids_bedtime
+      - scene.kids_good_night
+      - scene.bedtime
+      - scene.good_night
 
   bedroom:
     name: Bedroom
@@ -218,14 +188,6 @@
       - fan.bedroom_fan_level
       - fan.kids_room_fan_level
       - fan.playroom_fan_level
-
-  upstairs_scenes:
-    name: Scenes
-    entities:
-      - scene.kids_bedtime
-      - scene.kids_good_night
-      - scene.bedtime
-      - scene.good_night
 
 # Outside
 
@@ -319,14 +281,12 @@
 
   protect:
     name: Smoke Alarms
-    view: no
     entities:
       - binary_sensor.downstairs_nest_protect_online
       - binary_sensor.upstairs_nest_protect_online
 
   presence_debug:
     name: Presence
-    view: no
     entities:
       - device_tracker.rich
       - device_tracker.rich_ping
@@ -339,4 +299,3 @@
       - sensor.battery_front_door_lock
       - sensor.battery_downstairs_motion_detector
       - sensor.battery_vacuum_roomba
-

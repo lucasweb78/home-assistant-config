@@ -6,7 +6,7 @@
     icon: mdi:alarm
 
   home_alerts:
-    name: Home Alerts
+    name: Alerts
     initial: off
     icon: mdi:home-lock
 

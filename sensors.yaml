@@ -31,7 +31,7 @@
         icon_template: >-
           mdi:lightbulb
         value_template: >-
-          {% if is_state('group.lights', 'on') %}
+          {% if is_state('group.all_lights', 'on') %}
             on
           {% else %}
             off
@@ -41,7 +41,7 @@
         icon_template: >-
           mdi:fan
         value_template: >-
-          {% if is_state('group.fans', 'on') %}
+          {% if is_state('group.all_fans', 'on') %}
             on
           {% else %}
             off

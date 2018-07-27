@@ -7,47 +7,20 @@ homeassistant:
   time_zone: America/Los_Angeles
   customize: !include customize.yaml
 
-frontend:
-  javascript_version: latest
+automation: !include automations.yaml
+
+automation old: !include_dir_merge_list automation
+
+binary_sensor: !include binary_sensors.yaml
+
+cloud: !include cloud.yaml
 
 config:
-updater:
+
 discovery:
   ignore:
     - apple_tv
     - google_cast
-history:
-logbook:
-sun:
-python_script:
-
-http:
-  api_password: !secret http_password
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
-  base_url: !secret http_base_url
-
-logger:
-  default: error
-
-recorder:
-  purge_interval: 1
-  purge_keep_days: 2
-
-ios:
-
-zwave:
-  usb_path: /dev/ttyACM0
-  network_key: !secret z_wave_network_key
-
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-
-mqtt:
-  broker: localhost
-  username: !secret mqtt_username
-  password: !secret mqtt_password
 
 device_tracker:
   - platform: owntracks
@@ -56,11 +29,66 @@ device_tracker:
     hosts:
       rich_ping: 10.0.1.17
 
+frontend:
+
+group: !include groups.yaml
+
+history:
+
+homekit: !include homekit.yaml
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  base_url: !secret http_base_url
+
+
 ifttt:
   key: !secret ifttt_key
 
+input_boolean: !include input_boolean.yaml
+
+ios:
+
+light: !include lights.yaml
+
+logbook:
+
+logger:
+  default: error
+
+media_player: !include media_players.yaml
+
+mqtt:
+  broker: localhost
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+python_script:
+
 rachio:
   api_key: !secret rachio_api_key
+
+recorder:
+  purge_interval: 1
+  purge_keep_days: 2
+
+scene: !include scenes.yaml
+
+script: !include scripts.yaml
+
+sensor: !include sensors.yaml
+
+switch: !include switches.yaml
+
+sun:
+
+updater:
 
 vacuum:
   - platform: roomba
@@ -68,16 +96,8 @@ vacuum:
     username: !secret roomba_username
     password: !secret roomba_password
 
-homekit: !include homekit.yaml
-cloud: !include cloud.yaml
-input_boolean: !include input_boolean.yaml
-binary_sensor: !include binary_sensors.yaml
-sensor: !include sensors.yaml
-switch: !include switches.yaml
-automation: !include_dir_merge_list automation
-script: !include scripts.yaml
-scene: !include scenes.yaml
-group: !include groups.yaml
 zone: !include zones.yaml
-light: !include lights.yaml
-media_player: !include media_players.yaml
+
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret z_wave_network_key
