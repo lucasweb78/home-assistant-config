@@ -8,6 +8,14 @@
     friendly_name: Upstairs
     icon: mdi:smoke-detector
 
+  binary_sensor.bedroom_nest_protect_online:
+    friendly_name: Bedroom
+    icon: mdi:smoke-detector
+
+  binary_sensor.kids_room_nest_protect_online:
+    friendly_name: Kids Room
+    icon: mdi:smoke-detector
+
   binary_sensor.rachio2942f0_online:
     friendly_name: Rachio Status
 
@@ -122,6 +130,24 @@
   sensor.downstairs_motion_detector_luminance:
     friendly_name: Downstairs Luminance
     icon: mdi:brightness-7
+
+  sensor.netatmo_outdoor_temperature:
+    friendly_name: Outside Temperature
+
+  sensor.netatmo_outdoor_humidity:
+    friendly_name: Outside Humidity
+
+  sensor.netatmo_downstairs_temperature:
+    friendly_name: Downstairs Temperature
+
+  sensor.netatmo_downstairs_humidity:
+    friendly_name: Downstairs Humidity
+
+  sensor.netatmo_downstairs_co2:
+    friendly_name: Downstairs CO2
+
+  sensor.netatmo_downstairs_noise:
+    friendly_name: Downstairs Noise
 
 ## Switches
 

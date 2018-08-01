@@ -69,6 +69,12 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
+netatmo:
+  api_key: !secret netatmo_api_client_id
+  secret_key: !secret netatmo_api_client_secret
+  username: !secret netatmo_api_username
+  password: !secret netatmo_api_password
+
 python_script:
 
 rachio:

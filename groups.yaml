@@ -35,12 +35,14 @@
     name: Climate
     entities:
       - climate.downstairs
+      - sensor.netatmo_downstairs_temperature
+      - sensor.netatmo_downstairs_humidity
+      - sensor.netatmo_downstairs_co2
+      - sensor.netatmo_downstairs_co2
       - sun.sun
-      - sensor.dark_sky_temperature
-      - sensor.dark_sky_humidity
-      - sensor.downstairs_thermostat_temperature
-      - sensor.downstairs_thermostat_humidity
-
+      - sensor.netatmo_outdoor_temperature
+      - sensor.netatmo_outdoor_humidity
+      
   alarms:
     name: Alarms
     entities:
@@ -71,6 +73,8 @@
       - sensor.downstairs_lights_status
       - sensor.downstairs_fans_status
       - sensor.downstairs_tv_status
+      - sensor.netatmo_downstairs_temperature
+      - sensor.netatmo_downstairs_noise
       - sensor.downstairs_motion_detector_luminance
       - sensor.downstairs_last_motion
 
@@ -284,6 +288,8 @@
     entities:
       - binary_sensor.downstairs_nest_protect_online
       - binary_sensor.upstairs_nest_protect_online
+      - binary_sensor.bedroom_nest_protect_online
+      - binary_sensor.kids_room_nest_protect_online
 
   presence_debug:
     name: Presence
