@@ -16,7 +16,7 @@
     friendly_name: Kids Room
     icon: mdi:smoke-detector
 
-  binary_sensor.rachio2942f0_online:
+  binary_sensor.rachio_online:
     friendly_name: Rachio Status
 
 ## Device Trackers
@@ -157,5 +157,5 @@
   switch.outdoor_plug_switch:
     friendly_name: Outdoor Switch
 
-  switch.rachio2942f0_in_standby_mode:
+  switch.rachio_in_standby_mode:
     friendly_name: Rachio Standby Mode

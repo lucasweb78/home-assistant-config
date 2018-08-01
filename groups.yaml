@@ -214,8 +214,8 @@
     name: Sprinklers
     icon: mdi:water-pump
     entities:
-      - binary_sensor.rachio2942f0_online
-      - switch.rachio2942f0_in_standby_mode
+      - binary_sensor.rachio_online
+      - switch.rachio_in_standby_mode
       - group.zones_front
       - group.zones_back
 
