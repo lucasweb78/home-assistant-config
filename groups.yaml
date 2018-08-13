@@ -89,7 +89,6 @@
       - scene.bright_downstairs
       - scene.dimmed_downstairs
       - scene.nightlight_downstairs
-      - scene.off_downstairs
       - scene.tv_time
 
   living_room:

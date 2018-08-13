@@ -1,0 +1,254 @@
+title: Home
+views:
+  - title: Overview
+    id: overview
+    cards:
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            entities:
+              - entity: group.all_lights
+                name: Lights
+                icon: mdi:lightbulb
+              - entity: group.all_fans
+                name: Fans
+                icon: mdi:fan
+              - entity: media_player.vizio_smartcast
+                name: TV
+                icon: mdi:television
+
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - sensor.home_presence_status
+              - lock.front_door_lock_locked
+              - sensor.downstairs_last_motion
+              - input_boolean.home_alerts
+
+          - type: entities
+            entities:
+              - device_tracker.rich
+
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - climate.downstairs
+
+          - type: glance
+            title: Indoor
+            show_name: false
+            entities:
+              - sensor.netatmo_downstairs_temperature
+              - sensor.netatmo_downstairs_humidity
+              - sensor.netatmo_downstairs_co2
+
+          - type: glance
+            title: Outdoor
+            show_name: false
+            entities:
+              - sensor.netatmo_outdoor_temperature
+              - sensor.netatmo_outdoor_humidity
+
+  - title: Downstaris
+    id: downstairs
+    cards:
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            entities:
+              - entity: group.downstairs_all_lights
+                name: Lights
+                icon: mdi:lightbulb
+              - entity: group.downstairs_fans
+                name: Fans
+                icon: mdi:fan
+              - entity: media_player.vizio_smartcast
+                name: TV
+                icon: mdi:television
+
+          - type: entities
+            entities:
+              - sensor.netatmo_downstairs_temperature
+              - sensor.netatmo_downstairs_noise
+              - sensor.downstairs_motion_detector_luminance
+              - sensor.downstairs_last_motion
+
+          - type: entities
+            entities:
+              - input_boolean.disable_downstairs_motion
+              - vacuum.roomba
+
+      - type: entities
+        entities:
+          - scene.bright_downstairs
+          - scene.dimmed_downstairs
+          - scene.nightlight_downstairs
+          - scene.tv_time
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            title: Living Room
+            entities:
+              - light.living_room
+
+          - type: entities
+            title: Family Room
+            entities:
+              - switch.family_room_light_switch
+              - light.hue_family_room_lightstrip
+              - fan.family_room_fan_level
+
+          - type: entities
+            title: Dining Room
+            entities:
+              - switch.dining_room_light_switch
+              - light.dining_room
+
+          - type: entities
+            title: Kitchen
+            entities:
+              - switch.kitchen_light_switch
+              - switch.kitchen_under_cabinet_light_switch
+              - switch.kitchen_sink_light_switch
+
+  - title: Upstairs
+    id: upstairs
+    cards:
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            entities:
+              - entity: group.upstairs_lights
+                name: Lights
+                icon: mdi:lightbulb
+              - entity: group.upstairs_fans
+                name: Fans
+                icon: mdi:fan
+
+          - type: entities
+            entities:
+              - scene.kids_bedtime
+              - scene.kids_good_night
+              - scene.bedtime
+              - scene.good_night
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            title: Bedroom
+            entities:
+              - light.bedroom
+              - fan.bedroom_fan_level
+
+          - type: entities
+            entities:
+              - input_boolean.morning_alarm
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            title: Kids Room
+            entities:
+              - switch.kids_room_light_switch
+              - light.hue_kids_room_lamp
+              - fan.kids_room_fan_level
+
+          - type: entities
+            title: Playroom
+            entities:
+              - switch.playroom_light_switch
+              - fan.playroom_fan_level
+
+
+  - title: Outside
+    id: outside
+    cards:
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            entities:
+              - entity: group.outside_lights
+                name: Lights
+                icon: mdi:lightbulb
+
+          - type: entities
+            title: Sprinklers
+            show_header_toggle: false
+            entities:
+              - binary_sensor.rachio_online
+              - switch.rachio_in_standby_mode
+              - switch.front_yard_lawn
+              - switch.front_yard_shrubs
+              - switch.back_yard_lawn
+              - switch.back_yard_shrubs
+
+      - type: vertical-stack
+        cards:
+
+          - type: entities
+            title: Porch
+            entities:
+              - switch.porch_light_switch
+              - light.porch
+              - switch.porch_switch
+
+          - type: entities
+            title: Garage
+            entities:
+              - switch.garage_light
+
+          - type: entities
+            title: Patio
+            entities:
+              - switch.patio_light_switch
+
+  - title: Debug
+    id: debug
+
+    cards:
+
+      - type: entities
+        title: Network
+        entities:
+          - sensor.lucaswebduckdnsorg
+
+      - type: entities
+        title: Utilities
+        entities:
+          - sensor.ohmconnect_status
+
+      - type: entities
+        title: Smoke Alarms
+        entities:
+          - binary_sensor.downstairs_nest_protect_online
+          - binary_sensor.upstairs_nest_protect_online
+          - binary_sensor.bedroom_nest_protect_online
+          - binary_sensor.kids_room_nest_protect_online
+
+      - type: entities
+        title: Presence
+        entities:
+          - device_tracker.rich
+          - device_tracker.rich_ping
+          - device_tracker.rich_iphone
+          - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
+
+      - type: entities
+        title: Batteries
+        entities:
+          - sensor.battery_front_door_lock
+          - sensor.battery_downstairs_motion_detector
+          - sensor.battery_vacuum_roomba

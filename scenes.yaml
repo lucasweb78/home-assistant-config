@@ -45,19 +45,6 @@
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
 
-  - name: Off Downstairs
-    entities:
-      light.living_room:
-        state: off
-      light.hue_family_room_lightstrip:
-        state: off
-      switch.family_room_light_switch: off
-      switch.dining_room_light_switch: off
-      script.nightlight_dining_room_with_delay: off
-      switch.kitchen_light_switch: off
-      switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: off
-
   - name: Dimmed Dining Room
     entities:
       light.dining_room:

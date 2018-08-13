@@ -30,6 +30,7 @@ device_tracker:
       rich_ping: 10.0.1.17
 
 frontend:
+  javascript_version: latest
 
 group: !include groups.yaml
 
