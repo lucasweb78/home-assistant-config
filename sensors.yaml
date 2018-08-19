@@ -20,7 +20,11 @@
         icon_template: >-
           mdi:eye
         value_template: >-
-          {{ relative_time(states.sensor.downstairs_motion_detector.last_changed) }}
+          {%- if states.sensor.downstairs_motion_detector -%}
+            {{ relative_time(states.sensor.downstairs_motion_detector.last_changed) }}
+          {%- else -%}
+            Loading...
+          {%- endif -%}
       battery_front_door_lock:
         friendly_name: 'Front Door Lock'
         icon_template: >-
