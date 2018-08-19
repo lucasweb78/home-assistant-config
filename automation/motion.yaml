@@ -16,7 +16,7 @@
           state: 'off'
         - condition: numeric_state
           entity_id: sensor.downstairs_motion_detector_luminance
-          below: '20'
+          below: '15'
         - condition: time
           after: '05:30:00'
           before: '20:00:00'
@@ -42,7 +42,7 @@
           state: 'off'
         - condition: numeric_state
           entity_id: sensor.downstairs_motion_detector_luminance
-          below: '20'
+          below: '15'
         - condition: time
           after: '20:00:00'
           before: '22:00:00'
@@ -68,7 +68,7 @@
           state: 'off'
         - condition: numeric_state
           entity_id: sensor.downstairs_motion_detector_luminance
-          below: '20'
+          below: '15'
         - condition: time
           after: '22:00:00'
           before: '05:30:00'
