@@ -38,9 +38,12 @@
         brightness: 1
       light.hue_family_room_lightstrip:
         state: off
+      light.hue_family_room_lightstrip:
+        state: on
+        brightness: 25
+        xy_color: [0.561,0.404]
       switch.family_room_light_switch: off
-      switch.dining_room_light_switch: on
-      script.nightlight_dining_room_with_delay: on
+      switch.dining_room_light_switch: off
       switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
