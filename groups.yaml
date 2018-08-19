@@ -1,95 +1,26 @@
-# Default/Home
-
-  default_view:
-    view: yes
-    name: Home
+  lights:
+    name: Lights
     entities:
-      - group.status
-      - group.controls
-      - group.presence
-      - group.climate
-      - group.alarms
-      - group.vacuums
-
-  status:
-    name: Status
-    entities:
-      - sensor.home_presence_status
-      - lock.front_door_lock_locked
-      - sensor.downstairs_last_motion
-      - sensor.lights_status
-      - sensor.fans_status
-      - sensor.downstairs_tv_status
-
-  controls:
-    name: Controls
-    entities:
-      - input_boolean.home_alerts
-
-  presence:
-    name: Presence
-    entities:
-      - device_tracker.rich
-
-  climate:
-    name: Climate
-    entities:
-      - climate.downstairs
-      - sensor.netatmo_downstairs_temperature
-      - sensor.netatmo_downstairs_humidity
-      - sensor.netatmo_downstairs_co2
-      - sensor.netatmo_downstairs_co2
-      - sun.sun
-      - sensor.netatmo_outdoor_temperature
-      - sensor.netatmo_outdoor_humidity
-      
-  alarms:
-    name: Alarms
-    entities:
-     - input_boolean.morning_alarm
-
-  vacuums:
-    name: Vacuums
-    entities:
-      - vacuum.roomba
+      - light.living_room
+      - switch.family_room_light_switch
+      - light.hue_family_room_lightstrip
+      - switch.dining_room_light_switch
+      - light.dining_room
+      - switch.kitchen_light_switch
+      - switch.kitchen_under_cabinet_light_switch
+      - switch.kitchen_sink_light_switch
+      - light.bedroom
+      - switch.kids_room_light_switch
+      - switch.playroom_light_switch
+      - light.hue_kids_room_lamp
+      - switch.garage_light
+      - switch.patio_light_switch
+      - switch.playroom_light_switch
+      - switch.porch_switch
+      - switch.porch_light_switch
+      - light.porch
 
 # Downstairs
-
-  downstairs_view:
-    view: yes
-    name: Downstairs
-    entities:
-      - group.downstairs_status
-      - group.downstairs_controls
-      - group.downstairs_scenes
-      - group.living_room
-      - group.family_room
-      - group.dining_room
-      - group.kitchen
-
-  downstairs_status:
-    name: Status
-    entities:
-      - sensor.downstairs_lights_status
-      - sensor.downstairs_fans_status
-      - sensor.downstairs_tv_status
-      - sensor.netatmo_downstairs_temperature
-      - sensor.netatmo_downstairs_noise
-      - sensor.downstairs_motion_detector_luminance
-      - sensor.downstairs_last_motion
-
-  downstairs_controls:
-    name: Controls
-    entities:
-      - input_boolean.disable_downstairs_motion
-
-  downstairs_scenes:
-    name: Scenes
-    entities:
-      - scene.bright_downstairs
-      - scene.dimmed_downstairs
-      - scene.nightlight_downstairs
-      - scene.tv_time
 
   living_room:
     name: Living Room
@@ -117,48 +48,30 @@
       - switch.kitchen_sink_light_switch
 
   downstairs_all_lights:
+    name: Lights
     entities:
       - light.living_room
       - switch.family_room_light_switch
       - light.hue_family_room_lightstrip
-      - group.dining_room
-      - group.kitchen
+      - switch.dining_room_light_switch
+      - light.dining_room
+      - switch.kitchen_light_switch
+      - switch.kitchen_under_cabinet_light_switch
+      - switch.kitchen_sink_light_switch
 
   downstairs_main_lights:
+    name: Lights
     entities:
       - switch.family_room_light_switch
       - switch.dining_room_light_switch
       - switch.kitchen_light_switch
 
   downstairs_fans:
+    name: Fans
     entities:
       - fan.family_room_fan_level
 
 # Upstairs
-
-  upstairs_view:
-    view: yes
-    name: "Upstairs"
-    entities:
-      - group.upstairs_status
-      - group.upstairs_scenes
-      - group.bedroom
-      - group.kids_room
-      - group.playroom
-
-  upstairs_status:
-    name: Status
-    entities:
-      - sensor.upstairs_lights_status
-      - sensor.upstairs_fans_status
-
-  upstairs_scenes:
-    name: Scenes
-    entities:
-      - scene.kids_bedtime
-      - scene.kids_good_night
-      - scene.bedtime
-      - scene.good_night
 
   bedroom:
     name: Bedroom
@@ -180,6 +93,7 @@
       - fan.playroom_fan_level
 
   upstairs_lights:
+    name: Lights
     entities:
       - light.bedroom
       - switch.kids_room_light_switch
@@ -187,50 +101,13 @@
       - light.hue_kids_room_lamp
 
   upstairs_fans:
+    name: Fans
     entities:
       - fan.bedroom_fan_level
       - fan.kids_room_fan_level
       - fan.playroom_fan_level
 
 # Outside
-
-  outside_view:
-    view: yes
-    name: "Outside"
-    entities:
-      - group.outside_status
-      - group.porch
-      - group.patio
-      - group.garage
-      - group.sprinklers
-
-  outside_status:
-    name: Status
-    entities:
-      - sensor.outside_lights_status
-
-  sprinklers:
-    name: Sprinklers
-    icon: mdi:water-pump
-    entities:
-      - binary_sensor.rachio_online
-      - switch.rachio_in_standby_mode
-      - group.zones_front
-      - group.zones_back
-
-  zones_front:
-    name: Front Yard
-    view: false
-    entities:
-      - switch.front_yard_lawn
-      - switch.front_yard_shrubs
-
-  zones_back:
-    name: Back Yard
-    view: false
-    entities:
-      - switch.back_yard_lawn
-      - switch.back_yard_shrubs
 
   porch:
     name: Porch
@@ -250,6 +127,7 @@
       - switch.garage_light
 
   outside_lights:
+    name: Lights
     entities:
       - switch.garage_light
       - switch.patio_light_switch
@@ -257,50 +135,3 @@
       - switch.porch_switch
       - switch.porch_light_switch
       - light.porch
-
-# Debug
-
-  debug_view:
-    view: yes
-    name: Debug
-    entities:
-      - group.network
-      - group.utilities
-      - group.presence_debug
-      - group.protect
-      - group.batteries
-      - group.all_automations
-      - group.all_scripts
-
-  network:
-    name: Network
-    entities:
-      - sensor.lucaswebduckdnsorg
-
-  utilities:
-    name: Utilities
-    entities:
-      - sensor.ohmconnect_status
-
-  protect:
-    name: Smoke Alarms
-    entities:
-      - binary_sensor.downstairs_nest_protect_online
-      - binary_sensor.upstairs_nest_protect_online
-      - binary_sensor.bedroom_nest_protect_online
-      - binary_sensor.kids_room_nest_protect_online
-
-  presence_debug:
-    name: Presence
-    entities:
-      - device_tracker.rich
-      - device_tracker.rich_ping
-      - device_tracker.rich_iphone
-      - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
-
-  batteries:
-    name: Batteries
-    entities:
-      - sensor.battery_front_door_lock
-      - sensor.battery_downstairs_motion_detector
-      - sensor.battery_vacuum_roomba

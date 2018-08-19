@@ -49,12 +49,8 @@
 
 ## Groups
 
-  group.all_automations:
-    friendly_name: Automations
-    hidden: false
-
-  group.all_scripts:
-    friendly_name: Scripts
+  group.all_fans:
+    friendly_name: Fans
     hidden: false
 
 ## Lights
@@ -113,19 +109,6 @@
     friendly_name: Front Door Lock
 
 ## Sensors
-
-  sensor.dark_sky_temperature:
-    friendly_name: Outdoor Temp
-
-  sensor.dark_sky_humidity:
-    friendly_name: Outdoor Humidity
-
-  sensor.downstairs_thermostat_temperature:
-    friendly_name: Indoor Temp
-
-  sensor.downstairs_thermostat_humidity:
-    friendly_name: Indoor Humidity
-    icon: mdi:water-percent
 
   sensor.downstairs_motion_detector_luminance:
     friendly_name: Downstairs Luminance

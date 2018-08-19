@@ -10,15 +10,9 @@
         exclude_entities:
           - light.bedroom
           - light.dining_room
-          - light.entrance
           - light.family_room
-          - light.garage
-          - light.hallway
           - light.kids_room
-          - light.kitchen
           - light.living_room
-          - light.office
-          - light.patio
           - light.porch
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn
@@ -59,15 +53,9 @@
         exclude_entities:
           - light.bedroom
           - light.dining_room
-          - light.entrance
           - light.family_room
-          - light.garage
-          - light.hallway
           - light.kids_room
-          - light.kitchen
           - light.living_room
-          - light.office
-          - light.patio
           - light.porch
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn

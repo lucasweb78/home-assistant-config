@@ -1,16 +1,5 @@
 ## Sensors
 
-  - platform: darksky
-    api_key: !secret darksky_api_key
-    monitored_conditions:
-      - summary
-      - temperature
-      - temperature_max
-      - temperature_min
-      - humidity
-      - precip_probability
-      - wind_speed
-
   - platform: dnsip
     hostname: lucasweb.duckdns.org
 
@@ -26,92 +15,12 @@
           {% else %}
             Away
           {% endif %}
-      lights_status:
-        friendly_name: 'Lights'
-        icon_template: >-
-          mdi:lightbulb
-        value_template: >-
-          {% if is_state('group.all_lights', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
-      fans_status:
-        friendly_name: 'Fans'
-        icon_template: >-
-          mdi:fan
-        value_template: >-
-          {% if is_state('group.all_fans', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
-      downstairs_fans_status:
-        friendly_name: 'Fans'
-        icon_template: >-
-          mdi:fan
-        value_template: >-
-          {% if is_state('group.downstairs_fans', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
-      downstairs_lights_status:
-        friendly_name: 'Lights'
-        icon_template: >-
-          mdi:lightbulb
-        value_template: >-
-          {% if is_state('group.downstairs_all_lights', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
-      downstairs_tv_status:
-        friendly_name: 'TV'
-        icon_template: >-
-          mdi:television
-        value_template: >-
-          {% if is_state('media_player.vizio_smartcast', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
       downstairs_last_motion:
         friendly_name: 'Last Motion'
         icon_template: >-
           mdi:eye
         value_template: >-
           {{ relative_time(states.sensor.downstairs_motion_detector.last_changed) }}
-      upstairs_fans_status:
-        friendly_name: 'Fans'
-        icon_template: >-
-          mdi:fan
-        value_template: >-
-          {% if is_state('group.upstairs_fans', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
-      upstairs_lights_status:
-        friendly_name: 'Lights'
-        icon_template: >-
-          mdi:lightbulb
-        value_template: >-
-          {% if is_state('group.upstairs_lights', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
-      outside_lights_status:
-        friendly_name: 'Lights'
-        icon_template: >-
-          mdi:lightbulb
-        value_template: >-
-          {% if is_state('group.outside_lights', 'on') %}
-            on
-          {% else %}
-            off
-          {% endif %}
       battery_front_door_lock:
         friendly_name: 'Front Door Lock'
         icon_template: >-

@@ -9,7 +9,7 @@ views:
 
           - type: entities
             entities:
-              - entity: group.all_lights
+              - entity: group.lights
                 name: Lights
                 icon: mdi:lightbulb
               - entity: group.all_fans
