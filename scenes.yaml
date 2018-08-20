@@ -37,16 +37,14 @@
         state: on
         brightness: 1
       light.hue_family_room_lightstrip:
-        state: off
-      light.hue_family_room_lightstrip:
         state: on
-        brightness: 25
-        xy_color: [0.561,0.404]
+        brightness: 144
+        xy_color: [0.502,0.414]
       switch.family_room_light_switch: off
       switch.dining_room_light_switch: off
       switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: off
+      switch.kitchen_sink_light_switch: on
 
   - name: Dimmed Dining Room
     entities:
