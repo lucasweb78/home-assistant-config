@@ -80,23 +80,28 @@ views:
 
           - type: entities
             entities:
+            - scene.bright_downstairs
+            - scene.dimmed_downstairs
+            - scene.nightlight_downstairs
+            - scene.tv_time
+
+          - type: entities
+            entities:
               - input_boolean.disable_downstairs_motion
               - vacuum.roomba
-
-      - type: entities
-        entities:
-          - scene.bright_downstairs
-          - scene.dimmed_downstairs
-          - scene.nightlight_downstairs
-          - scene.tv_time
 
       - type: vertical-stack
         cards:
 
-          - type: entities
+          - type: picture-glance
             title: Living Room
+            image: /local/living-room.jpg
             entities:
               - light.living_room
+
+          - type: entities
+            entities:
+            - light.living_room
 
           - type: entities
             title: Family Room
