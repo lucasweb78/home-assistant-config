@@ -48,8 +48,6 @@
           - light
           - lock
           - fan
-          - scene
-          - input_boolean
         exclude_entities:
           - light.bedroom
           - light.dining_room
