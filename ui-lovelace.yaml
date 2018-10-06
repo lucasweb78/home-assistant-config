@@ -101,7 +101,7 @@ views:
 
           - type: entities
             entities:
-            - light.living_room
+              - light.living_room
 
           - type: entities
             title: Family Room
@@ -110,8 +110,14 @@ views:
               - light.hue_family_room_lightstrip
               - fan.family_room_fan_level
 
-          - type: entities
+          - type: picture-glance
             title: Dining Room
+            image: /local/dining-room.jpg
+            entities:
+              - switch.dining_room_light_switch
+              - light.dining_room
+
+          - type: entities
             entities:
               - switch.dining_room_light_switch
               - light.dining_room
