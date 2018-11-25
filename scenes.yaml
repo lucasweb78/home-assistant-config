@@ -92,6 +92,8 @@
 
   - name: Bedtime
     entities:
+      group.patio: off
+      group.garage: off
       group.porch: off
       group.family_room: off
       group.kitchen: off
