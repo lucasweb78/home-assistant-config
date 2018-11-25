@@ -19,6 +19,11 @@
   binary_sensor.rachio_online:
     friendly_name: Rachio Status
 
+## Climate
+
+  climate.downstairs:
+    friendly_name: Downstairs
+
 ## Device Trackers
 
   device_tracker.rich_ping:
