@@ -7,6 +7,7 @@
     sensors:
       home_presence_status:
         friendly_name: Presence
+        entity_id: climate.downstairs
         icon_template: >-
           mdi:home
         value_template: >-
@@ -17,6 +18,7 @@
           {% endif %}
       downstairs_last_motion:
         friendly_name: 'Last Motion'
+        entity_id: sensor.downstairs_motion_detector
         icon_template: >-
           mdi:eye
         value_template: >-
@@ -27,37 +29,37 @@
           {%- endif -%}
       battery_front_door_lock:
         friendly_name: 'Front Door Lock'
+        entity_id: zwave.front_door_lock
         icon_template: >-
           mdi:battery
         value_template: >-
           {%- if states.zwave.front_door_lock -%}
-            {{ states.zwave.front_door_lock.attributes.battery_level }}
+            {{ states.zwave.front_door_lock.attributes.battery_level }} %
           {%- else -%}
-            100
+            Loading...
           {%- endif -%}
-        unit_of_measurement: '%'
       battery_downstairs_motion_detector:
         friendly_name: 'Downstairs Motion Detector'
+        entity_id: zwave.downstairs_motion_detector
         icon_template: >-
           mdi:battery
         value_template: >-
           {%- if states.zwave.downstairs_motion_detector -%}
-            {{ states.zwave.downstairs_motion_detector.attributes.battery_level }}
+            {{ states.zwave.downstairs_motion_detector.attributes.battery_level }} %
           {%- else -%}
-            100
+            Loading...
           {%- endif -%}
-        unit_of_measurement: '%'
       battery_vacuum_roomba:
         friendly_name: 'Roomba'
+        entity_id: vacuum.roomba
         icon_template: >-
           mdi:battery
         value_template: >-
           {%- if states.vacuum.roomba -%}
-            {{ states.vacuum.roomba.attributes.battery_level }}
+            {{ states.vacuum.roomba.attributes.battery_level }} %
           {%- else -%}
-            100
+            Loading...
           {%- endif -%}
-        unit_of_measurement: '%'
           
   - platform: ohmconnect
     id: !secret ohm_connect_id

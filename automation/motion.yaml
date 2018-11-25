@@ -96,6 +96,14 @@
     - service: homeassistant.turn_off
       entity_id: group.downstairs_all_lights
 
+  - alias: 'last_motion_update'
+    trigger:
+    - platform: time
+      seconds: '/30'
+    action:
+    - service: homeassistant.update_entity
+      entity_id: sensor.downstairs_last_motion
+
   - alias: Low Battery Alert - Downstairs Motion Detector
     trigger:
       platform: template
