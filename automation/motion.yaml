@@ -6,20 +6,18 @@
         from: 'off'
         to: 'on'
     condition:
-      condition: and
-      conditions:
-        - condition: state
-          entity_id: input_boolean.disable_downstairs_motion
-          state: 'off'
-        - condition: state
-          entity_id: group.downstairs_all_lights
-          state: 'off'
-        - condition: numeric_state
-          entity_id: sensor.downstairs_motion_detector_luminance
-          below: '18'
-        - condition: time
-          after: '05:30:00'
-          before: '20:00:00'
+      - condition: state
+        entity_id: input_boolean.disable_downstairs_motion
+        state: 'off'
+      - condition: state
+        entity_id: group.downstairs_all_lights
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.downstairs_motion_detector_luminance
+        below: '17'
+      - condition: time
+        after: '05:30:00'
+        before: '19:00:00'
     action:
     - service: homeassistant.turn_on
       entity_id: group.downstairs_main_lights
@@ -32,20 +30,18 @@
         from: 'off'
         to: 'on'
     condition:
-      condition: and
-      conditions:
-        - condition: state
-          entity_id: input_boolean.disable_downstairs_motion
-          state: 'off'
-        - condition: state
-          entity_id: group.downstairs_all_lights
-          state: 'off'
-        - condition: numeric_state
-          entity_id: sensor.downstairs_motion_detector_luminance
-          below: '18'
-        - condition: time
-          after: '20:00:00'
-          before: '22:00:00'
+      - condition: state
+        entity_id: input_boolean.disable_downstairs_motion
+        state: 'off'
+      - condition: state
+        entity_id: group.downstairs_all_lights
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.downstairs_motion_detector_luminance
+        below: '18'
+      - condition: time
+        after: '19:00:00'
+        before: '22:00:00'
     action:
     - service: scene.turn_on
       entity_id: scene.dimmed_downstairs
@@ -58,25 +54,23 @@
         from: 'off'
         to: 'on'
     condition:
-      condition: and
-      conditions:
-        - condition: state
-          entity_id: input_boolean.disable_downstairs_motion
-          state: 'off'
-        - condition: state
-          entity_id: group.downstairs_all_lights
-          state: 'off'
-        - condition: numeric_state
-          entity_id: sensor.downstairs_motion_detector_luminance
-          below: '18'
-        - condition: time
-          after: '22:00:00'
-          before: '05:30:00'
+      - condition: state
+        entity_id: input_boolean.disable_downstairs_motion
+        state: 'off'
+      - condition: state
+        entity_id: group.downstairs_all_lights
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.downstairs_motion_detector_luminance
+        below: '18'
+      - condition: time
+        after: '22:00:00'
+        before: '05:30:00'
     action:
     - service: scene.turn_on
       entity_id: scene.nightlight_downstairs
 
-  - alias: Turn off downstains lights
+  - alias: Turn off downstains lights daytime
     trigger:
       - platform: state
         entity_id: binary_sensor.downstairs_motion_detector_sensor
@@ -92,6 +86,55 @@
         state: 'off'
         for:
           minutes: 20
+      - condition: time
+        after: '05:30:00'
+        before: '19:00:00'
+    action:
+    - service: homeassistant.turn_off
+      entity_id: group.downstairs_all_lights
+
+  - alias: Turn off downstains lights evening
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.downstairs_motion_detector_sensor
+      to: 'off'
+      for:
+        minutes: 60
+    condition:
+    - condition: state
+      entity_id: input_boolean.disable_downstairs_motion
+      state: 'off'
+    - condition: state
+      entity_id: media_player.vizio_smartcast
+      state: 'off'
+      for:
+        minutes: 20
+    - condition: time
+      after: '19:00:00'
+      before: '22:00:00'
+    action:
+    - service: homeassistant.turn_off
+      entity_id: group.downstairs_all_lights
+
+  - alias: Turn off downstains lights night
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.downstairs_motion_detector_sensor
+      to: 'off'
+      for:
+        minutes: 5
+    condition:
+    - condition: state
+      entity_id: input_boolean.disable_downstairs_motion
+      state: 'off'
+    - condition: state
+      entity_id: media_player.vizio_smartcast
+      state: 'off'
+      for:
+        minutes: 20
+    - condition: time
+      after: '22:00:00'
+      before: '05:30:00'
     action:
     - service: homeassistant.turn_off
       entity_id: group.downstairs_all_lights
