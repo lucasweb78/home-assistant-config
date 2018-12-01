@@ -112,7 +112,7 @@
 
   - name: Good Night
     entities:
-      group.all_lights: off
+      group.lights: off
       fan.family_room_fan_level: off
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
