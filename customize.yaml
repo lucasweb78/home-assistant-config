@@ -1,24 +1,3 @@
-## Binary Sensors
-
-  binary_sensor.downstairs_nest_protect_online:
-    friendly_name: Downstairs
-    icon: mdi:smoke-detector
-
-  binary_sensor.upstairs_nest_protect_online:
-    friendly_name: Upstairs
-    icon: mdi:smoke-detector
-
-  binary_sensor.bedroom_nest_protect_online:
-    friendly_name: Bedroom
-    icon: mdi:smoke-detector
-
-  binary_sensor.kids_room_nest_protect_online:
-    friendly_name: Kids Room
-    icon: mdi:smoke-detector
-
-  binary_sensor.rachio_online:
-    friendly_name: Rachio Status
-
 ## Climate
 
   climate.downstairs:

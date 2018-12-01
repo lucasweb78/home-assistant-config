@@ -159,6 +159,8 @@ views:
             entities:
               - light.bedroom
               - fan.bedroom_fan_level
+              - switch.bathroom_light_switch
+              - switch.bathroom_mirror_light_switch
 
           - type: entities
             entities:
@@ -245,6 +247,7 @@ views:
         entities:
           - binary_sensor.downstairs_nest_protect_online
           - binary_sensor.upstairs_nest_protect_online
+          - binary_sensor.upstairs_nest_protect_2_online
           - binary_sensor.bedroom_nest_protect_online
           - binary_sensor.kids_room_nest_protect_online
 

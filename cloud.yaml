@@ -8,13 +8,14 @@
           - scene
           - input_boolean
         exclude_entities:
-          - light.bedroom
+          - light.hue_bedroom_lamp_1
+          - light.hue_bedroom_lamp_2
           - light.dining_room
           - light.family_room
           - light.kids_room
           - light.living_room
           - light.porch
-          - light.tv
+          - light.hue_tv
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn
           - switch.back_yard_shrubs
@@ -34,6 +35,10 @@
         switch.patio_light_switch:
           display_categories: LIGHT
         switch.garage_light:
+          display_categories: LIGHT
+        switch.bathroom_light_switch:
+          display_categories: LIGHT
+        switch.bathroom_mirror_light_switch:
           display_categories: LIGHT
         switch.kids_room_light_switch:
           display_categories: LIGHT
@@ -56,7 +61,7 @@
           - light.kids_room
           - light.living_room
           - light.porch
-          - light.tv
+          - light.hue_tv
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn
           - switch.back_yard_shrubs
