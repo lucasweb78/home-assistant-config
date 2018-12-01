@@ -26,6 +26,7 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
   - platform: ping
+    consider_home: 300
     hosts:
       rich_ping: 10.0.1.17
 
@@ -55,6 +56,15 @@ ios:
 light: !include lights.yaml
 
 logbook:
+  exclude:
+    entities:
+      - automation.last_motion_update
+      - sensor.downstairs_last_motion
+      - sensor.downstairs_motion_detector_sourcenodeid
+      - sensor.downstairs_motion_detector
+      - sensor.downstairs_motion_detector_alarm_level
+      - sensor.downstairs_motion_detector_alarm_type
+      - binary_sensor.downstairs_motion_detector_sensor
 
 logger:
   default: error

@@ -8,7 +8,7 @@
         entity_id: 'device_tracker.rich_iphone'
         tracker_name: 'rich'
 
-  - alias: "Update Rich's Device Tracker Home"
+  - alias: "Update Rich's Device Tracker To Home"
     trigger:
       - platform: state
         entity_id: device_tracker.rich_iphone, device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74, device_tracker.rich_ping
@@ -19,7 +19,7 @@
         entity_id: '{{trigger.entity_id}}'
         tracker_name: 'rich'
 
-  - alias: "Update Rich's Device Tracker Away"
+  - alias: "Update Rich's Device Tracker To Away"
     trigger:
       - platform: state
         entity_id: device_tracker.rich_iphone, device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74, device_tracker.rich_ping
