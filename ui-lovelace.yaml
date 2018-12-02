@@ -19,13 +19,17 @@ views:
                 name: TV
                 icon: mdi:television
 
+          - type: picture-entity
+            title: Front Door
+            entity: camera.front_door
+
           - type: entities
             show_header_toggle: false
             entities:
-              - sensor.home_presence_status
-              - lock.front_door_lock_locked
-              - sensor.downstairs_last_motion
-              - input_boolean.home_alerts
+            - sensor.home_presence_status
+            - lock.front_door_lock_locked
+            - sensor.downstairs_last_motion
+            - input_boolean.home_alerts
 
           - type: entities
             entities:
