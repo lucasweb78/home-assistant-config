@@ -85,7 +85,7 @@
         entity_id: media_player.vizio_smartcast
         state: 'off'
         for:
-          minutes: 20
+          minutes: 15
       - condition: time
         after: '05:30:00'
         before: '19:00:00'
@@ -108,7 +108,7 @@
       entity_id: media_player.vizio_smartcast
       state: 'off'
       for:
-        minutes: 20
+        minutes: 15
     - condition: time
       after: '19:00:00'
       before: '22:00:00'
@@ -130,8 +130,6 @@
     - condition: state
       entity_id: media_player.vizio_smartcast
       state: 'off'
-      for:
-        minutes: 20
     - condition: time
       after: '22:00:00'
       before: '05:30:00'
