@@ -135,6 +135,7 @@
     name: Lights
     entities:
       - switch.garage_light
+      - switch.porch_switch
       - switch.patio_light_switch
       - switch.porch_switch
       - switch.porch_light_switch
