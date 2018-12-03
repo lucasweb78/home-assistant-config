@@ -101,10 +101,12 @@ views:
             image: /local/living-room.jpg
             entities:
               - light.living_room
+              - switch.christmas_tree
 
           - type: entities
             entities:
               - light.living_room
+              - switch.christmas_tree
 
           - type: entities
             title: Family Room
@@ -186,7 +188,6 @@ views:
               - switch.playroom_light_switch
               - fan.playroom_fan_level
 
-
   - title: Outside
     id: outside
     cards:
@@ -198,6 +199,9 @@ views:
             entities:
               - entity: group.outside_lights
                 name: Lights
+                icon: mdi:lightbulb
+              - entity: group.holiday_lights
+                name: Holiday Lights
                 icon: mdi:lightbulb
 
           - type: entities
@@ -225,6 +229,7 @@ views:
             title: Garage
             entities:
               - switch.garage_light
+              - switch.garage_switch
 
           - type: entities
             title: Patio

@@ -109,6 +109,7 @@
         brightness: 1
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
+      switch.christmas_tree: off
 
   - name: Good Night
     entities:
@@ -116,3 +117,8 @@
       fan.family_room_fan_level: off
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
+
+  - name: Holiday Lights
+    entites:
+      - switch.porch_switch
+      - switch.garage_switch

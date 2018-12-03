@@ -129,6 +129,7 @@
     name: Garage
     entities:
       - switch.garage_light
+      - switch.garage_switch
 
   outside_lights:
     name: Lights
@@ -138,3 +139,9 @@
       - switch.porch_switch
       - switch.porch_light_switch
       - light.porch
+
+  holiday_lights:
+    name: Holiday Lights
+    entities:
+      - switch.garage_switch
+      - switch.porch_switch

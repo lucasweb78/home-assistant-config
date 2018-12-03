@@ -1,0 +1,25 @@
+  - alias: "Turn on Christmas Tree"
+    initial_state: true
+    hide_entity: false
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:15:00"
+    condition:
+      - condition: state
+        entity_id: sensor.home_presence_status
+        state: 'Home'
+    action:
+      service: switch.turn_on
+      entity_id: switch.christmas_tree
+
+  - alias: Holiday Lights
+    initial_state: true
+    hide_entity: false
+    trigger:
+      platform: sun
+      event: sunset
+      offset: "-00:15:00"
+    action:
+      - service: scene.turn_on
+        entity_id: scene.holiday_lights
