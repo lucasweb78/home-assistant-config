@@ -119,6 +119,6 @@
       input_boolean.disable_downstairs_motion: off
 
   - name: Holiday Lights
-    entites:
-      - switch.porch_switch
-      - switch.garage_switch
+    entities:
+      switch.porch_switch: on
+      switch.garage_switch: on
