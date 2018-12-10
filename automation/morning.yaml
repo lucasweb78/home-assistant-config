@@ -7,6 +7,9 @@
       - condition: state
         entity_id: input_boolean.morning_alarm
         state: 'on'
+      - condition: state
+        entity_id: light.bedroom
+        state: 'off'
       - condition: time
         weekday:
           - mon
