@@ -21,6 +21,7 @@
           - switch.back_yard_shrubs
           - switch.front_yard_lawn
           - switch.front_yard_shrubs
+          - switch.christmas_tree
       entity_config:
         switch.family_room_light_switch:
           display_categories: LIGHT
@@ -46,6 +47,10 @@
           display_categories: LIGHT
         switch.porch_light_switch:
           display_categories: LIGHT
+        switch.garage_switch:
+          display_categories: SMARTPLUG
+        switch.porch_switch:
+          display_categories: SMARTPLUG
 
   google_actions:
       filter:
