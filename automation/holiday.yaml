@@ -1,5 +1,5 @@
   - alias: Turn on Christmas Tree
-    initial_state: true
+    initial_state: false
     hide_entity: false
     trigger:
       platform: sun
@@ -14,7 +14,7 @@
       entity_id: switch.christmas_tree
 
   - alias: Holiday Lights
-    initial_state: true
+    initial_state: false
     hide_entity: false
     trigger:
       platform: sun

@@ -101,12 +101,10 @@ views:
             image: /local/living-room.jpg
             entities:
               - light.living_room
-              - switch.christmas_tree
 
           - type: entities
             entities:
               - light.living_room
-              - switch.christmas_tree
 
           - type: entities
             title: Family Room
@@ -198,9 +196,6 @@ views:
             entities:
               - entity: group.outside_lights
                 name: Lights
-                icon: mdi:lightbulb
-              - entity: group.holiday_lights
-                name: Holiday Lights
                 icon: mdi:lightbulb
 
           - type: entities
