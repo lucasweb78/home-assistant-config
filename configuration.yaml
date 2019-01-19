@@ -70,11 +70,6 @@ logger:
 
 media_player: !include media_players.yaml
 
-mqtt:
-  broker: localhost
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
@@ -84,9 +79,6 @@ netatmo:
   secret_key: !secret netatmo_api_client_secret
   username: !secret netatmo_api_username
   password: !secret netatmo_api_password
-
-owntracks:
-  max_gps_accuracy: 200
 
 python_script:
 

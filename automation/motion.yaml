@@ -70,69 +70,25 @@
     - service: scene.turn_on
       entity_id: scene.nightlight_downstairs
 
-  - alias: Turn off downstains lights daytime
+  - alias: Turn off downstains lights
     trigger:
       - platform: state
         entity_id: binary_sensor.downstairs_motion_detector_sensor
         to: 'off'
         for:
-          minutes: 20
+          minutes: 30
     condition:
       - condition: state
         entity_id: input_boolean.disable_downstairs_motion
         state: 'off'
+      - condition: time
+        after: '22:00:00'
+        before: '19:00:00'
       - condition: state
         entity_id: media_player.vizio_smartcast
         state: 'off'
         for:
           minutes: 15
-      - condition: time
-        after: '05:30:00'
-        before: '19:00:00'
-    action:
-    - service: homeassistant.turn_off
-      entity_id: group.downstairs_all_lights
-
-  - alias: Turn off downstains lights evening
-    trigger:
-    - platform: state
-      entity_id: binary_sensor.downstairs_motion_detector_sensor
-      to: 'off'
-      for:
-        minutes: 60
-    condition:
-    - condition: state
-      entity_id: input_boolean.disable_downstairs_motion
-      state: 'off'
-    - condition: state
-      entity_id: media_player.vizio_smartcast
-      state: 'off'
-      for:
-        minutes: 15
-    - condition: time
-      after: '19:00:00'
-      before: '22:00:00'
-    action:
-    - service: homeassistant.turn_off
-      entity_id: group.downstairs_all_lights
-
-  - alias: Turn off downstains lights night
-    trigger:
-    - platform: state
-      entity_id: binary_sensor.downstairs_motion_detector_sensor
-      to: 'off'
-      for:
-        minutes: 5
-    condition:
-    - condition: state
-      entity_id: input_boolean.disable_downstairs_motion
-      state: 'off'
-    - condition: state
-      entity_id: media_player.vizio_smartcast
-      state: 'off'
-    - condition: time
-      after: '22:00:00'
-      before: '05:30:00'
     action:
     - service: homeassistant.turn_off
       entity_id: group.downstairs_all_lights

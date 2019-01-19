@@ -13,10 +13,6 @@
     friendly_name: iPhone
     icon: mdi:cellphone-iphone
 
-  device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74:
-    friendly_name: OwnTracks
-    icon: mdi:crosshairs-gps
-
 ## Fans
 
   fan.bedroom_fan_level:

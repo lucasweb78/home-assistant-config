@@ -11,7 +11,7 @@
   - alias: "Update Rich's Device Tracker To Home"
     trigger:
       - platform: state
-        entity_id: device_tracker.rich_iphone, device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74, device_tracker.rich_ping, device_tracker.tile_6e4033e544154a37
+        entity_id: device_tracker.rich_iphone, device_tracker.rich_ping, device_tracker.tile_6e4033e544154a37
         to: 'home'
     action:
       service: python_script.device_tracker
@@ -22,7 +22,7 @@
   - alias: "Update Rich's Device Tracker To Away"
     trigger:
       - platform: state
-        entity_id: device_tracker.rich_iphone, device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74, device_tracker.rich_ping, device_tracker.tile_6e4033e544154a37
+        entity_id: device_tracker.rich_iphone
         to: 'not_home'
     action:
       service: python_script.device_tracker

@@ -260,7 +260,6 @@ views:
           - device_tracker.rich
           - device_tracker.rich_ping
           - device_tracker.rich_iphone
-          - device_tracker.lucasweb_b39a460bf22642fbb61152481869ba74
           - entity: device_tracker.tile_6e4033e544154a37
             name: Keys
 
