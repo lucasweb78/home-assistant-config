@@ -7,6 +7,13 @@
       - service: switch.turn_off
         entity_id: switch.garage_light
 
+  concentrate_dining_room_with_delay:
+    sequence:
+    - delay:
+        milliseconds: 500
+    - service: scene.turn_on
+      entity_id: scene.concentrate_dining_room
+
   dim_dining_room_with_delay:
     sequence:
       - delay:

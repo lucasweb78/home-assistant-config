@@ -1,5 +1,7 @@
 ## Scenes
 
+  ## Downstairs
+
   - name: Bright Downstairs
     entities:
       switch.family_room_light_switch: on
@@ -46,6 +48,13 @@
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: on
 
+  - name: Concentrate Dining Room
+    entities:
+      light.dining_room:
+        state: on
+        brightness: 254
+        color_temp: 230
+
   - name: Dimmed Dining Room
     entities:
       light.dining_room:
@@ -76,6 +85,22 @@
       switch.kitchen_sink_light_switch: off
       media_player.vizio_smartcast: on
 
+  - name: Concentrate
+    entities:
+      light.hue_family_room_lightstrip:
+        state: on
+        brightness: 254
+        xy_color: [0.37,0.372]
+      light.living_room: off
+      switch.family_room_light_switch: off
+      switch.dining_room_light_switch: on
+      script.concentrate_dining_room_with_delay: on
+      switch.kitchen_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: off
+
+  ## Kids Bedtime Scenes
+
   - name: Kids Bedtime
     entities:
       switch.kids_room_light_switch: off
@@ -89,6 +114,8 @@
       switch.kids_room_light_switch: off
       light.hue_kids_room_lamp: off
       fan.kids_room_fan_level: on
+
+  ## Bedtime Scenes
 
   - name: Bedtime
     entities:
@@ -115,6 +142,8 @@
       fan.family_room_fan_level: off
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
+
+  ## Holiday Scenes
 
   - name: Holiday Lights
     entities:
