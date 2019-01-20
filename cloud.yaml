@@ -39,8 +39,6 @@
           display_categories: LIGHT
         switch.bathroom_light_switch:
           display_categories: LIGHT
-        switch.bathroom_mirror_light_switch:
-          display_categories: LIGHT
         switch.kids_room_light_switch:
           display_categories: LIGHT
         switch.playroom_light_switch:

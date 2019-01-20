@@ -99,7 +99,6 @@
       group.kitchen: off
       switch.dining_room_light_switch: off
       switch.bathroom_light_switch: on
-      switch.bathroom_mirror_light_switch: off
       light.bedroom:
         state: on
         brightness: 1
