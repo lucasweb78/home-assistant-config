@@ -32,6 +32,9 @@ device_tracker:
 frontend:
   javascript_version: latest
 
+lovelace:
+  mode: yaml
+
 group: !include groups.yaml
 
 history:
