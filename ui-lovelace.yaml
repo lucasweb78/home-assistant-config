@@ -106,6 +106,14 @@ views:
             entities:
               - light.living_room
 
+          - type: picture-glance
+            title: Family Room
+            image: /local/family-room.jpg
+            entities:
+              - switch.family_room_light_switch
+              - light.hue_family_room_lightstrip
+              - fan.family_room_fan_level
+
           - type: entities
             title: Family Room
             entities:
@@ -238,7 +246,7 @@ views:
       - type: entities
         title: Network
         entities:
-          - sensor.lucaswebduckdnsorg
+          - sensor.lucasweb_duckdns_org
 
       - type: entities
         title: Utilities
