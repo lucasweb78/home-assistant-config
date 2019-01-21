@@ -27,3 +27,28 @@
           milliseconds: 500
       - service: scene.turn_on
         entity_id: scene.nightlight_dining_room
+
+  sunrise:
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.683,0.314]
+          brightness: 1
+      - delay:
+          seconds: 1
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.526,0.411]
+          brightness: 103
+          transition: 300
+      - delay:
+          seconds: 300
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.37,0.372]
+          brightness: 255
+          transition: 600
+

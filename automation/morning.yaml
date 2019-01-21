@@ -2,7 +2,7 @@
     hide_entity: false
     trigger:
       platform: time
-      at: "07:15:00"
+      at: "07:00:00"
     condition:
       - condition: state
         entity_id: input_boolean.morning_alarm
@@ -18,12 +18,5 @@
           - thu
           - fri
     action:
-    - service: light.turn_on
-      entity_id: light.bedroom
-      data:
-        brightness: 1
-    - service: light.turn_on
-      entity_id: light.bedroom
-      data:
-        transition: 900
-        brightness: 255
+    - service: script.turn_on
+      entity_id: script.sunrise
