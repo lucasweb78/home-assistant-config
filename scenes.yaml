@@ -91,6 +91,10 @@
         state: on
         brightness: 254
         xy_color: [0.37,0.372]
+      light.hue_family_room_lamp:
+        state: on
+        brightness: 254
+        xy_color: [0.372,0.37]
       light.living_room: off
       switch.family_room_light_switch: off
       switch.dining_room_light_switch: on

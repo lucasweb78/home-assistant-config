@@ -113,6 +113,7 @@ views:
             entities:
               - switch.family_room_light_switch
               - light.hue_family_room_lightstrip
+              - light.hue_family_room_lamp
               - fan.family_room_fan_level
 
           - type: entities
@@ -120,6 +121,7 @@ views:
             entities:
               - switch.family_room_light_switch
               - light.hue_family_room_lightstrip
+              - light.hue_family_room_lamp
               - fan.family_room_fan_level
 
           - type: picture-glance
