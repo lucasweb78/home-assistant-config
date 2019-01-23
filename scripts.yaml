@@ -1,7 +1,9 @@
 ## Scripts
 
-  timer_off_garage_light_timer:
+  garage_light_timer:
     sequence:
+      - service: switch.turn_on
+        entity_id: switch.garage_light
       - delay:
           minutes: 10
       - service: switch.turn_off

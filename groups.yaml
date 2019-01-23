@@ -4,6 +4,7 @@
       - light.living_room
       - switch.family_room_light_switch
       - light.hue_family_room_lightstrip
+      - light.hue_family_room_lamp
       - switch.dining_room_light_switch
       - light.dining_room
       - switch.kitchen_light_switch
@@ -33,6 +34,7 @@
     entities:
       - switch.family_room_light_switch
       - light.hue_family_room_lightstrip
+      - light.hue_family_room_lamp
       - fan.family_room_fan_level
 
   dining_room:
@@ -54,6 +56,7 @@
       - light.living_room
       - switch.family_room_light_switch
       - light.hue_family_room_lightstrip
+      - light.hue_family_room_lamp
       - switch.dining_room_light_switch
       - light.dining_room
       - switch.kitchen_light_switch

@@ -10,8 +10,8 @@
         entity_id: switch.garage_light
         state: 'off'
     action:
-    - service: switch.turn_on
-      entity_id: switch.garage_light
-    - service: script.timer_off_garage_light_timer
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.home_alerts
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.home_alerts
+      - service: script.turn_on
+        entity_id: script.garage_light_timer
+

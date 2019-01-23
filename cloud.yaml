@@ -15,7 +15,7 @@
           - light.kids_room
           - light.living_room
           - light.porch
-          - light.hue_tv
+          - light.entertainment_area_1
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn
           - switch.back_yard_shrubs
@@ -64,7 +64,7 @@
           - light.kids_room
           - light.living_room
           - light.porch
-          - light.hue_tv
+          - light.entertainment_area_1
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn
           - switch.back_yard_shrubs
