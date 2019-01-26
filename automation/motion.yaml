@@ -95,7 +95,7 @@
 
   - alias: 'last_motion_update'
     trigger:
-    - platform: time
+    - platform: time_pattern
       seconds: '/30'
     action:
     - service: homeassistant.update_entity

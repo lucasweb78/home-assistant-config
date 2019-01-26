@@ -2,7 +2,7 @@
     hide_entity: false
     trigger:
       - platform: state
-        entity_id: device_tracker.rich
+        entity_id: device_tracker.rich_iphone
         from: 'not_home'
         to: 'home'
     condition:

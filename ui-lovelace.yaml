@@ -33,7 +33,7 @@ views:
 
           - type: entities
             entities:
-              - device_tracker.rich
+              - device_tracker.rich_iphone
 
       - type: vertical-stack
         cards:
@@ -264,15 +264,6 @@ views:
           - binary_sensor.upstairs_nest_protect_2_online
           - binary_sensor.bedroom_nest_protect_online
           - binary_sensor.kids_room_nest_protect_online
-
-      - type: entities
-        title: Presence
-        entities:
-          - device_tracker.rich
-          - device_tracker.rich_ping
-          - device_tracker.rich_iphone
-          - entity: device_tracker.tile_6e4033e544154a37
-            name: Keys
 
       - type: entities
         title: Batteries

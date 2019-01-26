@@ -5,13 +5,12 @@
 
 ## Device Trackers
 
-  device_tracker.rich_ping:
-    friendly_name: Ping
-    icon: mdi:wifi
-
   device_tracker.rich_iphone:
-    friendly_name: iPhone
+    friendly_name: Rich
     icon: mdi:cellphone-iphone
+
+  device_tracker.tile_6e4033e544154a37:
+      friendly_name: Keys
 
 ## Fans
 
