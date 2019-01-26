@@ -44,7 +44,7 @@
         before: '22:00:00'
     action:
     - service: scene.turn_on
-      entity_id: scene.dimmed_downstairs
+      entity_id: scene.dim_downstairs
 
   - alias: Turn on downstains lights night
     hide_entity: false

@@ -18,7 +18,7 @@
       light.hue_family_room_lightstrip: off
       light.hue_family_room_lamp: off
 
-  - name: Dimmed Downstairs
+  - name: Dim Downstairs
     entities:
       light.living_room:
         state: on
@@ -109,7 +109,7 @@
         brightness: 254
         color_temp: 230
 
-  - name: Dimmed Dining Room
+  - name: Dim Dining Room
     entities:
       light.dining_room:
         state: on
@@ -181,7 +181,7 @@
         brightness: 254
         xy_color: [0.37,0.372]
 
-  - name: Dimmed Bedroom
+  - name: Dim Bedroom
     entities:
       light.bedroom:
         state: on

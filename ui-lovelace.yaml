@@ -84,7 +84,7 @@ views:
           - type: entities
             entities:
             - scene.bright_downstairs
-            - scene.dimmed_downstairs
+            - scene.dim_downstairs
             - scene.nightlight_downstairs
             - scene.tv_time
             - scene.concentrate
