@@ -33,7 +33,7 @@ views:
 
           - type: entities
             entities:
-              - device_tracker.rich_iphone
+              - person.rich
 
       - type: vertical-stack
         cards:

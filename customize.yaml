@@ -6,7 +6,7 @@
 ## Device Trackers
 
   device_tracker.rich_iphone:
-    friendly_name: Rich
+    friendly_name: Rich iPhone
     icon: mdi:cellphone-iphone
 
   device_tracker.tile_6e4033e544154a37:
