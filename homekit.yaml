@@ -2,9 +2,28 @@
   filter:
     include_domains:
       - lock
-      - input_boolean
-    include_entities:
-      - switch.porch_light_switch
-      - switch.garage_light
+      - switch
+      - light
+      - fan
+      - climate
+      - sensor
     exclude_entities:
-      - input_boolean.morning_alarm
+      - switch.back_yard_lawn
+      - switch.back_yard_shrubs
+      - switch.front_yard_lawn
+      - switch.front_yard_shrubs
+      - switch.rachio_in_standby_mode
+      - light.bedroom
+      - light.dining_room
+      - light.entertainment_area_1
+      - light.family_room
+      - light.kids_room
+      - light.living_room
+      - light.porch
+      - sensor.downstairs_thermostat_target
+      - sensor.downstairs_thermostat_temperature
+      - sensor.downstairs_thermostat_humidity
+      - sensor.netatmo_downstairs_humidity
+      - sensor.netatmo_downstairs_temperature
+      - sensor.netatmo_outdoor_temperature
+      - sensor.netatmo_outdoor_humidity
