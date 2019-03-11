@@ -60,6 +60,3 @@
           {%- else -%}
             Loading...
           {%- endif -%}
-          
-  - platform: ohmconnect
-    id: !secret ohm_connect_id

@@ -75,6 +75,8 @@ netatmo:
   username: !secret netatmo_api_username
   password: !secret netatmo_api_password
 
+person:
+
 python_script:
 
 rachio:

@@ -252,11 +252,6 @@ views:
           - sensor.lucasweb_duckdns_org
 
       - type: entities
-        title: Utilities
-        entities:
-          - sensor.ohmconnect_status
-
-      - type: entities
         title: Smoke Alarms
         entities:
           - binary_sensor.downstairs_nest_protect_online
