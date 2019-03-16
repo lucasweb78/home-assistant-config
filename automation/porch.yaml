@@ -1,3 +1,17 @@
+  - alias: Porch Motion
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: binary_sensor.porch_camera_person_detected
+      to: 'on'
+    condition:
+      condition: sun
+      after: sunset
+      after_offset: "-00:30:00"
+    action:
+      - service: script.turn_on
+        entity_id: script.porch_light_timer
+
   - alias: Porch Lighting On
     hide_entity: false
     trigger:

@@ -19,9 +19,13 @@ views:
                 name: TV
                 icon: mdi:television
 
-          - type: picture-entity
-            title: Front Door
-            entity: camera.porch
+          - type: picture-glance
+            title: Porch Camera
+            camera_image: camera.porch
+            entities:
+              - binary_sensor.porch_camera_motion_detected
+              - binary_sensor.porch_camera_person_detected
+              - binary_sensor.porch_camera_sound_detected
 
           - type: entities
             show_header_toggle: false

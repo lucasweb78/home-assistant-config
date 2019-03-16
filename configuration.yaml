@@ -96,6 +96,8 @@ switch: !include switches.yaml
 
 sun:
 
+tplink:
+
 updater:
 
 vacuum:

@@ -9,12 +9,21 @@
       - service: switch.turn_off
         entity_id: switch.garage_light
 
+  porch_light_timer:
+    sequence:
+      - service: switch.turn_on
+        entity_id: switch.porch_light_switch
+      - delay:
+          minutes: 5
+      - service: switch.turn_off
+        entity_id: switch.porch_light_switch
+
   concentrate_dining_room_with_delay:
     sequence:
-    - delay:
-        milliseconds: 500
-    - service: scene.turn_on
-      entity_id: scene.concentrate_dining_room
+      - delay:
+          milliseconds: 500
+      - service: scene.turn_on
+        entity_id: scene.concentrate_dining_room
 
   dim_dining_room_with_delay:
     sequence:
