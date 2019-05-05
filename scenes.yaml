@@ -233,10 +233,7 @@
       group.patio: off
       group.garage: off
       group.porch: off
-      group.family_room: off
-      group.kitchen: off
-      light.dining_room: off
-      light.kitchen: off
+      scene.nightlight_downstairs: on
       switch.bathroom_light_switch: on
       scene.nightlight_bedroom: on
       fan.bedroom_fan_level: on
