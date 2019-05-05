@@ -49,6 +49,18 @@
   light.hue_dining_room_lamp_2:
     friendly_name: Dining Room Lamp 2
 
+  light.hue_kitchen_lamp_1:
+      friendly_name: Kitchen Lamp 1
+
+  light.hue_kitchen_lamp_2:
+    friendly_name: Kitchen Lamp 2
+
+  light.hue_kitchen_lamp_3:
+    friendly_name: Kitchen Lamp 3
+
+  light.hue_kitchen_lamp_4:
+   friendly_name: Kitchen Lamp 4
+
   light.hue_living_room_lamp_1:
     friendly_name: Living Room Lamp 1
 
@@ -74,13 +86,22 @@
     friendly_name: Bedroom Lamps
 
   light.dining_room:
-    friendly_name: Dining Room Lamps
+    friendly_name: Dining Room Lights
+
+  light.family_room:
+    friendly_name: Family Room Lamps
+
+  light.kids_room:
+    friendly_name: Kids Room Lamp
+
+  light.kitchen:
+    friendly_name: Kitchen Lights
 
   light.living_room:
     friendly_name: Living Room Lamps
 
   light.porch:
-    friendly_name: Porch Lamps
+    friendly_name: Porch Lights
 
 ## Locks
 

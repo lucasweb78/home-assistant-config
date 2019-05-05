@@ -4,124 +4,213 @@
 
   - name: Bright Downstairs
     entities:
+      scene.bright_family_room: on
+      scene.bright_dining_room: on
+      scene.bright_kitchen: on
+      scene.bright_living_room: on
       switch.family_room_light_switch: on
-      switch.dining_room_light_switch: on
-      light.dining_room:
-        state: on
-        brightness: 254
-      switch.kitchen_light_switch: on
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
-      light.living_room:
-        state: on
-        brightness: 254
-      light.hue_family_room_lightstrip: off
-      light.hue_family_room_lamp: off
 
-  - name: Dim Downstairs
+  - name: Energize Downstairs
     entities:
-      light.living_room:
-        state: on
-        brightness: 77
-      light.hue_family_room_lightstrip:
-        state: on
-        brightness: 144
-        xy_color: [0.502,0.414]
-      light.hue_family_room_lamp:
-        state: on
-        brightness: 144
-        xy_color: [0.502,0.414]
+      scene.energize_family_room: on
+      scene.energize_dining_room: on
+      scene.energize_kitchen: on
+      light.living_room: off
       switch.family_room_light_switch: off
-      switch.dining_room_light_switch: on
-      script.dim_dining_room_with_delay: on
-      switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: on
+      switch.kitchen_sink_light_switch: off
+
+  - name: Concentrate Downstairs
+    entities:
+      scene.concentrate_family_room: on
+      scene.concentrate_dining_room: on
+      scene.concentrate_kitchen: on
+      light.living_room: off
+      switch.family_room_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: off
+
+  - name: Relax Downstairs
+    entities:
+      scene.relax_family_room: on
+      scene.relax_dining_room: on
+      scene.relax_kitchen: on
+      scene.dimmed_living_room: on
+      switch.family_room_light_switch: off
+      switch.kitchen_under_cabinet_light_switch: off
+      switch.kitchen_sink_light_switch: off
 
   - name: Nightlight Downstairs
     entities:
-      light.living_room:
-        state: on
-        brightness: 1
-      light.hue_family_room_lightstrip:
-        state: on
-        brightness: 25
-        xy_color: [0.561,0.404]
-      light.hue_family_room_lamp:
-        state: on
-        brightness: 25
-        xy_color: [0.561,0.404]
+      scene.nightlight_family_room: on
+      scene.nightlight_dining_room: on
+      scene.nightlight_kitchen: on
+      scene.nightlight_living_room: on
       switch.family_room_light_switch: off
-      switch.dining_room_light_switch: off
-      switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: on
+      switch.kitchen_sink_light_switch: off
 
   - name: TV time
     entities:
-      light.living_room:
-        state: on
-        brightness: 1
-      light.hue_family_room_lightstrip:
-        state: on
-        brightness: 254
-        xy_color: [0.263,0.187]
-      light.hue_family_room_lamp:
-        state: on
-        brightness: 63
-        xy_color: [0.263,0.187]
+      scene.purple_family_room: on
+      scene.nightlight_kitchen: on
+      scene.nightlight_living_room: on
+      light.dining_room: off
       switch.family_room_light_switch: off
-      switch.dining_room_light_switch: off
-      switch.kitchen_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
       media_player.vizio_smartcast: on
 
-  - name: Concentrate
+  # Living Room
+
+  - name: Bright Living Room
     entities:
-      light.hue_family_room_lightstrip:
+      light.living_room:
+        state: on
+        brightness: 254
+
+  - name: Dimmed Living Room
+    entities:
+      light.living_room:
+        state: on
+        brightness: 77
+
+  - name: Nightlight Living Room
+    entities:
+      light.living_room:
+        state: on
+        brightness: 1
+
+
+  # Family Room
+
+  - name: Bright Family Room
+    entities:
+      light.family_room:
+        state: on
+        brightness: 254
+        xy_color: [0.457,0.41]
+
+  - name: Energize Family Room
+    entities:
+      light.family_room:
+        state: on
+        brightness: 254
+        xy_color: [0.314,0.331]
+
+  - name: Concentrate Family Room
+    entities:
+      light.family_room:
         state: on
         brightness: 254
         xy_color: [0.37,0.372]
-      light.hue_family_room_lamp:
+
+  - name: Relax Family Room
+    entities:
+      light.family_room:
         state: on
-        brightness: 90
-        xy_color: [0.372,0.37]
-      light.living_room: off
-      switch.family_room_light_switch: off
-      switch.dining_room_light_switch: on
-      script.concentrate_dining_room_with_delay: on
-      switch.kitchen_light_switch: off
-      switch.kitchen_under_cabinet_light_switch: off
-      switch.kitchen_sink_light_switch: off
+        brightness: 144
+        xy_color: [0.502,0.414]
+
+  - name: Nightlight Family Room
+    entities:
+      light.family_room:
+        state: on
+        brightness: 25
+        xy_color: [0.561,0.404]
+
+  - name: Purple Family Room
+    entities:
+      light.family_room:
+        state: on
+        brightness: 63
+        xy_color: [0.263,0.187]
+
+  # Dining Room
 
   - name: Bright Dining Room
     entities:
+      switch.dining_room_light_switch: on
       light.dining_room:
         state: on
         brightness: 254
         color_temp: 366
 
+  - name: Energize Dining Room
+    entities:
+      switch.dining_room_light_switch: on
+      light.dining_room:
+        state: on
+        brightness: 254
+        color_temp: 156
+
   - name: Concentrate Dining Room
     entities:
+      switch.dining_room_light_switch: on
       light.dining_room:
         state: on
         brightness: 254
         color_temp: 230
 
-  - name: Dim Dining Room
+  - name: Relax Dining Room
     entities:
+      switch.dining_room_light_switch: on
       light.dining_room:
         state: on
         brightness: 144
-        color_temp: 443
+        color_temp: 447
 
   - name: Nightlight Dining Room
     entities:
+      switch.dining_room_light_switch: on
       light.dining_room:
         state: on
         brightness: 1
         color_temp: 443
+
+  # Kitchen
+
+  - name: Bright Kitchen
+    entities:
+      switch.kitchen_light_switch: on
+      light.kitchen:
+        state: on
+        brightness: 254
+        color_temp: 366
+
+  - name: Energize Kitchen
+    entities:
+      switch.kitchen_light_switch: on
+      light.kitchen:
+        state: on
+        brightness: 254
+        color_temp: 156
+
+  - name: Concentrate Kitchen
+    entities:
+      switch.kitchen_light_switch: on
+      light.kitchen:
+        state: on
+        brightness: 254
+        color_temp: 233
+
+  - name: Relax Kitchen
+    entities:
+      switch.kitchen_light_switch: on
+      light.kitchen:
+        state: on
+        brightness: 144
+        color_temp: 447
+
+  - name: Nightlight Kitchen
+    entities:
+      switch.kitchen_light_switch: on
+      light.kitchen:
+        state: on
+        brightness: 1
+        color_temp: 447
 
   # Bedtime Scenes
 
@@ -146,15 +235,11 @@
       group.porch: off
       group.family_room: off
       group.kitchen: off
-      switch.dining_room_light_switch: off
+      light.dining_room: off
+      light.kitchen: off
       switch.bathroom_light_switch: on
-      light.bedroom:
-        state: on
-        brightness: 1
+      scene.nightlight_bedroom: on
       fan.bedroom_fan_level: on
-      light.living_room:
-        state: on
-        brightness: 1
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
 
@@ -174,6 +259,13 @@
         brightness: 254
         xy_color: [0.457,0.41]
 
+  - name: Energize Bedroom
+    entities:
+      light.bedroom:
+        state: on
+        brightness: 254
+        xy_color: [0.314,0.331]
+
   - name: Concentrate Bedroom
     entities:
       light.bedroom:
@@ -181,12 +273,12 @@
         brightness: 254
         xy_color: [0.37,0.372]
 
-  - name: Dim Bedroom
+  - name: Relax Bedroom
     entities:
       light.bedroom:
         state: on
-        brightness: 77
-        xy_color: [0.457,0.41]
+        brightness: 144
+        xy_color: [0.502,0.414]
 
   - name: Nightlight Bedroom
     entities:

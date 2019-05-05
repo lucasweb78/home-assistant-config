@@ -1,25 +1,23 @@
   lights:
     name: Lights
     entities:
-      - light.living_room
       - switch.family_room_light_switch
-      - light.hue_family_room_lightstrip
-      - light.hue_family_room_lamp
-      - switch.dining_room_light_switch
-      - light.dining_room
-      - switch.kitchen_light_switch
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
       - switch.bathroom_light_switch
-      - light.bedroom
       - switch.kids_room_light_switch
       - switch.playroom_light_switch
-      - light.hue_kids_room_lamp
       - switch.garage_light
       - switch.patio_light_switch
       - switch.playroom_light_switch
       - switch.porch_switch
       - switch.porch_light_switch
+      - light.living_room
+      - light.family_room
+      - light.dining_room
+      - light.kitchen
+      - light.bedroom
+      - light.kids_room
       - light.porch
 
 # Downstairs
@@ -33,20 +31,13 @@
     name: Family Room
     entities:
       - switch.family_room_light_switch
-      - light.hue_family_room_lightstrip
-      - light.hue_family_room_lamp
+      - light.family_room
       - fan.family_room_fan_level
-
-  dining_room:
-    name: Dining Room
-    entities:
-      - switch.dining_room_light_switch
-      - light.dining_room
 
   kitchen:
     name: Kitchen
     entities:
-      - switch.kitchen_light_switch
+      - light.kitchen
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
 
@@ -54,21 +45,12 @@
     name: Lights
     entities:
       - light.living_room
-      - switch.family_room_light_switch
-      - light.hue_family_room_lightstrip
-      - light.hue_family_room_lamp
-      - switch.dining_room_light_switch
+      - light.family_room
       - light.dining_room
-      - switch.kitchen_light_switch
+      - light.kitchen
+      - switch.family_room_light_switch
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
-
-  downstairs_main_lights:
-    name: Lights
-    entities:
-      - switch.family_room_light_switch
-      - switch.dining_room_light_switch
-      - switch.kitchen_light_switch
 
   downstairs_fans:
     name: Fans

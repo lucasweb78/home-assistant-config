@@ -14,13 +14,13 @@
         state: 'off'
       - condition: numeric_state
         entity_id: sensor.downstairs_motion_detector_luminance
-        below: '17'
+        below: '18'
       - condition: time
-        after: '05:30:00'
+        after: '06:00:00'
         before: '19:00:00'
     action:
-    - service: homeassistant.turn_on
-      entity_id: group.downstairs_main_lights
+    - service: scene.turn_on
+      entity_id: scene.energize_downstairs
 
   - alias: Turn on downstains lights evening
     hide_entity: false
@@ -44,7 +44,7 @@
         before: '22:00:00'
     action:
     - service: scene.turn_on
-      entity_id: scene.dim_downstairs
+      entity_id: scene.relax_downstairs
 
   - alias: Turn on downstains lights night
     hide_entity: false
@@ -65,7 +65,7 @@
         below: '18'
       - condition: time
         after: '22:00:00'
-        before: '05:30:00'
+        before: '06:00:00'
     action:
     - service: scene.turn_on
       entity_id: scene.nightlight_downstairs

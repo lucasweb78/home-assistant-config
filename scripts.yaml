@@ -18,21 +18,21 @@
       - service: switch.turn_off
         entity_id: switch.porch_light_switch
 
-  concentrate_dining_room_with_delay:
+  wakeup_energize:
     sequence:
-      - delay:
-          milliseconds: 500
-      - service: scene.turn_on
-        entity_id: scene.concentrate_dining_room
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom
+        xy_color: [0.314,0.331]
+        brightness: 1
+    - service: light.turn_on
+      data:
+        entity_id: light.bedroom
+        xy_color: [0.314,0.331]
+        brightness: 254
+        transition: 900
 
-  dim_dining_room_with_delay:
-    sequence:
-      - delay:
-          milliseconds: 500
-      - service: scene.turn_on
-        entity_id: scene.dim_dining_room
-
-  sunrise:
+  wakeup_sunrise:
     sequence:
       - service: light.turn_on
         data:

@@ -19,14 +19,6 @@ views:
                 name: TV
                 icon: mdi:television
 
-          - type: picture-glance
-            title: Porch Camera
-            camera_image: camera.porch
-            entities:
-              - binary_sensor.porch_camera_motion_detected
-              - binary_sensor.porch_camera_person_detected
-              - binary_sensor.porch_camera_sound_detected
-
           - type: entities
             show_header_toggle: false
             entities:
@@ -41,23 +33,23 @@ views:
 
       - type: vertical-stack
         cards:
-          - type: thermostat
-            entity: climate.downstairs
+        - type: thermostat
+          entity: climate.downstairs
 
-          - type: glance
-            title: Indoor
-            show_name: false
-            entities:
-              - sensor.netatmo_downstairs_temperature
-              - sensor.netatmo_downstairs_humidity
-              - sensor.netatmo_downstairs_co2
+        - type: glance
+          title: Indoor
+          show_name: false
+          entities:
+          - sensor.netatmo_downstairs_temperature
+          - sensor.netatmo_downstairs_humidity
+          - sensor.netatmo_downstairs_co2
 
-          - type: glance
-            title: Outdoor
-            show_name: false
-            entities:
-              - sensor.netatmo_outdoor_temperature
-              - sensor.netatmo_outdoor_humidity
+        - type: glance
+          title: Outdoor
+          show_name: false
+          entities:
+          - sensor.netatmo_outdoor_temperature
+          - sensor.netatmo_outdoor_humidity
 
   - title: Downstaris
     id: downstairs
@@ -88,10 +80,11 @@ views:
           - type: entities
             entities:
             - scene.bright_downstairs
-            - scene.dim_downstairs
+            - scene.energize_downstairs
+            - scene.concentrate_downstairs
+            - scene.relax_downstairs
             - scene.nightlight_downstairs
             - scene.tv_time
-            - scene.concentrate
 
           - type: entities
             entities:
@@ -110,42 +103,84 @@ views:
           - type: entities
             entities:
               - light.living_room
+              - entity: scene.bright_living_room
+                name: Bright
+              - entity: scene.dimmed_living_room
+                name: Relax
+              - entity: scene.nightlight_living_room
+                name: Nightlight
 
           - type: picture-glance
             title: Family Room
             image: /local/family-room.jpg
             entities:
+              - light.family_room
               - switch.family_room_light_switch
-              - light.hue_family_room_lightstrip
-              - light.hue_family_room_lamp
               - fan.family_room_fan_level
 
           - type: entities
             title: Family Room
             entities:
-              - switch.family_room_light_switch
-              - light.hue_family_room_lightstrip
-              - light.hue_family_room_lamp
-              - fan.family_room_fan_level
+            - entity: light.family_room
+              name: Lights
+            - entity: switch.family_room_light_switch
+              name: Fan Light Switch
+            - entity: fan.family_room_fan_level
+              name: Fan
+            - entity: scene.bright_family_room
+              name: Bright
+            - entity: scene.energize_family_room
+              name: Energize
+            - entity: scene.concentrate_family_room
+              name: Concentrate
+            - entity: scene.relax_family_room
+              name: Relax
+            - entity: scene.nightlight_family_room
+              name: Nightlight
+            - entity: scene.purple_family_room
+              name: Purple
 
           - type: picture-glance
             title: Dining Room
             image: /local/dining-room.jpg
             entities:
-              - switch.dining_room_light_switch
               - light.dining_room
 
           - type: entities
             entities:
-              - switch.dining_room_light_switch
-              - light.dining_room
+              - entity: light.dining_room
+                name: Lights
+              - entity: scene.bright_dining_room
+                name: Bright
+              - entity: scene.energize_dining_room
+                name: Energize
+              - entity: scene.concentrate_dining_room
+                name: Concentrate
+              - entity: scene.relax_dining_room
+                name: Relax
+              - entity: scene.nightlight_dining_room
+                name: Nightlight
+
 
           - type: entities
             title: Kitchen
             entities:
-              - switch.kitchen_light_switch
-              - switch.kitchen_under_cabinet_light_switch
-              - switch.kitchen_sink_light_switch
+              - entity: light.kitchen
+                name: Lights
+              - entity: switch.kitchen_under_cabinet_light_switch
+                name: Cabinet Lights Switch
+              - entity: switch.kitchen_sink_light_switch
+                name: Sink Light Switch
+              - entity: scene.bright_kitchen
+                name: Bright
+              - entity: scene.energize_kitchen
+                name: Energize
+              - entity: scene.concentrate_kitchen
+                name: Concentrate
+              - entity: scene.relax_kitchen
+                name: Relax
+              - entity: scene.nightlight_kitchen
+                name: Nightlight
 
   - title: Upstairs
     id: upstairs
@@ -199,6 +234,18 @@ views:
             entities:
               - switch.playroom_light_switch
               - fan.playroom_fan_level
+
+  - title: Cameras
+    id: cameras
+    cards:
+
+    - type: picture-glance
+      title: Porch Camera
+      camera_image: camera.porch
+      entities:
+      - binary_sensor.porch_camera_motion_detected
+      - binary_sensor.porch_camera_person_detected
+      - binary_sensor.porch_camera_sound_detected
 
   - title: Outside
     id: outside

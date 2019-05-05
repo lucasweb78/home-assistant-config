@@ -2,7 +2,7 @@
     hide_entity: false
     trigger:
       platform: time
-      at: "07:00:00"
+      at: "06:55:00"
     condition:
       - condition: state
         entity_id: input_boolean.morning_alarm
@@ -19,4 +19,4 @@
           - fri
     action:
     - service: script.turn_on
-      entity_id: script.sunrise
+      entity_id: script.wakeup_energize
