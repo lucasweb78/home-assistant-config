@@ -9,6 +9,9 @@
     friendly_name: Rich iPhone
     icon: mdi:cellphone-iphone
 
+  device_tracker.tile_6e4033e544154a37:
+      friendly_name: Keys
+
 ## Fans
 
   fan.bedroom_fan_level:
