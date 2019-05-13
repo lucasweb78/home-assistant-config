@@ -91,6 +91,8 @@ switch: !include switches.yaml
 
 sun:
 
+system_health:
+
 tplink:
 
 updater:

@@ -4,19 +4,20 @@
 
   - name: Bright Downstairs
     entities:
-      scene.bright_family_room: on
-      scene.bright_dining_room: on
-      scene.bright_kitchen: on
-      scene.bright_living_room: on
+      light.downstairs:
+        state: on
+        brightness: 254
+        color_temp: 366
       switch.family_room_light_switch: on
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
 
   - name: Energize Downstairs
     entities:
-      scene.energize_family_room: on
-      scene.energize_dining_room: on
-      scene.energize_kitchen: on
+      light.family_area:
+        state: on
+        brightness: 254
+        color_temp: 156
       light.living_room: off
       switch.family_room_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
@@ -24,9 +25,10 @@
 
   - name: Concentrate Downstairs
     entities:
-      scene.concentrate_family_room: on
-      scene.concentrate_dining_room: on
-      scene.concentrate_kitchen: on
+      light.family_area:
+        state: on
+        brightness: 254
+        color_temp: 230
       light.living_room: off
       switch.family_room_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
@@ -34,9 +36,10 @@
 
   - name: Relax Downstairs
     entities:
-      scene.relax_family_room: on
-      scene.relax_dining_room: on
-      scene.relax_kitchen: on
+      light.family_area:
+        state: on
+        brightness: 144
+        color_temp: 447
       scene.dimmed_living_room: on
       switch.family_room_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
@@ -44,10 +47,10 @@
 
   - name: Nightlight Downstairs
     entities:
-      scene.nightlight_family_room: on
-      scene.nightlight_dining_room: on
-      scene.nightlight_kitchen: on
-      scene.nightlight_living_room: on
+      light.downstairs:
+        state: on
+        brightness: 1
+        color_temp: 443
       switch.family_room_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off

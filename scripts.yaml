@@ -18,19 +18,30 @@
       - service: switch.turn_off
         entity_id: switch.porch_light_switch
 
+  scene_retry:
+    sequence:
+      - service: scene.turn_on
+        data_template:
+          entity_id: "{{ scene_entity_id }}"
+      - delay:
+          seconds: 1
+      - service: scene.turn_on
+        data_template:
+          entity_id: "{{ scene_entity_id }}"
+
   wakeup_energize:
     sequence:
-    - service: light.turn_on
-      data:
-        entity_id: light.bedroom
-        xy_color: [0.314,0.331]
-        brightness: 1
-    - service: light.turn_on
-      data:
-        entity_id: light.bedroom
-        xy_color: [0.314,0.331]
-        brightness: 254
-        transition: 900
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.314,0.331]
+          brightness: 1
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.314,0.331]
+          brightness: 254
+          transition: 900
 
   wakeup_sunrise:
     sequence:
