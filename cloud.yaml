@@ -25,6 +25,9 @@
           - light.hue_porch_lamp_2
           - light.hue_kids_room_lamp
           - light.entertainment_area_1
+          - light.downstairs
+          - light.family_area
+          - light.upstairs
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn
           - switch.back_yard_shrubs
@@ -83,6 +86,10 @@
           - light.hue_porch_lamp_2
           - light.hue_kids_room_lamp
           - light.entertainment_area_1
+          - light.downstairs
+          - light.family_area
+          - light.upstairs
+          - scene.tv_time
           - switch.rachio_in_standby_mode
           - switch.back_yard_lawn
           - switch.back_yard_shrubs

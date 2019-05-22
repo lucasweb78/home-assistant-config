@@ -9,7 +9,6 @@
       - switch.playroom_light_switch
       - switch.garage_light
       - switch.patio_light_switch
-      - switch.playroom_light_switch
       - switch.porch_switch
       - switch.porch_light_switch
       - light.living_room
