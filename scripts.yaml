@@ -24,10 +24,21 @@
         data_template:
           entity_id: "{{ scene_entity_id }}"
       - delay:
-          seconds: 1
+          seconds: 3
       - service: scene.turn_on
         data_template:
           entity_id: "{{ scene_entity_id }}"
+
+  turn_off_group_with_retry:
+    sequence:
+      - service: homeassistant.turn_off
+        data_template:
+          entity_id: "{{ group_entity_id }}"
+      - delay:
+          seconds: 3
+      - service: homeassistant.turn_off
+        data_template:
+          entity_id: "{{ group_entity_id }}"
 
   wakeup_energize:
     sequence:

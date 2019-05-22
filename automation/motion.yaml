@@ -1,4 +1,4 @@
-  - alias: Turn on downstains lights morning
+  - alias: Turn on downstains lights early morning
     hide_entity: false
     trigger:
       - platform: state
@@ -17,11 +17,36 @@
         below: '18'
       - condition: time
         after: '06:00:00'
+        before: '8:00:00'
+    action:
+      - service: script.scene_retry
+        data:
+          scene_entity_id: scene.bright_downstairs
+
+  - alias: Turn on downstains lights morning
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        from: 'off'
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.disable_downstairs_motion
+        state: 'off'
+      - condition: state
+        entity_id: group.downstairs_all_lights
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.downstairs_motion_detector_luminance
+        below: '18'
+      - condition: time
+        after: '08:00:00'
         before: '12:00:00'
     action:
-    - service: script.scene_retry
-      data:
-        scene_entity_id: scene.energize_downstairs
+      - service: script.scene_retry
+        data:
+          scene_entity_id: scene.energize_downstairs
 
   - alias: Turn on downstains lights afternoon
     hide_entity: false
@@ -44,9 +69,9 @@
       after: '12:00:00'
       before: '19:00:00'
     action:
-    - service: script.scene_retry
-      data:
-        scene_entity_id: scene.concentrate_downstairs
+      - service: script.scene_retry
+        data:
+          scene_entity_id: scene.concentrate_downstairs
 
   - alias: Turn on downstains lights evening
     hide_entity: false
@@ -69,9 +94,9 @@
         after: '19:00:00'
         before: '22:00:00'
     action:
-    - service: script.scene_retry
-      data:
-        scene_entity_id: scene.relax_downstairs
+      - service: script.scene_retry
+        data:
+          scene_entity_id: scene.relax_downstairs
 
   - alias: Turn on downstains lights night
     hide_entity: false
@@ -94,32 +119,41 @@
         after: '22:00:00'
         before: '06:00:00'
     action:
-    - service: script.scene_retry
-      data:
-        scene_entity_id: scene.nightlight_downstairs
+      - service: script.scene_retry
+        data:
+          scene_entity_id: scene.nightlight_downstairs
 
   - alias: Turn off downstains lights
     trigger:
-      - platform: state
+      - platform: time_pattern
+        seconds: '/60'
+    condition:
+      - condition: state
+        entity_id: group.downstairs_all_lights
+        state: 'on'
+      - condition: state
         entity_id: binary_sensor.downstairs_motion_detector_sensor
-        to: 'off'
+        state: 'off'
         for:
           minutes: 30
-    condition:
       - condition: state
         entity_id: input_boolean.disable_downstairs_motion
         state: 'off'
-      - condition: time
-        after: '22:00:00'
-        before: '19:00:00'
       - condition: state
         entity_id: media_player.vizio_smartcast
         state: 'off'
         for:
           minutes: 15
+      - condition: time
+        before: '19:00:00'
+        after: '22:00:00'
     action:
-    - service: homeassistant.turn_off
-      entity_id: group.downstairs_all_lights
+      - service: script.turn_off_group_with_retry
+        data:
+          group_entity_id: group.downstairs_all_lights
+      - service: notify.ios_rich_iphone
+        data:
+          message: "No motion for 30 minutes turning of downstairs lights"
 
   - alias: 'last_motion_update'
     trigger:
