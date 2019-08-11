@@ -2,7 +2,11 @@
     hide_entity: false
     trigger:
       - platform: state
-        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        entity_id: binary_sensor.downstairs_motion_detector_1_sensor
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_2_sensor
         from: 'off'
         to: 'on'
     condition:

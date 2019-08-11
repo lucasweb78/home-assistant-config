@@ -12,7 +12,7 @@
       - service: script.turn_on
         entity_id: script.porch_light_timer
 
-  - alias: Porch Lighting On
+  - alias: Porch Light Switch On
     hide_entity: false
     trigger:
       platform: state
@@ -22,7 +22,7 @@
       - service: light.turn_on
         entity_id: light.porch
 
-  - alias: Porch Lighting Off
+  - alias: Porch Light Switch Off
     hide_entity: false
     trigger:
       platform: state
@@ -32,3 +32,21 @@
       - service: light.turn_off
         entity_id: light.porch
 
+  - alias: Porch Lights On
+    hide_entity: false
+    trigger:
+      platform: state
+      entity_id: light.porch
+      to: 'on'
+    condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: switch.porch_light_switch
+          state: 'unavailable'
+        - condition: state
+          entity_id: switch.porch_light_switch
+          state: 'off'
+    action:
+      - service: switch.turn_on
+        entity_id: switch.porch_light_switch

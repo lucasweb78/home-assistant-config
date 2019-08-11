@@ -1,4 +1,4 @@
-  - alias: Kitchen Room Switch On
+  - alias: Kitchen Light Switch On
     hide_entity: false
     trigger:
       platform: state
@@ -12,7 +12,7 @@
       - service: light.turn_on
         entity_id: light.kitchen
 
-  - alias: Kitchen Room Switch Off
+  - alias: Kitchen Light Switch Off
     hide_entity: false
     trigger:
       platform: state
@@ -26,16 +26,21 @@
       - service: light.turn_off
         entity_id: light.kitchen
 
-  - alias: Kitchen Room Light On
+  - alias: Kitchen Lights On
     hide_entity: false
     trigger:
       platform: state
       entity_id: light.kitchen
       to: 'on'
     condition:
-    - condition: state
-      entity_id: switch.kitchen_light_switch
-      state: 'off'
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: switch.kitchen_light_switch
+          state: 'unavailable'
+        - condition: state
+          entity_id: switch.kitchen_light_switch
+          state: 'off'
     action:
     - service: switch.turn_on
       entity_id: switch.kitchen_light_switch

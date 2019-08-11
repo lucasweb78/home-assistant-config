@@ -1,86 +1,21 @@
-## Climate
-
-  climate.downstairs:
-    friendly_name: Downstairs
-
 ## Device Trackers
 
   device_tracker.rich_iphone:
     friendly_name: Rich iPhone
-    icon: mdi:cellphone-iphone
+    icon: mdi:cellphone-
 
-  device_tracker.tile_6e4033e544154a37:
-      friendly_name: Keys
+## Sensors
 
-## Fans
+  sensor.downstairs_luminance:
+    icon: mdi:brightness-7
 
-  fan.bedroom_fan_level:
-    friendly_name: Bedroom Fan
-
-  fan.family_room_fan_level:
-    friendly_name: Family Room Fan
-
-  fan.kids_room_fan_level:
-    friendly_name: Kids Room Fan
-
-  fan.playroom_fan_level:
-    friendly_name: PlayRoom Fan
-
-## Groups
-
-  group.all_fans:
-    friendly_name: Fans
-    hidden: false
+  sensor.downstairs_last_motion:
+      icon: mdi:motion-sensor
 
 ## Lights
 
   light.all_hue_lights:
     hidden: true
-
-  light.hue_bedroom_lamp_1:
-    friendly_name: Bedroom Lamp 1
-
-  light.hue_bedroom_lamp_2:
-    friendly_name: Bedroom Lamp 2
-
-  light.hue_dining_room_lamp_1:
-    friendly_name: Dining Room Lamp 1
-
-  light.hue_dining_room_lamp_2:
-    friendly_name: Dining Room Lamp 2
-
-  light.hue_kitchen_lamp_1:
-      friendly_name: Kitchen Lamp 1
-
-  light.hue_kitchen_lamp_2:
-    friendly_name: Kitchen Lamp 2
-
-  light.hue_kitchen_lamp_3:
-    friendly_name: Kitchen Lamp 3
-
-  light.hue_kitchen_lamp_4:
-   friendly_name: Kitchen Lamp 4
-
-  light.hue_living_room_lamp_1:
-    friendly_name: Living Room Lamp 1
-
-  light.hue_living_room_lamp_2:
-    friendly_name: Living Room Lamp 2
-
-  light.hue_living_room_lamp_3:
-    friendly_name: Living Room Lamp 3
-
-  light.hue_family_room_lightstrip:
-    friendly_name: Family Room Lightstrip
-
-  light.hue_porch_lamp_1:
-    friendly_name: Porch Lamp 1
-
-  light.hue_porch_lamp_2:
-    friendly_name: Porch Lamp 2
-
-  light.hue_kids_room_lamp:
-    friendly_name: Kids Room Lamp
 
   light.bedroom:
     friendly_name: Bedroom Lamps
@@ -102,43 +37,3 @@
 
   light.porch:
     friendly_name: Porch Lights
-
-## Locks
-
-  lock.front_door_lock_locked:
-    friendly_name: Front Door Lock
-
-## Sensors
-
-  sensor.downstairs_motion_detector_luminance:
-    friendly_name: Downstairs Luminance
-    icon: mdi:brightness-7
-
-  sensor.netatmo_outdoor_temperature:
-    friendly_name: Outside Temperature
-
-  sensor.netatmo_outdoor_humidity:
-    friendly_name: Outside Humidity
-
-  sensor.netatmo_downstairs_temperature:
-    friendly_name: Downstairs Temperature
-
-  sensor.netatmo_downstairs_humidity:
-    friendly_name: Downstairs Humidity
-
-  sensor.netatmo_downstairs_co2:
-    friendly_name: Downstairs CO2
-
-  sensor.netatmo_downstairs_noise:
-    friendly_name: Downstairs Noise
-
-## Switches
-
-  switch.garage_light:
-    friendly_name: Garage Light Switch
-
-  switch.outdoor_plug_switch:
-    friendly_name: Outdoor Switch
-
-  switch.rachio_in_standby_mode:
-    friendly_name: Rachio Standby Mode

@@ -3,6 +3,13 @@
   - platform: dnsip
     hostname: lucasweb.duckdns.org
 
+  - platform: min_max
+    name: Downstairs Luminance
+    type: mean
+    entity_ids:
+      - sensor.downstairs_motion_detector_1_luminance
+      - sensor.downstairs_motion_detector_2_luminance
+
   - platform: template
     sensors:
       home_presence_status:
@@ -17,13 +24,36 @@
             Away
           {% endif %}
       downstairs_last_motion:
-        friendly_name: 'Last Motion'
-        entity_id: sensor.downstairs_motion_detector
+        friendly_name: 'Downstairs Last Motion'
+        entity_id: sensor.downstairs_motion_detector_1, sensor.downstairs_motion_detector_2
         icon_template: >-
           mdi:eye
         value_template: >-
-          {%- if states.sensor.downstairs_motion_detector -%}
-            {{ relative_time(states.sensor.downstairs_motion_detector.last_changed) }}
+          {%- set sensors = [states.sensor.downstairs_motion_detector_1, states.sensor.downstairs_motion_detector_2] %}
+          {% for sensor in sensors %}
+            {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
+              {{ relative_time(sensor.last_changed) }}
+            {% endif %}
+          {% endfor %}
+      downstairs_last_motion_1:
+        friendly_name: 'Downstairs Last Motion One'
+        entity_id: sensor.downstairs_motion_detector_1
+        icon_template: >-
+          mdi:eye
+        value_template: >-
+          {%- if states.sensor.downstairs_motion_detector_1 -%}
+            {{ relative_time(states.sensor.downstairs_motion_detector_1.last_changed) }}
+          {%- else -%}
+            Loading...
+          {%- endif -%}
+      downstairs_last_motion_2:
+        friendly_name: 'Downstairs Last Motion Two'
+        entity_id: sensor.downstairs_motion_detector_2
+        icon_template: >-
+          mdi:eye
+        value_template: >-
+          {%- if states.sensor.downstairs_motion_detector_2 -%}
+            {{ relative_time(states.sensor.downstairs_motion_detector_2.last_changed) }}
           {%- else -%}
             Loading...
           {%- endif -%}
@@ -38,14 +68,25 @@
           {%- else -%}
             Loading...
           {%- endif -%}
-      battery_downstairs_motion_detector:
-        friendly_name: 'Downstairs Motion Detector'
-        entity_id: zwave.downstairs_motion_detector
+      battery_downstairs_motion_detector_1:
+        friendly_name: 'Downstairs Motion Detector One'
+        entity_id: zwave.downstairs_motion_detector_1
         icon_template: >-
           mdi:battery
         value_template: >-
-          {%- if states.zwave.downstairs_motion_detector -%}
-            {{ states.zwave.downstairs_motion_detector.attributes.battery_level }} %
+          {%- if states.zwave.downstairs_motion_detector_1 -%}
+            {{ states.zwave.downstairs_motion_detector_1.attributes.battery_level }} %
+          {%- else -%}
+            Loading...
+          {%- endif -%}
+      battery_downstairs_motion_detector_2:
+        friendly_name: 'Downstairs Motion Detector Two'
+        entity_id: zwave.downstairs_motion_detector_2
+        icon_template: >-
+          mdi:battery
+        value_template: >-
+          {%- if states.zwave.downstairs_motion_detector_2 -%}
+            {{ states.zwave.downstairs_motion_detector_2.attributes.battery_level }} %
           {%- else -%}
             Loading...
           {%- endif -%}

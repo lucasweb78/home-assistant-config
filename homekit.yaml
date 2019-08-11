@@ -6,7 +6,6 @@
       - light
       - fan
       - climate
-      - sensor
     exclude_entities:
       - switch.back_yard_lawn
       - switch.back_yard_shrubs
@@ -35,10 +34,3 @@
       - light.downstairs
       - light.family_area
       - light.upstairs
-      - sensor.downstairs_thermostat_target
-      - sensor.downstairs_thermostat_temperature
-      - sensor.downstairs_thermostat_humidity
-      - sensor.netatmo_downstairs_humidity
-      - sensor.netatmo_downstairs_temperature
-      - sensor.netatmo_outdoor_temperature
-      - sensor.netatmo_outdoor_humidity

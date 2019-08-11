@@ -1,4 +1,4 @@
-  - alias: Dining Room Switch On
+  - alias: Dining Room Light Switch On
     hide_entity: false
     trigger:
       platform: state
@@ -12,7 +12,7 @@
       - service: light.turn_on
         entity_id: light.dining_room
 
-  - alias: Dining Room Switch Off
+  - alias: Dining Room Light Switch Off
     hide_entity: false
     trigger:
       platform: state
@@ -26,16 +26,21 @@
       - service: light.turn_off
         entity_id: light.dining_room
 
-  - alias: Dining Room Light On
+  - alias: Dining Room Lights On
     hide_entity: false
     trigger:
       platform: state
       entity_id: light.dining_room
       to: 'on'
     condition:
-    - condition: state
-      entity_id: switch.dining_room_light_switch
-      state: 'off'
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: switch.dining_room_light_switch
+          state: 'unavailable'
+        - condition: state
+          entity_id: switch.dining_room_light_switch
+          state: 'off'
     action:
     - service: switch.turn_on
       entity_id: switch.dining_room_light_switch

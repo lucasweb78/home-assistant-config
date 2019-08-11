@@ -2,7 +2,11 @@
     hide_entity: false
     trigger:
       - platform: state
-        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        entity_id: binary_sensor.downstairs_motion_detector_1_sensor
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_2_sensor
         from: 'off'
         to: 'on'
     condition:
@@ -13,7 +17,7 @@
         entity_id: group.downstairs_all_lights
         state: 'off'
       - condition: numeric_state
-        entity_id: sensor.downstairs_motion_detector_luminance
+        entity_id: sensor.downstairs_motion_detector_1_luminance
         below: '18'
       - condition: time
         after: '06:00:00'
@@ -27,7 +31,11 @@
     hide_entity: false
     trigger:
       - platform: state
-        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        entity_id: binary_sensor.downstairs_motion_detector_1_sensor
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_2_sensor
         from: 'off'
         to: 'on'
     condition:
@@ -38,7 +46,7 @@
         entity_id: group.downstairs_all_lights
         state: 'off'
       - condition: numeric_state
-        entity_id: sensor.downstairs_motion_detector_luminance
+        entity_id: sensor.downstairs_motion_detector_1_luminance
         below: '18'
       - condition: time
         after: '08:00:00'
@@ -51,33 +59,12 @@
   - alias: Turn on downstains lights afternoon
     hide_entity: false
     trigger:
-    - platform: state
-      entity_id: binary_sensor.downstairs_motion_detector_sensor
-      from: 'off'
-      to: 'on'
-    condition:
-    - condition: state
-      entity_id: input_boolean.disable_downstairs_motion
-      state: 'off'
-    - condition: state
-      entity_id: group.downstairs_all_lights
-      state: 'off'
-    - condition: numeric_state
-      entity_id: sensor.downstairs_motion_detector_luminance
-      below: '18'
-    - condition: time
-      after: '12:00:00'
-      before: '19:00:00'
-    action:
-      - service: script.scene_retry
-        data:
-          scene_entity_id: scene.concentrate_downstairs
-
-  - alias: Turn on downstains lights evening
-    hide_entity: false
-    trigger:
       - platform: state
-        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        entity_id: binary_sensor.downstairs_motion_detector_1_sensor
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_2_sensor
         from: 'off'
         to: 'on'
     condition:
@@ -88,7 +75,36 @@
         entity_id: group.downstairs_all_lights
         state: 'off'
       - condition: numeric_state
-        entity_id: sensor.downstairs_motion_detector_luminance
+        entity_id: sensor.downstairs_motion_detector_1_luminance
+        below: '18'
+      - condition: time
+        after: '12:00:00'
+        before: '19:00:00'
+    action:
+      - service: script.scene_retry
+        data:
+          scene_entity_id: scene.concentrate_downstairs
+
+  - alias: Turn on downstains lights evening
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_1_sensor
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_2_sensor
+        from: 'off'
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.disable_downstairs_motion
+        state: 'off'
+      - condition: state
+        entity_id: group.downstairs_all_lights
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.downstairs_motion_detector_1_luminance
         below: '18'
       - condition: time
         after: '19:00:00'
@@ -102,7 +118,11 @@
     hide_entity: false
     trigger:
       - platform: state
-        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        entity_id: binary_sensor.downstairs_motion_detector_1_sensor
+        from: 'off'
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.downstairs_motion_detector_2_sensor
         from: 'off'
         to: 'on'
     condition:
@@ -113,7 +133,7 @@
         entity_id: group.downstairs_all_lights
         state: 'off'
       - condition: numeric_state
-        entity_id: sensor.downstairs_motion_detector_luminance
+        entity_id: sensor.downstairs_motion_detector_1_luminance
         below: '18'
       - condition: time
         after: '22:00:00'
@@ -132,7 +152,12 @@
         entity_id: group.downstairs_all_lights
         state: 'on'
       - condition: state
-        entity_id: binary_sensor.downstairs_motion_detector_sensor
+        entity_id: binary_sensor.downstairs_motion_detector_1_sensor
+        state: 'off'
+        for:
+          minutes: 30
+      - condition: state
+        entity_id: binary_sensor.downstairs_motion_detector_2_sensor
         state: 'off'
         for:
           minutes: 30
@@ -157,18 +182,32 @@
 
   - alias: 'last_motion_update'
     trigger:
-    - platform: time_pattern
-      seconds: '/30'
+      - platform: time_pattern
+        seconds: '/30'
     action:
-    - service: homeassistant.update_entity
-      entity_id: sensor.downstairs_last_motion
+      - service: homeassistant.update_entity
+        entity_id: sensor.downstairs_last_motion
+      - service: homeassistant.update_entity
+        entity_id: sensor.downstairs_last_motion_1
+      - service: homeassistant.update_entity
+        entity_id: sensor.downstairs_last_motion_2
 
-  - alias: Low Battery Alert - Downstairs Motion Detector
+  - alias: Low Battery Alert - Downstairs Motion Detector One
     trigger:
-      platform: template
-      value_template: '{{ states.sensor.battery_downstairs_motion_detector.state | int > 1 and states.sensor.battery_downstairs_motion_detector.state | int < 5 }}'
+      - platform: template
+        value_template: '{{ states.sensor.battery_downstairs_motion_detector_1.state | int > 1 and states.sensor.battery_downstairs_motion_detector_1.state | int < 5 }}'
     action:
       - service: notify.ios_rich_iphone
         data_template:
           message: >
-            Low Battery Alert - Downstairs Motion Detector is at {{ states.sensor.battery_downstairs_motion_detector.state }} %
+            Low Battery Alert - Downstairs Motion Detector One is at {{ states.sensor.battery_downstairs_motion_detector_1.state }} %
+
+  - alias: Low Battery Alert - Downstairs Motion Detector Two
+    trigger:
+      - platform: template
+        value_template: '{{ states.sensor.battery_downstairs_motion_detector_2.state | int > 1 and states.sensor.battery_downstairs_motion_detector_2.state | int < 5 }}'
+    action:
+      - service: notify.ios_rich_iphone
+        data_template:
+          message: >
+            Low Battery Alert - Downstairs Motion Detector Two is at {{ states.sensor.battery_downstairs_motion_detector_1.state }} %
