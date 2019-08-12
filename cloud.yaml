@@ -1,41 +1,4 @@
   alexa:
-      filter:
-        include_domains:
-          - switch
-          - light
-          - lock
-          - fan
-          - scene
-          - input_boolean
-        exclude_entities:
-          - light.hue_bedroom_lamp_1
-          - light.hue_bedroom_lamp_2
-          - light.hue_dining_room_lamp_1
-          - light.hue_dining_room_lamp_2
-          - light.hue_family_room_lamp
-          - light.hue_family_room_lightstrip
-          - light.hue_kitchen_lamp_1
-          - light.hue_kitchen_lamp_2
-          - light.hue_kitchen_lamp_3
-          - light.hue_kitchen_lamp_4
-          - light.hue_living_room_lamp_1
-          - light.hue_living_room_lamp_2
-          - light.hue_living_room_lamp_3
-          - light.hue_porch_lamp_1
-          - light.hue_porch_lamp_2
-          - light.hue_kids_room_lamp
-          - light.entertainment_area_1
-          - light.downstairs
-          - light.family_area
-          - light.upstairs
-          - switch.rachio_in_standby_mode
-          - switch.back_yard_lawn
-          - switch.back_yard_shrubs
-          - switch.front_yard_lawn
-          - switch.front_yard_shrubs
-          - switch.christmas_tree
-          - switch.dining_room_light_switch
-          - switch.kitchen_light_switch
       entity_config:
         switch.family_room_light_switch:
           display_categories: LIGHT
@@ -59,42 +22,3 @@
           display_categories: SMARTPLUG
         switch.porch_switch:
           display_categories: SMARTPLUG
-
-  google_actions:
-      filter:
-        include_domains:
-          - switch
-          - light
-          - lock
-          - fan
-          - scene
-        exclude_entities:
-          - light.hue_bedroom_lamp_1
-          - light.hue_bedroom_lamp_2
-          - light.hue_dining_room_lamp_1
-          - light.hue_dining_room_lamp_2
-          - light.hue_family_room_lamp
-          - light.hue_family_room_lightstrip
-          - light.hue_kitchen_lamp_1
-          - light.hue_kitchen_lamp_2
-          - light.hue_kitchen_lamp_3
-          - light.hue_kitchen_lamp_4
-          - light.hue_living_room_lamp_1
-          - light.hue_living_room_lamp_2
-          - light.hue_living_room_lamp_3
-          - light.hue_porch_lamp_1
-          - light.hue_porch_lamp_2
-          - light.hue_kids_room_lamp
-          - light.entertainment_area_1
-          - light.downstairs
-          - light.family_area
-          - light.upstairs
-          - scene.tv_time
-          - switch.rachio_in_standby_mode
-          - switch.back_yard_lawn
-          - switch.back_yard_shrubs
-          - switch.front_yard_lawn
-          - switch.front_yard_shrubs
-          - switch.christmas_tree
-          - switch.dining_room_light_switch
-          - switch.kitchen_light_switch
