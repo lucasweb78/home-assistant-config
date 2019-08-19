@@ -15,6 +15,12 @@ cloud: !include cloud.yaml
 
 config:
 
+cover:
+  - platform: myq
+    username: !secret myq_username
+    password: !secret myq_password
+    type: chamberlain
+
 discovery:
   ignore:
     - apple_tv

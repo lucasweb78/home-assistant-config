@@ -49,3 +49,51 @@
     - service: notify.ios_rich_iphone
       data:
         message: "Front door locked"
+
+  - alias: Door Unlocked
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: lock.front_door_lock_locked
+        from: 'locked'
+        to: 'unlocked'
+    condition:
+      - condition: state
+        entity_id: input_boolean.home_alerts
+        state: 'on'
+    action:
+      - service: notify.ios_rich_iphone
+        data:
+          message: "Front door unlocked"
+
+  - alias: Left Garage Closed
+      hide_entity: false
+      trigger:
+        - platform: state
+          entity_id: cover.left_garage_door
+          from: 'open'
+          to: 'closed'
+      condition:
+        - condition: state
+          entity_id: input_boolean.home_alerts
+          state: 'on'
+      action:
+        - service: notify.ios_rich_iphone
+          data:
+            message: "Left Garage Door closed"
+
+  - alias: Left Garage Opened
+    hide_entity: false
+    trigger:
+      - platform: state
+        entity_id: cover.left_garage_door
+        from: 'closed'
+        to: 'open'
+    condition:
+      - condition: state
+        entity_id: input_boolean.home_alerts
+        state: 'on'
+    action:
+      - service: notify.ios_rich_iphone
+        data:
+          message: "Left Garage Door opened"

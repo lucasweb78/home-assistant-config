@@ -6,6 +6,7 @@
       - light
       - fan
       - climate
+      - cover
     exclude_entities:
       - switch.back_yard_lawn
       - switch.back_yard_shrubs
