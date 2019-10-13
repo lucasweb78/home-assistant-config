@@ -5,6 +5,10 @@
         entity_id: cover.left_garage_door
         from: 'closed'
         to: 'open'
+      - platform: state
+        entity_id: cover.right_garage_door
+        from: 'closed'
+        to: 'open'
     condition:
       - condition: state
         entity_id: switch.garage_light

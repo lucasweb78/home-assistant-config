@@ -14,7 +14,7 @@
       entity_id: switch.christmas_tree
 
   - alias: Holiday Lights
-    initial_state: false
+    initial_state: true
     hide_entity: false
     trigger:
       platform: sun
@@ -22,4 +22,4 @@
       offset: "-00:15:00"
     action:
       service: scene.turn_on
-      entity_id: scene.holiday_lights
+      entity_id: scene.holiday_lights_outside

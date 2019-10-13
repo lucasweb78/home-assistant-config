@@ -44,6 +44,7 @@
       switch.family_room_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
+      group.holiday_lights_inside: on
 
   - name: Nightlight Downstairs
     entities:
@@ -228,6 +229,7 @@
   - name: Kids Good Night
     entities:
       switch.kids_room_light_switch: off
+      switch.lava_lamp: off
       light.hue_kids_room_lamp: off
       fan.kids_room_fan_level: on
 
@@ -242,6 +244,8 @@
       fan.bedroom_fan_level: on
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
+      group.holiday_lights_inside: off
+      group.holiday_lights_oustide: off
 
   - name: Good Night
     entities:
@@ -249,6 +253,8 @@
       fan.family_room_fan_level: off
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
+      group.holiday_lights_inside: off
+      group.holiday_lights_oustide: off
 
   ## Bedroom Scenes
 
@@ -289,7 +295,11 @@
 
 ## Holiday Scenes
 
-  - name: Holiday Lights
+  - name: Holiday Lights Inside
     entities:
-      switch.porch_switch: on
-      switch.garage_switch: on
+      group.holiday_lights_inside: on
+
+
+  - name: Holiday Lights Outside
+    entities:
+      group.holiday_lights_oustide: on

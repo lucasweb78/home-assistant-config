@@ -37,31 +37,24 @@ history:
 
 homekit: !include homekit.yaml
 
+hue:
+  bridges:
+    - host: !secret hue_ip
+      allow_unreachable: true
+
 input_boolean: !include input_boolean.yaml
 
 ios:
 
-light: !include lights.yaml
-
 logbook:
   exclude:
-    entities:
-      - automation.last_motion_update
-      - sensor.downstairs_last_motion
-      - sensor.downstairs_motion_detector_1
-      - sensor.downstairs_motion_detector_1_sourcenodeid
-      - sensor.downstairs_motion_detector_1_alarm_level
-      - sensor.downstairs_motion_detector_1_alarm_type
-      - sensor.downstairs_motion_detector_1_luminance
-      - sensor.downstairs_last_motion_1
-      - binary_sensor.downstairs_motion_1_detector_sensor
-      - sensor.downstairs_motion_detector_2
-      - sensor.downstairs_motion_detector_2_sourcenodeid
-      - sensor.downstairs_motion_detector_2_alarm_level
-      - sensor.downstairs_motion_detector_2_alarm_type
-      - sensor.downstairs_motion_detector_2_luminance
-      - sensor.downstairs_last_motion_2
-      - binary_sensor.downstairs_motion_2_detector_sensor
+    domains:
+      - zwave
+      - automation
+      - sensor
+      - binary_sensor
+      - light
+      - group
 
 logger:
   default: error
@@ -80,8 +73,6 @@ netatmo:
 
 person:
 
-python_script:
-
 rachio:
   api_key: !secret rachio_api_key
 
@@ -89,8 +80,10 @@ recorder:
   purge_interval: 1
   purge_keep_days: 2
   exclude:
+    domains:
+      - zwave
+      - automation
     entities:
-      - automation.last_motion_update
       - sensor.downstairs_last_motion
       - sensor.downstairs_motion_detector_1
       - sensor.downstairs_motion_detector_1_sourcenodeid
@@ -127,8 +120,8 @@ vacuum:
     username: !secret roomba_username
     password: !secret roomba_password
 
-wemo:
-
+zeroconf:
+  
 zone: !include zones.yaml
 
 zwave:

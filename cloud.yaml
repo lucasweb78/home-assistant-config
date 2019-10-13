@@ -18,6 +18,12 @@
           display_categories: LIGHT
         switch.porch_light_switch:
           display_categories: LIGHT
+        switch.switch_one:
+          display_categories: SMARTPLUG
+        switch.switch_two:
+          display_categories: SMARTPLUG
+        switch.lava_lamp:
+          display_categories: LIGHT
         switch.garage_switch:
           display_categories: SMARTPLUG
         switch.porch_switch:
