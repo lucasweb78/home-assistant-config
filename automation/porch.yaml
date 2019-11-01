@@ -1,5 +1,6 @@
   - alias: Porch Motion
     hide_entity: false
+    initial_state: true
     trigger:
       platform: state
       entity_id: binary_sensor.porch_camera_person_detected

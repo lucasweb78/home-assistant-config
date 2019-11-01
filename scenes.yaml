@@ -44,7 +44,6 @@
       switch.family_room_light_switch: off
       switch.kitchen_under_cabinet_light_switch: off
       switch.kitchen_sink_light_switch: off
-      group.holiday_lights_inside: on
 
   - name: Nightlight Downstairs
     entities:
@@ -244,8 +243,6 @@
       fan.bedroom_fan_level: on
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
-      group.holiday_lights_inside: off
-      group.holiday_lights_oustide: off
 
   - name: Good Night
     entities:
@@ -253,8 +250,6 @@
       fan.family_room_fan_level: off
       media_player.vizio_smartcast: off
       input_boolean.disable_downstairs_motion: off
-      group.holiday_lights_inside: off
-      group.holiday_lights_oustide: off
 
   ## Bedroom Scenes
 
@@ -292,14 +287,3 @@
         state: on
         brightness: 1
         xy_color: [0.561,0.404]
-
-## Holiday Scenes
-
-  - name: Holiday Lights Inside
-    entities:
-      group.holiday_lights_inside: on
-
-
-  - name: Holiday Lights Outside
-    entities:
-      group.holiday_lights_oustide: on

@@ -1,8 +1,6 @@
   lights:
     name: Lights
     entities:
-      - switch.switch_one
-      - switch.switch_two
       - switch.family_room_light_switch
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
@@ -53,19 +51,11 @@
       - switch.family_room_light_switch
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
-      - switch.switch_one
-      - switch.switch_two
 
   downstairs_fans:
     name: Fans
     entities:
       - fan.family_room_fan_level
-
-  holiday_lights_inside:
-    name: Holiday Lights Inside
-    entities:
-      - switch.switch_one
-      - switch.switch_two
 
 # Upstairs
 
@@ -133,9 +123,3 @@
       - switch.porch_switch
       - switch.porch_light_switch
       - light.porch
-
-  holiday_lights_oustide:
-    name: Holiday Lights Outside
-    entities:
-      - switch.garage_switch
-      - switch.porch_switch
