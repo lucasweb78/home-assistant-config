@@ -61,10 +61,6 @@ logger:
 
 media_player: !include media_players.yaml
 
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-
 netatmo:
   api_key: !secret netatmo_api_client_id
   secret_key: !secret netatmo_api_client_secret

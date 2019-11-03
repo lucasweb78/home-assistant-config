@@ -5,8 +5,9 @@
       - switch
       - light
       - fan
-      - climate
       - cover
+    include_entities:
+      - sensor.netatmo_downstairs_temperature
     exclude_entities:
       - switch.back_yard_lawn
       - switch.back_yard_shrubs
@@ -15,6 +16,8 @@
       - switch.rachio_in_standby_mode
       - switch.dining_room_light_switch
       - switch.kitchen_light_switch
+      - switch.switch_one
+      - switch.switch_two
       - light.hue_bedroom_lamp_1
       - light.hue_bedroom_lamp_2
       - light.hue_dining_room_lamp_1
