@@ -9,7 +9,6 @@
       - switch.playroom_light_switch
       - switch.garage_light
       - switch.garage_switch
-      - switch.patio_light_switch
       - switch.porch_switch
       - switch.porch_light_switch
       - light.living_room
@@ -19,6 +18,7 @@
       - light.bedroom
       - light.kids_room
       - light.porch
+      - group.christmas_tree
 
 # Downstairs
 
@@ -51,6 +51,13 @@
       - switch.family_room_light_switch
       - switch.kitchen_under_cabinet_light_switch
       - switch.kitchen_sink_light_switch
+      - group.christmas_tree
+
+  christmas_tree:
+    name: Christmas Tree
+    entities:
+      - switch.switch_one
+      - switch.switch_two
 
   downstairs_fans:
     name: Fans
@@ -103,11 +110,6 @@
       - switch.porch_light_switch
       - light.porch
 
-  patio:
-    name: Patio
-    entities:
-      - switch.patio_light_switch
-
   garage:
     name: Garage
     entities:
@@ -117,7 +119,6 @@
   outside_lights:
     name: Lights
     entities:
-      - switch.patio_light_switch
       - switch.garage_light
       - switch.garage_switch
       - switch.porch_switch

@@ -234,7 +234,6 @@
 
   - name: Bedtime
     entities:
-      group.patio: off
       group.garage: off
       group.porch: off
       scene.nightlight_downstairs: on

@@ -6,8 +6,6 @@
           display_categories: LIGHT
         switch.kitchen_sink_light_switch:
           display_categories: LIGHT
-        switch.patio_light_switch:
-          display_categories: LIGHT
         switch.garage_light:
           display_categories: LIGHT
         switch.bathroom_light_switch:

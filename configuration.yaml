@@ -13,13 +13,13 @@ automation old: !include_dir_merge_list automation
 
 cloud: !include cloud.yaml
 
-config:
-
 cover:
   - platform: myq
     username: !secret myq_username
     password: !secret myq_password
     type: chamberlain
+
+default_config:
 
 discovery:
   ignore:
@@ -33,8 +33,6 @@ lovelace:
 
 group: !include groups.yaml
 
-history:
-
 homekit: !include homekit.yaml
 
 hue:
@@ -43,8 +41,6 @@ hue:
       allow_unreachable: true
 
 input_boolean: !include input_boolean.yaml
-
-ios:
 
 logbook:
   exclude:
@@ -66,8 +62,6 @@ netatmo:
   secret_key: !secret netatmo_api_client_secret
   username: !secret netatmo_api_username
   password: !secret netatmo_api_password
-
-person:
 
 rachio:
   api_key: !secret rachio_api_key
@@ -102,21 +96,13 @@ sensor: !include sensors.yaml
 
 switch: !include switches.yaml
 
-sun:
-
-system_health:
-
 tplink:
-
-updater:
 
 vacuum:
   - platform: roomba
     host: !secret roomba_ip
     username: !secret roomba_username
     password: !secret roomba_password
-
-zeroconf:
   
 zone: !include zones.yaml
 

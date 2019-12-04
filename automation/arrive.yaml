@@ -5,10 +5,6 @@
         entity_id: device_tracker.rich_iphone
         from: 'not_home'
         to: 'home'
-    condition:
-      - condition: state
-        entity_id: switch.garage_light
-        state: 'off'
     action:
       - service: input_boolean.turn_off
         entity_id: input_boolean.home_alerts
