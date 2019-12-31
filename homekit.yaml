@@ -6,8 +6,6 @@
       - light
       - fan
       - cover
-    include_entities:
-      - sensor.netatmo_downstairs_temperature
     exclude_entities:
       - switch.back_yard_lawn
       - switch.back_yard_shrubs

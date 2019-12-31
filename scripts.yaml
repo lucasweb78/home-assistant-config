@@ -1,5 +1,7 @@
 ## Scripts
 
+### Timers
+
   garage_light_timer:
     sequence:
       - service: switch.turn_on
@@ -18,16 +20,18 @@
       - service: switch.turn_off
         entity_id: switch.porch_light_switch
 
-  scene_retry:
+### Retries
+  
+  script_retry:
     sequence:
-      - service: scene.turn_on
+      - service: script.turn_on
         data_template:
-          entity_id: "{{ scene_entity_id }}"
+          entity_id: "{{ script_entity_id }}"
       - delay:
           seconds: 3
-      - service: scene.turn_on
+      - service: script.turn_on
         data_template:
-          entity_id: "{{ scene_entity_id }}"
+          entity_id: "{{ script_entity_id }}"
 
   turn_off_group_with_retry:
     sequence:
@@ -40,41 +44,222 @@
         data_template:
           entity_id: "{{ group_entity_id }}"
 
-  wakeup_energize:
+### Scenes
+
+  bright_downstairs:
+    alias: Bright Downstairs
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.downstairs
+          color_temp: 366
+          brightness: 254
+      - service: switch.turn_on
+        entity_id: switch.family_room_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_under_cabinet_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_sink_light_switch
+
+  energize_downstairs:
+    alias: Energize Downstairs
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.family_area
+          color_temp: 156
+          brightness: 254
+      - service: light.turn_off
+        entity_id: light.living_room
+      - service: switch.turn_off
+        entity_id: switch.family_room_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_under_cabinet_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_sink_light_switch
+
+  concentrate_downstairs:
+    alias: Concentrate Downstairs
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.family_area
+          color_temp: 230
+          brightness: 254
+      - service: light.turn_off
+        entity_id: light.living_room
+      - service: switch.turn_off
+        entity_id: switch.family_room_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_under_cabinet_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_sink_light_switch
+
+  relax_downstairs:
+    alias: Relax Downstairs
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.family_area
+          color_temp: 447
+          brightness: 144
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room
+          brightness: 77
+      - service: switch.turn_off
+        entity_id: switch.family_room_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_under_cabinet_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_sink_light_switch
+
+  nightlight_downstairs:
+    alias: Nightlight Downstairs
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.downstairs
+          color_temp: 443
+          brightness: 1
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room
+          brightness: 1
+      - service: switch.turn_off
+        entity_id: switch.family_room_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_under_cabinet_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_sink_light_switch
+
+  tv_time:
+    alias: TV Time
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.kitchen
+          color_temp: 443
+          brightness: 1
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room
+          color_temp: 443
+          brightness: 1
+      - service: light.turn_on
+        data:
+          entity_id: light.family_room
+          xy_color: [0.263,0.187]
+          brightness: 63
+      - service: light.turn_off
+        entity_id: light.dining_room
+      - service: switch.turn_off
+        entity_id: switch.family_room_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_under_cabinet_light_switch
+      - service: switch.turn_off
+        entity_id: switch.kitchen_sink_light_switch
+      - service: media_player.turn_on
+        entity_id: media_player.vizio_smartcast
+
+  bright_bedroom:
+    alias: Bright Bedroom
     sequence:
       - service: light.turn_on
         data:
           entity_id: light.bedroom
-          xy_color: [0.314,0.331]
-          brightness: 1
+          xy_color: [0.457,0.41]
+          brightness: 254
+
+  energize_bedroom:
+    alias: Energize Bedroom
+    sequence:
       - service: light.turn_on
         data:
           entity_id: light.bedroom
           xy_color: [0.314,0.331]
           brightness: 254
-          transition: 900
 
-  wakeup_sunrise:
+  concentrate_bedroom:
+    alias: Concentrate Bedroom
     sequence:
       - service: light.turn_on
         data:
           entity_id: light.bedroom
-          xy_color: [0.683,0.314]
-          brightness: 1
-      - delay:
-          seconds: 1
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom
-          xy_color: [0.526,0.411]
-          brightness: 103
-          transition: 300
-      - delay:
-          seconds: 300
-      - service: light.turn_on
-        data:
-          entity_id: light.bedroom
           xy_color: [0.37,0.372]
-          brightness: 255
-          transition: 600
+          brightness: 254
+
+  relax_bedroom:
+    alias: Relax Bedroom
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.502,0.414]
+          brightness: 144
+
+  nightlight_bedroom:
+    alias: Nightlight Bedroom
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.561,0.404]
+          brightness: 1
+
+  kids_bedtime:
+    alias: Kids Bedtime
+    sequence:
+      - service: fan.turn_on
+        entity_id: fan.kids_room_fan_level
+      - service: light.turn_on
+        data:
+          entity_id: light.hue_kids_room_lamp
+          brightness: 178
+      - service: switch.turn_off
+        entity_id: switch.kids_room_light_switch
+
+  kids_goodnight:
+    alias: Kids Goodnight
+    sequence:
+      - service: fan.turn_on
+        entity_id: fan.kids_room_fan_level
+      - service: light.turn_off
+        entity_id: light.hue_kids_room_lamp
+      - service: switch.turn_off
+        entity_id: switch.kids_room_light_switch
+      - service: switch.turn_off
+        entity_id: switch.lava_lamp
+
+  bedtime:
+    alias: Bedtime
+    sequence:
+      - service: homeassistant.turn_off
+        entity_id: group.garage
+      - service: homeassistant.turn_off
+        entity_id: group.porch
+      - service: media_player.turn_off
+        entity_id: media_player.vizio_smartcast
+      - service: fan.turn_off
+        entity_id: fan.family_room_fan_level
+      - service: script.turn_on
+        entity_id: script.nightlight_downstairs
+      - service: script.turn_on
+        entity_id: script.nightlight_bedroom
+      - service: switch.turn_on
+        entity_id: switch.bathroom_light_switch
+      - service: fan.turn_on
+        entity_id: fan.bedroom_fan_level
+      - service: lock.lock
+        entity_id: lock.front_door_lock_locked
+
+  goodnight:
+    alias: Goodnight
+    sequence:
+      - service: homeassistant.turn_off
+        entity_id: group.lights
+      - service: media_player.turn_off
+        entity_id: media_player.vizio_smartcast
+      - service: fan.turn_off
+        entity_id: fan.family_room_fan_level
 

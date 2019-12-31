@@ -23,9 +23,9 @@
         after: '06:00:00'
         before: '8:00:00'
     action:
-      - service: script.scene_retry
+      - service: script.script_retry
         data:
-          scene_entity_id: scene.bright_downstairs
+          script_entity_id: script.bright_downstairs
 
   - alias: Turn on downstains lights morning
     hide_entity: false
@@ -52,9 +52,9 @@
         after: '08:00:00'
         before: '12:00:00'
     action:
-      - service: script.scene_retry
+      - service: script.script_retry
         data:
-          scene_entity_id: scene.energize_downstairs
+          script_entity_id: script.energize_downstairs
 
   - alias: Turn on downstains lights afternoon
     hide_entity: false
@@ -81,9 +81,9 @@
         after: '12:00:00'
         before: '19:00:00'
     action:
-      - service: script.scene_retry
+      - service: script.script_retry
         data:
-          scene_entity_id: scene.concentrate_downstairs
+          script_entity_id: script.concentrate_downstairs
 
   - alias: Turn on downstains lights evening
     hide_entity: false
@@ -110,9 +110,9 @@
         after: '19:00:00'
         before: '22:00:00'
     action:
-      - service: script.scene_retry
+      - service: script.script_retry
         data:
-          scene_entity_id: scene.relax_downstairs
+          script_entity_id: script.relax_downstairs
 
   - alias: Turn on downstains lights night
     hide_entity: false
@@ -139,9 +139,9 @@
         after: '22:00:00'
         before: '06:00:00'
     action:
-      - service: script.scene_retry
+      - service: script.script_retry
         data:
-          scene_entity_id: scene.nightlight_downstairs
+          script_entity_id: script.nightlight_downstairs
 
   - alias: Turn off downstains lights
     trigger:

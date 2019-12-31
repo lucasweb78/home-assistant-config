@@ -88,8 +88,6 @@ recorder:
       - sensor.downstairs_motion_detector_2_luminance
       - binary_sensor.downstairs_motion_2_detector_sensor
 
-scene: !include scenes.yaml
-
 script: !include scripts.yaml
 
 sensor: !include sensors.yaml

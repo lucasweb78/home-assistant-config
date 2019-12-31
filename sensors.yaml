@@ -1,28 +1,14 @@
 ## Sensors
 
-  - platform: dnsip
-    hostname: lucasweb.duckdns.org
-
   - platform: min_max
     name: Downstairs Luminance
     type: mean
     entity_ids:
-      - sensor.downstairs_motion_detector_1_luminance
+      # - sensor.downstairs_motion_detector_1_luminance
       - sensor.downstairs_motion_detector_2_luminance
 
   - platform: template
     sensors:
-      home_presence_status:
-        friendly_name: Presence
-        entity_id: climate.downstairs
-        icon_template: >-
-          mdi:home
-        value_template: >-
-          {% if is_state_attr('climate.downstairs', 'away_mode', 'off') %}
-            Home
-          {% else %}
-            Away
-          {% endif %}
       downstairs_last_motion:
         friendly_name: 'Downstairs Last Motion'
         entity_id: sensor.downstairs_motion_detector_1, sensor.downstairs_motion_detector_2
