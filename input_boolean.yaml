@@ -5,11 +5,6 @@
     initial: on
     icon: mdi:alarm
 
-  home_alerts:
-    name: Security Alerts
-    initial: off
-    icon: mdi:home-lock
-
   disable_downstairs_motion:
     name: Disable Downstairs Motion
     initial: off
