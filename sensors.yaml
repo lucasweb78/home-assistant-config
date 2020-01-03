@@ -4,7 +4,7 @@
     name: Downstairs Luminance
     type: mean
     entity_ids:
-      # - sensor.downstairs_motion_detector_1_luminance
+      - sensor.downstairs_motion_detector_1_luminance
       - sensor.downstairs_motion_detector_2_luminance
 
   - platform: template
