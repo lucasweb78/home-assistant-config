@@ -245,7 +245,7 @@
       - service: script.turn_on
         entity_id: script.nightlight_downstairs
       - service: script.turn_on
-        entity_id: script.nightlight_bedroom
+        entity_id: script.relax_bedroom
       - service: switch.turn_on
         entity_id: switch.bathroom_light_switch
       - service: fan.turn_on
@@ -263,3 +263,32 @@
       - service: fan.turn_off
         entity_id: fan.family_room_fan_level
 
+  leaving:
+    alias: Leaving
+    sequence:
+      - service: homeassistant.turn_off
+        entity_id: group.lights
+      - service: media_player.turn_off
+        entity_id: media_player.vizio_smartcast
+      - service: homeassistant.turn_off
+        entity_id: group.all_fans
+      - service: script.turn_on
+        entity_id: script.garage_light_timer        
+      - service: lock.lock
+        entity_id: lock.front_door_lock_locked        
+        
+### Wakeup
+
+  wakeup_energize:
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.314,0.331]
+          brightness: 1
+      - service: light.turn_on
+        data:
+          entity_id: light.bedroom
+          xy_color: [0.314,0.331]
+          brightness: 254
+          transition: 900
