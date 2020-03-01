@@ -271,7 +271,7 @@
       - service: media_player.turn_off
         entity_id: media_player.vizio_smartcast
       - service: homeassistant.turn_off
-        entity_id: group.all_fans
+        entity_id: group.fans
       - service: script.turn_on
         entity_id: script.garage_light_timer        
       - service: lock.lock

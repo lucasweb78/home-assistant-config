@@ -50,14 +50,6 @@ logbook:
 logger:
   default: error
 
-media_player: !include media_players.yaml
-
-netatmo:
-  api_key: !secret netatmo_api_client_id
-  secret_key: !secret netatmo_api_client_secret
-  username: !secret netatmo_api_username
-  password: !secret netatmo_api_password
-
 rachio:
   api_key: !secret rachio_api_key
 

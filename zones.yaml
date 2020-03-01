@@ -1,6 +1,0 @@
-## Zones
-
-  name: Work
-  latitude: !secret work_latitude
-  longitude: !secret work_longitude
-  radius: 250

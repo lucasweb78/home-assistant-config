@@ -18,6 +18,14 @@
       - light.bedroom
       - light.kids_room
       - light.porch
+      
+  fans:
+    name: Fans
+    entities:
+      - fan.family_room_fan_level
+      - fan.bedroom_fan_level
+      - fan.kids_room_fan_level
+      - fan.playroom_fan_level
 
 # Downstairs
 
